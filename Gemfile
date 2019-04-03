@@ -49,6 +49,9 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem "factory_bot_rails"
+  gem 'simplecov'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

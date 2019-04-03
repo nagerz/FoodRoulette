@@ -1,6 +1,5 @@
 class YelpFacade
   def recommendation
-    binding.pry
     Recommendation.new(random_restaurant)
   end
 

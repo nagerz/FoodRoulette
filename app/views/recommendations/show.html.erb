@@ -6,9 +6,9 @@ expect(page).to have_css(".rating")
 expect(page).to have_css(".hours") --->
 
 
-<li class="name"><% yelp_facade.recommendation.name %></li>
-<li class="address"><% yelp_facade.recommendation.address %></li>
-<li class="price_range"><% yelp_facade.recommendation.price_range %></li>
-<li class="cuisine"><% yelp_facade.recommendation.cuisine %></li>
-<li class="rating"><% yelp_facade.recommendation.rating %></li>
-<li class="distance"><% yelp_facade.recommendation.distance %></li>
+<li class="name">Name: <%= restaurant.name %></li>
+<li class="address">Address: <%= restaurant.address %></li>
+<li class="price_range">Price Range: <%= restaurant.price_range %></li>
+<li class="cuisine">Cuisine: <%= restaurant.cuisine %></li>
+<li class="rating">Rating: <%= restaurant.rating %></li>
+<li class="distance">Distance: <%= restaurant.distance %> miles away</li>
