@@ -19,9 +19,19 @@ VCR.configure do |config|
 end
 
 OmniAuth.config.test_mode = true
-OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new(
-
-)
+OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+  provider: "google",
+      uid: "108693550823420995807",
+      info: {
+        email: "marcootj@gmail.com",
+        first_name: "Julia",
+        last_name: "Marco",
+        image: "https://lh6.googleusercontent.com/-v5E7X9BssFY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rc9ovNgz_Eslf59KrWqo3Oi7jQLMQ/mo/photo.jpg"
+      },
+      credentials: {
+        token: ENV['ACCESS_TOKEN']
+      }
+})
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
