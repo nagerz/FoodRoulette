@@ -1,4 +1,12 @@
 class SessionsController < ApplicationController
   def create
+    user = User.update_or_create(request.env['omniauth.auth'])
+    if user.nil?
+      render :'login/index'
+    else
+      session[:id] = user.id
+      redirect_to root_path
+      flash[:success] = "Welcome, #{user.first_name}!"
+    end
   end
 end
