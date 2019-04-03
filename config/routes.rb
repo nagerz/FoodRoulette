@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   get '/login', to: 'login#index'
   get 'auth/google', as: :google_connect
   get 'auth/google/callback',  to: 'sessions#create'
-
 end

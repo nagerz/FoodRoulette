@@ -19,19 +19,24 @@ VCR.configure do |config|
 end
 
 OmniAuth.config.test_mode = true
+    # then, provide a set of fake oauth data that
+    # omniauth will use when a user tries to authenticate:
 OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
   provider: "google",
-      uid: "108693550823420995807",
-      info: {
-        email: "marcootj@gmail.com",
-        first_name: "Julia",
-        last_name: "Marco",
-        image: "https://lh6.googleusercontent.com/-v5E7X9BssFY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rc9ovNgz_Eslf59KrWqo3Oi7jQLMQ/mo/photo.jpg"
-      },
-      credentials: {
-        token: ENV['ACCESS_TOKEN']
-      }
+  uid: "108693550823420995807",
+  info: {
+    email: "marcootj@gmail.com",
+    first_name: "Julia",
+    last_name: "Marco",
+    image: "https://lh6.googleusercontent.com/-v5E7X9BssFY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rc9ovNgz_Eslf59KrWqo3Oi7jQLMQ/mo/photo.jpg"
+  },
+  credentials: {
+    token: ENV['TOKEN'],
+    refresh_token: ENV['REFRESH_TOKEN'],
+    expires_at: 1554258409
+  }
 })
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
