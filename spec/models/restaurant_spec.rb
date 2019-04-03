@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Recommendation, type: :model do
+describe Restaurant, type: :model do
   before :each do
     @restaurant_data = {
         "id": "dnJvyhSPiIVlmpdM_3SCrg",
@@ -49,13 +49,13 @@ describe Recommendation, type: :model do
   end
 
   it "exists" do
-    rec = Recommendation.new(@restaurant_data)
+    rec = Restaurant.new(@restaurant_data)
 
-    expect(rec).to be_a(Recommendation)
+    expect(rec).to be_a(Restaurant)
   end
 
   it "has attributes" do
-    rec = Recommendation.new(@restaurant_data)
+    rec = Restaurant.new(@restaurant_data)
 
     expect(rec.name).to eq("Snooze, An A.M. Eatery")
     expect(rec.address).to eq("2262 Larimer St  Denver, CO 80205")

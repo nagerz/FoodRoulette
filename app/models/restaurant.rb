@@ -1,4 +1,4 @@
-class Recommendation
+class Restaurant
   attr_reader :name, :address, :price_range, :cuisine, :rating, :distance
 
   def initialize(data)

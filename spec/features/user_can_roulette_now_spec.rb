@@ -8,7 +8,7 @@ describe "As a user" do
     # I am redirected to “random#show” via “/random”
     # and I see the restaurant’s name, address, price range, cuisine type, star rating, open-now hours, and distance
 
-    visit recommendation_path
+    visit restaurant_path
 
     expect(page).to have_css(".name")
     expect(page).to have_css(".address")

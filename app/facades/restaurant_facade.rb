@@ -1,6 +1,6 @@
-class YelpFacade
+class RestaurantFacade
   def recommendation
-    Recommendation.new(random_restaurant)
+    Restaurant.new(random_restaurant)
   end
 
   def random_restaurant

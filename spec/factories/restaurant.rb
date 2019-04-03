@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :recommendation do
+  factory :restaurant do
     name { "Resto Name" }
     address  { "123 Address St." }
     price_range { "$$" }

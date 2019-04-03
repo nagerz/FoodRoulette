@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get '/recommendation', to: 'recommendations#show', as: :recommendation
-  resources :recommendations, only: [:index]
+  get '/restaurant', to: 'restaurants#show', as: :restaurant
+  resources :restaurants, only: [:index]
 end
