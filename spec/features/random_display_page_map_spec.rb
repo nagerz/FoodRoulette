@@ -26,7 +26,7 @@ RSpec.describe 'As a user, when I visit the restaurant display page' do
                               }
                 }
 
-  	visit '/random'
+  	visit roulette_path
 
     #test map shows?
   	expect(page).to have_content("800 N Point St")
