@@ -1,6 +1,6 @@
 class RouletteController < ApplicationController
   def show
-    params[:location] = ""
+    params[:location] = "Denver, CO"
     render locals: {
       facade: RouletteFacade.new(params[:location])
     }
