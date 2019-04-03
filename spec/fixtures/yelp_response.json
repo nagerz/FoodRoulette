@@ -1,0 +1,886 @@
+{
+    "businesses": [
+        {
+            "id": "dnJvyhSPiIVlmpdM_3SCrg",
+            "alias": "snooze-an-a-m-eatery-denver-12",
+            "name": "Snooze, An A.M. Eatery",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/QdozUJPNZ2rfQMJcZvMfgw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-12?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 3799,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.755459608447,
+                "longitude": -104.988913938884
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2262 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2262 Larimer St",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+13032970700",
+            "display_phone": "(303) 297-0700",
+            "distance": 963.6331565339298
+        },
+        {
+            "id": "ywFvkNZVJoXUQbZoq7fr1w",
+            "alias": "rioja-denver",
+            "name": "Rioja",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/10nJgzsK4Fb_EeoiCGV7nQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rioja-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 2049,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "spanish",
+                    "title": "Spanish"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7478083125095,
+                "longitude": -104.999331349925
+            },
+            "transactions": [],
+            "price": "$$$",
+            "location": {
+                "address1": "1431 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1431 Larimer St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13038202282",
+            "display_phone": "(303) 820-2282",
+            "distance": 489.64415868432474
+        },
+        {
+            "id": "Ip6MAcRC_HTPxhuKi2ZD2w",
+            "alias": "euclid-hall-bar-and-kitchen-denver",
+            "name": "Euclid Hall Bar & Kitchen",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/BIYnxEFUVhMZ-83SsvVBIA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/euclid-hall-bar-and-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 2044,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.74773,
+                "longitude": -105.00001
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1317 14th St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1317 14th St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13035954255",
+            "display_phone": "(303) 595-4255",
+            "distance": 514.1935094367549
+        },
+        {
+            "id": "LX8nS1dlW7MEZDDEmVcyGw",
+            "alias": "root-down-denver",
+            "name": "Root Down",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/EtHR5JwQwZKs3b79GOOPuQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/root-down-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 3089,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "vegan",
+                    "title": "Vegan"
+                },
+                {
+                    "alias": "vegetarian",
+                    "title": "Vegetarian"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.76306,
+                "longitude": -105.0056
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1600 W 33rd Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80211",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1600 W 33rd Ave",
+                    "Denver, CO 80211"
+                ]
+            },
+            "phone": "+13039934200",
+            "display_phone": "(303) 993-4200",
+            "distance": 1301.2842149050452
+        },
+        {
+            "id": "KwmKhdWpcIzypdjAUNrc7w",
+            "alias": "mercantile-dining-and-provision-denver",
+            "name": "Mercantile Dining & Provision",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/La36RRv14CheGs4x5WAR2Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mercantile-dining-and-provision-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 984,
+            "categories": [
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                },
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7536149959513,
+                "longitude": -104.999776429002
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1701 Wynkoop St",
+                "address2": "Ste 155",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1701 Wynkoop St",
+                    "Ste 155",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+17204603733",
+            "display_phone": "(720) 460-3733",
+            "distance": 145.4834041945522
+        },
+        {
+            "id": "hWdupym3JerJ2p_-wRj00A",
+            "alias": "snooze-an-a-m-eatery-denver-11",
+            "name": "Snooze, An A.M. Eatery",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/A3wqc0cQwqBf7Un1ckfkiQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-11?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 842,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7534172798151,
+                "longitude": -104.999892472353
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1701 Wynkoop St",
+                "address2": "Ste 150",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1701 Wynkoop St",
+                    "Ste 150",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13038253536",
+            "display_phone": "(303) 825-3536",
+            "distance": 126.79615337268544
+        },
+        {
+            "id": "jx5kzkP_9zwh9BW0WVPAWw",
+            "alias": "osteria-marco-denver",
+            "name": "Osteria Marco",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/P1xn_YGc0dx0Kg5TGrbPJw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/osteria-marco-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 1426,
+            "categories": [
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                },
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.74819,
+                "longitude": -104.99897
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1453 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1453 Larimer St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13035345855",
+            "display_phone": "(303) 534-5855",
+            "distance": 462.54792282675487
+        },
+        {
+            "id": "LXlVCu6G-buaxC8GlDjmLA",
+            "alias": "little-man-ice-cream-denver",
+            "name": "Little Man Ice Cream",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ik81DBSk6smQLy1Gn3R70w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/little-man-ice-cream-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 1893,
+            "categories": [
+                {
+                    "alias": "icecream",
+                    "title": "Ice Cream & Frozen Yogurt"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7595,
+                "longitude": -105.01104
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "2620 16th St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80211",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2620 16th St",
+                    "Denver, CO 80211"
+                ]
+            },
+            "phone": "+13034553811",
+            "display_phone": "(303) 455-3811",
+            "distance": 1274.1494260088575
+        },
+        {
+            "id": "lqNe_QMrAyZLnEr06F9S_w",
+            "alias": "jax-fish-house-lodo-denver",
+            "name": "Jax Fish House LoDo",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/hMx-pEFzspAQUDsFjzB2fg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/jax-fish-house-lodo-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 767,
+            "categories": [
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7521259302617,
+                "longitude": -104.998515626984
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1539 17th St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1539 17th St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13032925767",
+            "display_phone": "(303) 292-5767",
+            "distance": 81.35171722159352
+        },
+        {
+            "id": "Z8vO_mf1V09QDUPdyqJ6og",
+            "alias": "linger-denver-2",
+            "name": "Linger",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_5mQyB29yVKHu-uNp8P2Qw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/linger-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 3035,
+            "categories": [
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.75954,
+                "longitude": -105.01139
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2030 W 30th Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80211",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2030 W 30th Ave",
+                    "Denver, CO 80211"
+                ]
+            },
+            "phone": "+13039933120",
+            "display_phone": "(303) 993-3120",
+            "distance": 1297.491646568803
+        },
+        {
+            "id": "UTV40d3C0P7vfUUqmPl3vA",
+            "alias": "vesta-denver",
+            "name": "Vesta",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/LA6JeuX388_8VUwJZmIfcg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/vesta-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 890,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                },
+                {
+                    "alias": "wine_bars",
+                    "title": "Wine Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7525672912598,
+                "longitude": -104.996025085449
+            },
+            "transactions": [],
+            "price": "$$$",
+            "location": {
+                "address1": "1822 Blake St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1822 Blake St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13032961970",
+            "display_phone": "(303) 296-1970",
+            "distance": 289.3543628197963
+        },
+        {
+            "id": "U9OuwqzvfeqoNUUoRtLfHA",
+            "alias": "biker-jims-gourmet-dogs-denver-8",
+            "name": "Biker Jim's Gourmet Dogs",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/6KeKKAwblPG4OimhiBh7Gw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/biker-jims-gourmet-dogs-denver-8?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 1180,
+            "categories": [
+                {
+                    "alias": "hotdog",
+                    "title": "Hot Dogs"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7545196952158,
+                "longitude": -104.99033919367
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "2148 Larimer St",
+                "address2": "",
+                "address3": null,
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2148 Larimer St",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+17207469355",
+            "display_phone": "(720) 746-9355",
+            "distance": 814.0694349370145
+        },
+        {
+            "id": "mzOAkvH-4WIfQuR3uCs87g",
+            "alias": "hopdoddy-burger-bar-denver",
+            "name": "Hopdoddy Burger Bar",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/CdADjEj_McY9D9Mpk6Jvgg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hopdoddy-burger-bar-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 781,
+            "categories": [
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7534294,
+                "longitude": -104.9991989
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1747 Wynkoop St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1747 Wynkoop St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13034462337",
+            "display_phone": "(303) 446-2337",
+            "distance": 148.83176113296932
+        },
+        {
+            "id": "9UYPzrky0DmOHFW-BkItIg",
+            "alias": "cholon-denver-3",
+            "name": "ChoLon",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Zk4_3aQKb4N1Y4NPiGsnWQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cholon-denver-3?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 969,
+            "categories": [
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.75058,
+                "longitude": -104.999721
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$$",
+            "location": {
+                "address1": "1555 Blake St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1555 Blake St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13033535223",
+            "display_phone": "(303) 353-5223",
+            "distance": 196.6816953459513
+        },
+        {
+            "id": "_dcRj7n4qPEnHqJQ7hC5Kg",
+            "alias": "biker-jims-gourmet-dogs-denver-5",
+            "name": "Biker Jim's Gourmet Dogs",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Lr6EucZa-CCZ6shFBzDbpw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/biker-jims-gourmet-dogs-denver-5?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 604,
+            "categories": [
+                {
+                    "alias": "hotdog",
+                    "title": "Hot Dogs"
+                },
+                {
+                    "alias": "foodstands",
+                    "title": "Food Stands"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.74785,
+                "longitude": -104.99567
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "16th & Arapahoe",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "16th & Arapahoe",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 571.4081913616435
+        },
+        {
+            "id": "BKRLsUCryeR1JJtyGVWW_g",
+            "alias": "blue-sushi-sake-grill-denver",
+            "name": "Blue Sushi Sake Grill",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ChBkyTy2cKgTCqSaPdd3UA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/blue-sushi-sake-grill-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 858,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.751248413952,
+                "longitude": -105.000414848328
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1616 16th St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1616 16th St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13036403655",
+            "display_phone": "(303) 640-3655",
+            "distance": 147.3153670444076
+        },
+        {
+            "id": "PS0EyzTCA_ctKQBOWntUCg",
+            "alias": "tattered-cover-book-store-denver-6",
+            "name": "Tattered Cover Book Store",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/OTwKaQ2aH5HdofJO7P0ZfA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tattered-cover-book-store-denver-6?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 468,
+            "categories": [
+                {
+                    "alias": "bookstores",
+                    "title": "Bookstores"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.7516356022367,
+                "longitude": -105.000837742777
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1628 16th St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1628 16th St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13034361070",
+            "display_phone": "(303) 436-1070",
+            "distance": 143.40835449928963
+        },
+        {
+            "id": "LRyRNUWVSZ8NXPuCzTrfpA",
+            "alias": "union-lodge-no-1-denver",
+            "name": "Union Lodge No.1",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/jQpwkClues7QyvTy9eYluQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/union-lodge-no-1-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 480,
+            "categories": [
+                {
+                    "alias": "cocktailbars",
+                    "title": "Cocktail Bars"
+                },
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 39.74627,
+                "longitude": -104.99462
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1543 Champa St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1543 Champa St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+17203890447",
+            "display_phone": "(720) 389-0447",
+            "distance": 788.3660103379793
+        },
+        {
+            "id": "3ncWfQJg_RbTqnkPmksoAA",
+            "alias": "sams-no-3-downtown-denver",
+            "name": "Sam's No. 3 Downtown",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/gkl12xujRvYQWk89v8njEg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sams-no-3-downtown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 1807,
+            "categories": [
+                {
+                    "alias": "diners",
+                    "title": "Diners"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.7462,
+                "longitude": -104.99559
+            },
+            "transactions": [
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1500 Curtis St",
+                "address2": null,
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1500 Curtis St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13035341927",
+            "display_phone": "(303) 534-1927",
+            "distance": 757.9304334785627
+        },
+        {
+            "id": "tW39sjRfqxlm5krBSWzGCw",
+            "alias": "tag-restaurant-denver-3",
+            "name": "TAG Restaurant",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/Eyo0daWeFe16j-Eguwvtiw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tag-restaurant-denver-3?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 897,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                },
+                {
+                    "alias": "venues",
+                    "title": "Venues & Event Spaces"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 39.74814,
+                "longitude": -104.99935
+            },
+            "transactions": [],
+            "price": "$$$",
+            "location": {
+                "address1": "1441 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1441 Larimer St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13039969985",
+            "display_phone": "(303) 996-9985",
+            "distance": 466.7177195507733
+        }
+    ],
+    "total": 1800,
+    "region": {
+        "center": {
+            "longitude": -104.99942779541016,
+            "latitude": 39.75233437973034
+        }
+    }
+}

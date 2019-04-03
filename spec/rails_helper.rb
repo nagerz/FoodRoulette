@@ -8,6 +8,7 @@ require 'rspec/rails'
 
 require 'vcr'
 require 'webmock/rspec'
+require 'support/factory_bot.rb'
 
 VCR.configure do |config|
   config.ignore_localhost = true
@@ -16,6 +17,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
   config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
+  config.filter_sensitive_data('<YELP_API_KEY>') { ENV['YELP_API_KEY'] }
 end
 
 OmniAuth.config.test_mode = true
@@ -36,7 +38,6 @@ OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
     expires_at: 1554258409
   }
 })
-
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -70,32 +71,22 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = true
 
-  # RSpec Rails can automatically mix in different behaviours to your tests
-  # based on their file location, for example enabling you to call `get` and
-  # `post` in specs under `spec/controllers`.
-  #
-  # You can disable this behaviour by removing the line below, and instead
-  # explicitly tag your specs with their type, e.g.:
-  #
-  #     RSpec.describe UsersController, :type => :controller do
-  #       # ...
-  #     end
-  #
-  # The different available types are documented in the features, such as in
-  # https://relishapp.com/rspec/rspec-rails/docs
-  config.infer_spec_type_from_file_location!
+  Capybara.configure do |config|
+    config.default_max_wait_time = 5
+  end
 
-  # Filter lines from Rails gems in backtraces.
-  config.filter_rails_from_backtrace!
-  # arbitrary gems may also be filtered via:
-  # config.filter_gems_from_backtrace("gem name")
-end
+  SimpleCov.start 'rails'
+
+  RSpec.configure do |config|
+    config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+    config.include FactoryBot::Syntax::Methods
+
+    config.use_transactional_fixtures = true
+
+    config.infer_spec_type_from_file_location!
+
+    config.filter_rails_from_backtrace!
+  end

@@ -38,19 +38,24 @@ gem 'figaro'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faker'
+gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
   gem 'pry'
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'awesome_print'
-  gem 'webmock'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
   gem 'simplecov'
   gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
