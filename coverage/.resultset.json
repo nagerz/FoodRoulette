@@ -1,0 +1,104 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/models/recommendation.rb": [
+        1,
+        1,
+        null,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/controllers/recommendations_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/facades/yelp_facade.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/services/yelp_service.rb": [
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        4,
+        4,
+        4,
+        null,
+        null,
+        null
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/aprildagonese/Turing/3module/projects/FoodRoulette/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1554317222
+  }
+}
