@@ -1,24 +1,22 @@
 class YelpService
-  attr_reader :zipcode
 
-  def initialize(zipcode)
-    @zipcode = zipcode
+  def get_random_restaurant(zipcode)
+    yelp_json("v3/businesses/search?location=#{zipcode}
+              &radius=8000
+              &open_now=true
+              &price=2
+              &limit=20
+              &categories=restaurants
+              ")
   end
 
-  def self.fetch(zipcode)
-    new(zipcode).fetch
-  end
-
-  def fetch
-    body
-  end
-
-  def body
-    JSON.parse(conn.response.body)
+  def yelp_json(url)
+    response = conn.get(url)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
-    Faraday.new(:url => "https://api.yelp.com/v3/businesses/search?location=#{zipcode}") do |faraday|
+    Faraday.new(url: "https://api.yelp.com/") do |faraday|
       faraday.headers["Authorization"] = "Bearer #{ENV['YELP_API_KEY']}"
       faraday.adapter  Faraday.default_adapter
     end
