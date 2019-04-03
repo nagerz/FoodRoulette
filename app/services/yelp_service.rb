@@ -1,13 +1,7 @@
 class YelpService
 
-  def get_random_restaurant(zipcode)
-    yelp_json("v3/businesses/search?location=#{zipcode}
-              &radius=8000
-              &open_now=true
-              &price=2
-              &limit=20
-              &categories=restaurants
-              ")
+  def restaurants(zipcode)
+    yelp_json("v3/businesses/search?location=#{zipcode}&radius=8000&open_now=true&price=2&limit=20&categories=restaurants").first[1]
   end
 
   def yelp_json(url)
