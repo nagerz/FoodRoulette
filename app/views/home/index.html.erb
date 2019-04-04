@@ -1,12 +1,29 @@
-<%= form_tag(root_path, method: :get, id: "search-form") do %>
-  <%= label_tag "Location:" %>
-  <%= text_field_tag :location, params[:position], placeholder: "Current Location" %>
-  <%= submit_tag("Search".html_safe, class: "search-submit-tag") %>
-<% end %>
+<section class='home-hero' style="background-image: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_large_assets/507de6a720e4/assets/img/home/hero_photos/pkwm_5P7XMoIXHOzQR0Y7A.jpg)">
+  <section class='home-hero-inner'>
 
-<div class="logo">
-  <%= image_tag('logo.png', class: "home-logo-banner", alt: "Roulette Logo") %>
-</div>
+    <section class="header">
+      <section class="header-logo">
+        <%= image_tag('logo.png', class: "home-header-logo", alt: "Roulette Logo") %>
+        <h1 class="home-header-name"> FoodRoulette </h1>
+      </section>
+      <section class='header-nav-bar'>
+        <%= render 'partials/nav' %>
+      </section>
+    </section>
+
+    <section class='hero-body'>
+      <h1 class="welcome"> Welcome to FoodRoulette</h1>
+      <h3 class="welcome-description"> Stop debating and start eating!</h3>
+      <article class="search-form">
+        <%= form_tag(root_path, method: :get, id: "search-form") do %>
+          <%= label_tag "" %><i class="fas fa-map-marker-alt"></i>
+          <%= text_field_tag :location, params[:position], placeholder: "Current Location" %>
+          <%= submit_tag("Search".html_safe, class: "search-submit-tag") %>
+        <% end %>
+      </article>
+    </section>
+  </section>
+</section>
 
 <div class="home-roulette-now">
   <h5>Ready to eat?</h5>
@@ -20,5 +37,3 @@
   <h5>Want input from a group?</h5>
   <%= button_to 'Survey them!', survey_path, method: :get %>
 </div>
-
-<%= render 'partials/nav' %>
