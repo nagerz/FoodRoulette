@@ -22,7 +22,7 @@ RSpec.feature 'Home page' do
       expect(page).to have_button('Search')
 
       #I see the app’s logo
-      expect(page).to have_css(".home-logo-banner")
+      expect(page).to have_css(".home-header-logo")
 
       #I see a button for “Roulette Now” that says in small text “Ready to eat?” above it
       expect(page).to have_content('Ready to eat?')
