@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :user do
-    google_id { "google id" }
-    first_name  { "John" }
-    last_name { "Doe" }
-    email { "jdoe@gmail.com" }
-    token { "token" }
+    sequence(:google_id) { |n| "Id_#{n}" }
+    sequence(:first_name) { |n| "User_#{n}" }
+    last_name { "Name" }
+    sequence(:email) { |n| "user_#{n}@email.com" }
+    sequence(:token) { |n| "user_#{n}_token" }
   end
 end
