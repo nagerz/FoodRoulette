@@ -1,6 +1,87 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.home-logo-banner{
-  width: 80px;
+body{
+    margin: 0;
+}
+
+.home-hero{
+  height: 100%;
+  padding-top: 30px;
+  height: 570px;
+  background-color: #333;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.home-hero-inner {
+  margin: 0;
+  padding: 0 15px;
+}
+
+.header{
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-areas: "logo empty nav";
+  margin-bottom: 10px;
+}
+
+.header-logo {
+  grid-area: logo;
+}
+
+.home-header-logo {
+  width: 50px;
+  display: inline;
+}
+
+.home-header-name {
+  font-size: 20px;
+  display: inline;
+  color: white;
+
+}
+
+.header-nav-bar {
+  grid-area: nav;
+  text-align: right;
+}
+
+.nav-links a {
+  display: inline;
+  color: white;
+  text-decoration: none;
+  padding: 28px 17px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.nav-link{
+  display: inline;
+}
+
+.hero-body{
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.welcome {
+  grid-area: 2 / 2;
+  font-size: 40px;
+  color: white;
+  margin: 0;
+}
+
+.welcome-description {
+  grid-area: 3/2;
+
+}
+
+.search-form {
+  grid-area: 5/2;
 }
