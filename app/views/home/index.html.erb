@@ -1,0 +1,24 @@
+<%= form_tag(root_path, method: :get, id: "search-form") do %>
+  <%= label_tag "Location:" %>
+  <%= text_field_tag :location, params[:position], placeholder: "Current Location" %>
+  <%= submit_tag("Search".html_safe, class: "search-submit-tag") %>
+<% end %>
+
+<div class="logo">
+  <%= image_tag('logo.png', class: "home-logo-banner", alt: "Roulette Logo") %>
+</div>
+
+<div class="home-roulette-now">
+  <h5>Ready to eat?</h5>
+  <%= button_to 'Roulette Now', restaurant_path, method: :get %>
+</div>
+<div class="home-refine-search">
+  <h5>Something in mind?</h5>
+  <%= button_to 'Select Options', refine_path, method: :get %>
+</div>
+<div class="home-survey">
+  <h5>Want input from a group?</h5>
+  <%= button_to 'Survey them!', survey_path, method: :get %>
+</div>
+
+<%= render 'partials/nav' %>
