@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{user.first_name}!"
     end
   end
+
+  def destroy
+    session[:id] = nil
+    redirect_to root_path
+  end
 end
