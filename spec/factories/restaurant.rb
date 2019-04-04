@@ -5,6 +5,7 @@ FactoryBot.define do
     price_range { "$$" }
     cuisine { "Spanish" }
     rating { "4" }
+    distance { 0.81 }
     hours { "M-F, 9AM-5PM" }
   end
 end
