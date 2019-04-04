@@ -12,3 +12,5 @@ expect(page).to have_css(".hours") --->
 <li class="cuisine">Cuisine: <%= restaurant.cuisine %></li>
 <li class="rating">Rating: <%= restaurant.rating %></li>
 <li class="distance">Distance: <%= restaurant.distance %> miles away</li>
+
+<%= button_to 'Roulette Again', restaurant_path, method: :get %>

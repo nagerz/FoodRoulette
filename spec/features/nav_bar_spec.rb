@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Navigation bar' do
   context 'as a visitor' do
-    context 'when I am redireced to the login page' do
+    context 'when I am redirected to the login page' do
       it 'I do not see a navigation bar' do
         visit root_path
 
