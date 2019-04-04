@@ -8,7 +8,7 @@ describe 'When a logged in user visits their profile page' do
 
     expect(current_path).to eq(root_path)
 
-    click_button 'Profile'
+    click_link 'Profile'
 
     expect(current_path).to eq(profile_path)
 
