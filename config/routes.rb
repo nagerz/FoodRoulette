@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/profile', to: 'profile#show'
   get 'auth/google', as: :google_connect
   get 'auth/google/callback', to: 'sessions#create'
-  get '/restaurant', to: 'restaurants#show', as: :restaurant
+  get '/restaurant', to: 'restaurants#show'
   resources :restaurants, only: [:index]
 end
