@@ -8,9 +8,9 @@ RSpec.feature 'Navigation bar' do
 
         expect(current_path).to eq(login_path)
 
-        expect(page).to_not have_button('Home')
-        expect(page).to_not have_button('Profile')
-        expect(page).to_not have_button('About')
+        expect(page).to_not have_link('Home')
+        expect(page).to_not have_link('Profile')
+        expect(page).to_not have_link('About')
       end
     end
   end
@@ -27,9 +27,9 @@ RSpec.feature 'Navigation bar' do
 
         expect(current_path).to eq(root_path)
 
-        expect(page).to have_button('Home')
-        expect(page).to have_button('Profile')
-        expect(page).to have_button('About')
+        expect(page).to have_link('Home')
+        expect(page).to have_link('Profile')
+        expect(page).to have_link('About')
       end
 
       it 'I can navigate to home' do
