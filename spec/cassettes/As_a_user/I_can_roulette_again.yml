@@ -1,0 +1,535 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=20&location=80202&open_now=true&price=2&radius=8000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YELP_API_KEY>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4999'
+      Ratelimit-Resettime:
+      - '2019-04-05T00:00:00+00:00'
+      X-Zipkin-Id:
+      - 0b9df66a5c5a3854
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-80-169-uswest2aprod
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 04 Apr 2019 02:23:06 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-den19647-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "LX8nS1dlW7MEZDDEmVcyGw", "alias": "root-down-denver",
+        "name": "Root Down", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/EtHR5JwQwZKs3b79GOOPuQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/root-down-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 3091, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "vegan", "title": "Vegan"}, {"alias": "vegetarian", "title":
+        "Vegetarian"}], "rating": 4.5, "coordinates": {"latitude": 39.76306, "longitude":
+        -105.0056}, "transactions": [], "price": "$$", "location": {"address1": "1600
+        W 33rd Ave", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80211", "country": "US", "state": "CO", "display_address": ["1600 W 33rd
+        Ave", "Denver, CO 80211"]}, "phone": "+13039934200", "display_phone": "(303)
+        993-4200", "distance": 1301.2842149050452}, {"id": "Ip6MAcRC_HTPxhuKi2ZD2w",
+        "alias": "euclid-hall-bar-and-kitchen-denver", "name": "Euclid Hall Bar &
+        Kitchen", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/BIYnxEFUVhMZ-83SsvVBIA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/euclid-hall-bar-and-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 2043, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "bars", "title": "Bars"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.74773, "longitude": -105.00001}, "transactions": ["pickup",
+        "delivery"], "price": "$$", "location": {"address1": "1317 14th St", "address2":
+        "", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
+        "state": "CO", "display_address": ["1317 14th St", "Denver, CO 80202"]}, "phone":
+        "+13035954255", "display_phone": "(303) 595-4255", "distance": 514.1935094367549},
+        {"id": "Z8vO_mf1V09QDUPdyqJ6og", "alias": "linger-denver-2", "name": "Linger",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_5mQyB29yVKHu-uNp8P2Qw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/linger-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 3037, "categories": [{"alias": "asianfusion", "title": "Asian
+        Fusion"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
+        "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.75954,
+        "longitude": -105.01139}, "transactions": ["pickup", "delivery"], "price":
+        "$$", "location": {"address1": "2030 W 30th Ave", "address2": "", "address3":
+        "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
+        "display_address": ["2030 W 30th Ave", "Denver, CO 80211"]}, "phone": "+13039933120",
+        "display_phone": "(303) 993-3120", "distance": 1297.491646568803}, {"id":
+        "jx5kzkP_9zwh9BW0WVPAWw", "alias": "osteria-marco-denver", "name": "Osteria
+        Marco", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/P1xn_YGc0dx0Kg5TGrbPJw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/osteria-marco-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1426, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "pizza", "title": "Pizza"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.74819, "longitude": -104.99897},
+        "transactions": ["pickup"], "price": "$$", "location": {"address1": "1453
+        Larimer St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80202", "country": "US", "state": "CO", "display_address": ["1453 Larimer
+        St", "Denver, CO 80202"]}, "phone": "+13035345855", "display_phone": "(303)
+        534-5855", "distance": 462.54792282675487}, {"id": "KwmKhdWpcIzypdjAUNrc7w",
+        "alias": "mercantile-dining-and-provision-denver", "name": "Mercantile Dining
+        & Provision", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/La36RRv14CheGs4x5WAR2Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/mercantile-dining-and-provision-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 983, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "newamerican", "title": "American (New)"}], "rating": 4.5, "coordinates":
+        {"latitude": 39.7536149959513, "longitude": -104.999776429002}, "transactions":
+        [], "price": "$$", "location": {"address1": "1701 Wynkoop St", "address2":
+        "Ste 155", "address3": "", "city": "Denver", "zip_code": "80202", "country":
+        "US", "state": "CO", "display_address": ["1701 Wynkoop St", "Ste 155", "Denver,
+        CO 80202"]}, "phone": "+17204603733", "display_phone": "(720) 460-3733", "distance":
+        145.4834041945522}, {"id": "svJWwW0ilssyqk_UML0mUg", "alias": "work-and-class-denver",
+        "name": "Work & Class", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wknJ1nD0jTQssiXfW-tjFQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/work-and-class-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1270, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "latin", "title": "Latin American"}, {"alias": "cocktailbars",
+        "title": "Cocktail Bars"}], "rating": 4.5, "coordinates": {"latitude": 39.75761,
+        "longitude": -104.98604}, "transactions": [], "price": "$$", "location": {"address1":
+        "2500 Larimer St", "address2": "Ste 101", "address3": "", "city": "Denver",
+        "zip_code": "80205", "country": "US", "state": "CO", "display_address": ["2500
+        Larimer St", "Ste 101", "Denver, CO 80205"]}, "phone": "+13032920700", "display_phone":
+        "(303) 292-0700", "distance": 1282.1914214808344}, {"id": "3ncWfQJg_RbTqnkPmksoAA",
+        "alias": "sams-no-3-downtown-denver", "name": "Sam''s No. 3 Downtown", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/gkl12xujRvYQWk89v8njEg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/sams-no-3-downtown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1808, "categories": [{"alias": "diners", "title": "Diners"},
+        {"alias": "mexican", "title": "Mexican"}, {"alias": "tradamerican", "title":
+        "American (Traditional)"}], "rating": 4.0, "coordinates": {"latitude": 39.7462,
+        "longitude": -104.99559}, "transactions": ["delivery"], "price": "$$", "location":
+        {"address1": "1500 Curtis St", "address2": null, "address3": "", "city": "Denver",
+        "zip_code": "80202", "country": "US", "state": "CO", "display_address": ["1500
+        Curtis St", "Denver, CO 80202"]}, "phone": "+13035341927", "display_phone":
+        "(303) 534-1927", "distance": 757.9304334785627}, {"id": "lqNe_QMrAyZLnEr06F9S_w",
+        "alias": "jax-fish-house-lodo-denver", "name": "Jax Fish House LoDo", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/hMx-pEFzspAQUDsFjzB2fg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/jax-fish-house-lodo-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 767, "categories": [{"alias": "seafood", "title": "Seafood"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.7521259302617, "longitude":
+        -104.998515626984}, "transactions": [], "price": "$$", "location": {"address1":
+        "1539 17th St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80202", "country": "US", "state": "CO", "display_address": ["1539 17th St",
+        "Denver, CO 80202"]}, "phone": "+13032925767", "display_phone": "(303) 292-5767",
+        "distance": 81.35171722159352}, {"id": "mzOAkvH-4WIfQuR3uCs87g", "alias":
+        "hopdoddy-burger-bar-denver", "name": "Hopdoddy Burger Bar", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/CdADjEj_McY9D9Mpk6Jvgg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/hopdoddy-burger-bar-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 780, "categories": [{"alias": "burgers", "title": "Burgers"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.7534294, "longitude": -104.9991989},
+        "transactions": ["pickup"], "price": "$$", "location": {"address1": "1747
+        Wynkoop St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80202", "country": "US", "state": "CO", "display_address": ["1747 Wynkoop
+        St", "Denver, CO 80202"]}, "phone": "+13034462337", "display_phone": "(303)
+        446-2337", "distance": 148.83176113296932}, {"id": "tnXYXUAoYnfE_Gvh0IiIQg",
+        "alias": "ophelias-electric-soapbox-denver", "name": "Ophelia''s Electric
+        Soapbox", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/0mZGxSVvSCI9Qd63p8Gjvw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/ophelias-electric-soapbox-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 851, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "venues", "title":
+        "Venues & Event Spaces"}], "rating": 4.0, "coordinates": {"latitude": 39.7526969909668,
+        "longitude": -104.991821289062}, "transactions": [], "price": "$$", "location":
+        {"address1": "1215 20th St", "address2": "", "address3": "", "city": "Denver",
+        "zip_code": "80202", "country": "US", "state": "CO", "display_address": ["1215
+        20th St", "Denver, CO 80202"]}, "phone": "+13039938023", "display_phone":
+        "(303) 993-8023", "distance": 638.0011427956482}, {"id": "G6ckyL7AK1qNyRop7xHa4g",
+        "alias": "marcos-coal-fired-ballpark-denver", "name": "Marco''s Coal Fired-
+        Ballpark", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/GENJNpKXqteiMILxDNXmag/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/marcos-coal-fired-ballpark-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1060, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "italian", "title": "Italian"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.75452, "longitude": -104.99106},
+        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "2129 Larimer St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80205", "country": "US", "state": "CO", "display_address": ["2129 Larimer
+        St", "Denver, CO 80205"]}, "phone": "+13032967000", "display_phone": "(303)
+        296-7000", "distance": 762.252337447241}, {"id": "BKRLsUCryeR1JJtyGVWW_g",
+        "alias": "blue-sushi-sake-grill-denver", "name": "Blue Sushi Sake Grill",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ChBkyTy2cKgTCqSaPdd3UA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/blue-sushi-sake-grill-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 858, "categories": [{"alias": "sushi", "title": "Sushi Bars"},
+        {"alias": "japanese", "title": "Japanese"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.751248413952, "longitude": -105.000414848328}, "transactions":
+        [], "price": "$$", "location": {"address1": "1616 16th St", "address2": "",
+        "address3": "", "city": "Denver", "zip_code": "80202", "country": "US", "state":
+        "CO", "display_address": ["1616 16th St", "Denver, CO 80202"]}, "phone": "+13036403655",
+        "display_phone": "(303) 640-3655", "distance": 147.3153670444076}, {"id":
+        "uAsOPByhA_JiDi1d8K7cjw", "alias": "5280-burger-bar-denver-denver", "name":
+        "5280 Burger Bar - Denver", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/9VjVU7E-IFzdL7XwBWLHIw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/5280-burger-bar-denver-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1163, "categories": [{"alias": "burgers", "title": "Burgers"},
+        {"alias": "tradamerican", "title": "American (Traditional)"}], "rating": 4.0,
+        "coordinates": {"latitude": 39.74388, "longitude": -104.99082}, "transactions":
+        ["pickup"], "price": "$$", "location": {"address1": "500 16th St", "address2":
+        "Ste 160", "address3": "", "city": "Denver", "zip_code": "80202", "country":
+        "US", "state": "CO", "display_address": ["500 16th St", "Ste 160", "Denver,
+        CO 80202"]}, "phone": "+13038251020", "display_phone": "(303) 825-1020", "distance":
+        1196.563109796485}, {"id": "CKjQicdYAfPShHmQkQSVIQ", "alias": "bistro-vendome-denver-4",
+        "name": "Bistro Vendome", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/MTO_q2u2ROhhvBiyt2bP_g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/bistro-vendome-denver-4?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 696, "categories": [{"alias": "french", "title": "French"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.7476916, "longitude": -104.9991479},
+        "transactions": [], "price": "$$", "location": {"address1": "1420 Larimer
+        St", "address2": "", "address3": "", "city": "Denver", "zip_code": "80202",
+        "country": "US", "state": "CO", "display_address": ["1420 Larimer St", "Denver,
+        CO 80202"]}, "phone": "+13038253232", "display_phone": "(303) 825-3232", "distance":
+        526.3990656962476}, {"id": "zhsiD46GZOGjgW9OuRaF6g", "alias": "freshcraft-denver",
+        "name": "Freshcraft", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/x_JUL97BYoCNq_eq_y5pAg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/freshcraft-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 921, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "comfortfood", "title": "Comfort Food"}], "rating": 4.0, "coordinates": {"latitude":
+        39.74992, "longitude": -104.99954}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "1530 Blake St", "address2": "Ste
+        A", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
+        "state": "CO", "display_address": ["1530 Blake St", "Ste A", "Denver, CO 80202"]},
+        "phone": "+13037589608", "display_phone": "(303) 758-9608", "distance": 270.625408028053},
+        {"id": "oJc3khNkjW3aAQZDMEWe4Q", "alias": "avanti-food-and-beverage-denver",
+        "name": "Avanti Food & Beverage", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/qs8ilZMvAuY7OutmU7PEYQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/avanti-food-and-beverage-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 966, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "food_court", "title": "Food Court"}], "rating": 4.0, "coordinates": {"latitude":
+        39.7622413635254, "longitude": -105.00611114502}, "transactions": [], "price":
+        "$$", "location": {"address1": "3200 Pecos St", "address2": null, "address3":
+        "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
+        "display_address": ["3200 Pecos St", "Denver, CO 80211"]}, "phone": "+17202694778",
+        "display_phone": "(720) 269-4778", "distance": 1243.8609255141696}, {"id":
+        "XBJYkhpPPQFhIJvp2gjmbQ", "alias": "butchers-bistro-denver", "name": "Butcher''s
+        Bistro", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/NYAL27bbChQxrSm9MhsCLw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/butchers-bistro-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 426, "categories": [{"alias": "butcher", "title": "Butcher"},
+        {"alias": "newamerican", "title": "American (New)"}, {"alias": "steak", "title":
+        "Steakhouses"}], "rating": 4.5, "coordinates": {"latitude": 39.7554817, "longitude":
+        -104.9898071}, "transactions": [], "price": "$$", "location": {"address1":
+        "2233 Larimer St", "address2": null, "address3": "", "city": "Denver", "zip_code":
+        "80205", "country": "US", "state": "CO", "display_address": ["2233 Larimer
+        St", "Denver, CO 80205"]}, "phone": "+13032962750", "display_phone": "(303)
+        296-2750", "distance": 897.6172942578727}, {"id": "CQNv4SXqFltcwNsx-qHbLQ",
+        "alias": "steubens-uptown-denver", "name": "Steuben''s Uptown", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/iPEj2KIB41JR844HgsWXyQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/steubens-uptown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 2530, "categories": [{"alias": "diners", "title": "Diners"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "cocktailbars",
+        "title": "Cocktail Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.74349,
+        "longitude": -104.98017}, "transactions": ["pickup", "delivery"], "price":
+        "$$", "location": {"address1": "523 E 17th Ave", "address2": null, "address3":
+        "", "city": "Denver", "zip_code": "80203", "country": "US", "state": "CO",
+        "display_address": ["523 E 17th Ave", "Denver, CO 80203"]}, "phone": "+13038301001",
+        "display_phone": "(303) 830-1001", "distance": 1895.4463257533027}, {"id":
+        "N_tX1pJz92Ls-4sMQvMLpA", "alias": "postino-lohi-denver-7", "name": "Postino
+        LoHi", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/fJ4PfnrBf9ylz43XB9Chrw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/postino-lohi-denver-7?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 471, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "wine_bars", "title": "Wine Bars"}, {"alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"}], "rating": 4.5, "coordinates": {"latitude":
+        39.76151, "longitude": -105.01045}, "transactions": [], "price": "$$", "location":
+        {"address1": "2715 17th St", "address2": "", "address3": "", "city": "Denver",
+        "zip_code": "80211", "country": "US", "state": "CO", "display_address": ["2715
+        17th St", "Denver, CO 80211"]}, "phone": "+13034336363", "display_phone":
+        "(303) 433-6363", "distance": 1392.8929414722893}, {"id": "gGXnG-Rf5UUr6wT8krXT5w",
+        "alias": "williams-and-graham-denver", "name": "Williams & Graham", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/XF-BSjZ7rqPZbJ1KAhuPuA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/williams-and-graham-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 740, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "tradamerican", "title": "American (Traditional)"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.76195, "longitude": -105.011}, "transactions": [], "price":
+        "$$", "location": {"address1": "3160 Tejon St", "address2": null, "address3":
+        "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
+        "display_address": ["3160 Tejon St", "Denver, CO 80211"]}, "phone": "+13039978886",
+        "display_phone": "(303) 997-8886", "distance": 1451.1425869789553}], "total":
+        572, "region": {"center": {"longitude": -104.99942779541016, "latitude": 39.75233437973034}}}'
+    http_version: 
+  recorded_at: Thu, 04 Apr 2019 02:23:06 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=20&location=80202&open_now=true&price=2&radius=8000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YELP_API_KEY>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4998'
+      Ratelimit-Resettime:
+      - '2019-04-05T00:00:00+00:00'
+      X-Zipkin-Id:
+      - dcce0cce29060d6a
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-90-16-uswest2aprod
+      Transfer-Encoding:
+      - chunked
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 04 Apr 2019 02:23:07 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-den19621-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "LX8nS1dlW7MEZDDEmVcyGw", "alias": "root-down-denver",
+        "name": "Root Down", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/EtHR5JwQwZKs3b79GOOPuQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/root-down-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 3091, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "vegan", "title": "Vegan"}, {"alias": "vegetarian", "title":
+        "Vegetarian"}], "rating": 4.5, "coordinates": {"latitude": 39.76306, "longitude":
+        -105.0056}, "transactions": [], "price": "$$", "location": {"address1": "1600
+        W 33rd Ave", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80211", "country": "US", "state": "CO", "display_address": ["1600 W 33rd
+        Ave", "Denver, CO 80211"]}, "phone": "+13039934200", "display_phone": "(303)
+        993-4200", "distance": 1301.2842149050452}, {"id": "Ip6MAcRC_HTPxhuKi2ZD2w",
+        "alias": "euclid-hall-bar-and-kitchen-denver", "name": "Euclid Hall Bar &
+        Kitchen", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/BIYnxEFUVhMZ-83SsvVBIA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/euclid-hall-bar-and-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 2043, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "bars", "title": "Bars"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.74773, "longitude": -105.00001}, "transactions": ["pickup",
+        "delivery"], "price": "$$", "location": {"address1": "1317 14th St", "address2":
+        "", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
+        "state": "CO", "display_address": ["1317 14th St", "Denver, CO 80202"]}, "phone":
+        "+13035954255", "display_phone": "(303) 595-4255", "distance": 514.1935094367549},
+        {"id": "Z8vO_mf1V09QDUPdyqJ6og", "alias": "linger-denver-2", "name": "Linger",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_5mQyB29yVKHu-uNp8P2Qw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/linger-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 3037, "categories": [{"alias": "asianfusion", "title": "Asian
+        Fusion"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
+        "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.75954,
+        "longitude": -105.01139}, "transactions": ["pickup", "delivery"], "price":
+        "$$", "location": {"address1": "2030 W 30th Ave", "address2": "", "address3":
+        "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
+        "display_address": ["2030 W 30th Ave", "Denver, CO 80211"]}, "phone": "+13039933120",
+        "display_phone": "(303) 993-3120", "distance": 1297.491646568803}, {"id":
+        "jx5kzkP_9zwh9BW0WVPAWw", "alias": "osteria-marco-denver", "name": "Osteria
+        Marco", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/P1xn_YGc0dx0Kg5TGrbPJw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/osteria-marco-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1426, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "pizza", "title": "Pizza"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.74819, "longitude": -104.99897},
+        "transactions": ["pickup"], "price": "$$", "location": {"address1": "1453
+        Larimer St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80202", "country": "US", "state": "CO", "display_address": ["1453 Larimer
+        St", "Denver, CO 80202"]}, "phone": "+13035345855", "display_phone": "(303)
+        534-5855", "distance": 462.54792282675487}, {"id": "KwmKhdWpcIzypdjAUNrc7w",
+        "alias": "mercantile-dining-and-provision-denver", "name": "Mercantile Dining
+        & Provision", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/La36RRv14CheGs4x5WAR2Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/mercantile-dining-and-provision-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 983, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "newamerican", "title": "American (New)"}], "rating": 4.5, "coordinates":
+        {"latitude": 39.7536149959513, "longitude": -104.999776429002}, "transactions":
+        [], "price": "$$", "location": {"address1": "1701 Wynkoop St", "address2":
+        "Ste 155", "address3": "", "city": "Denver", "zip_code": "80202", "country":
+        "US", "state": "CO", "display_address": ["1701 Wynkoop St", "Ste 155", "Denver,
+        CO 80202"]}, "phone": "+17204603733", "display_phone": "(720) 460-3733", "distance":
+        145.4834041945522}, {"id": "svJWwW0ilssyqk_UML0mUg", "alias": "work-and-class-denver",
+        "name": "Work & Class", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wknJ1nD0jTQssiXfW-tjFQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/work-and-class-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1270, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "latin", "title": "Latin American"}, {"alias": "cocktailbars",
+        "title": "Cocktail Bars"}], "rating": 4.5, "coordinates": {"latitude": 39.75761,
+        "longitude": -104.98604}, "transactions": [], "price": "$$", "location": {"address1":
+        "2500 Larimer St", "address2": "Ste 101", "address3": "", "city": "Denver",
+        "zip_code": "80205", "country": "US", "state": "CO", "display_address": ["2500
+        Larimer St", "Ste 101", "Denver, CO 80205"]}, "phone": "+13032920700", "display_phone":
+        "(303) 292-0700", "distance": 1282.1914214808344}, {"id": "3ncWfQJg_RbTqnkPmksoAA",
+        "alias": "sams-no-3-downtown-denver", "name": "Sam''s No. 3 Downtown", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/gkl12xujRvYQWk89v8njEg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/sams-no-3-downtown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1808, "categories": [{"alias": "diners", "title": "Diners"},
+        {"alias": "mexican", "title": "Mexican"}, {"alias": "tradamerican", "title":
+        "American (Traditional)"}], "rating": 4.0, "coordinates": {"latitude": 39.7462,
+        "longitude": -104.99559}, "transactions": ["delivery"], "price": "$$", "location":
+        {"address1": "1500 Curtis St", "address2": null, "address3": "", "city": "Denver",
+        "zip_code": "80202", "country": "US", "state": "CO", "display_address": ["1500
+        Curtis St", "Denver, CO 80202"]}, "phone": "+13035341927", "display_phone":
+        "(303) 534-1927", "distance": 757.9304334785627}, {"id": "lqNe_QMrAyZLnEr06F9S_w",
+        "alias": "jax-fish-house-lodo-denver", "name": "Jax Fish House LoDo", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/hMx-pEFzspAQUDsFjzB2fg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/jax-fish-house-lodo-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 767, "categories": [{"alias": "seafood", "title": "Seafood"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.7521259302617, "longitude":
+        -104.998515626984}, "transactions": [], "price": "$$", "location": {"address1":
+        "1539 17th St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80202", "country": "US", "state": "CO", "display_address": ["1539 17th St",
+        "Denver, CO 80202"]}, "phone": "+13032925767", "display_phone": "(303) 292-5767",
+        "distance": 81.35171722159352}, {"id": "mzOAkvH-4WIfQuR3uCs87g", "alias":
+        "hopdoddy-burger-bar-denver", "name": "Hopdoddy Burger Bar", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/CdADjEj_McY9D9Mpk6Jvgg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/hopdoddy-burger-bar-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 780, "categories": [{"alias": "burgers", "title": "Burgers"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.7534294, "longitude": -104.9991989},
+        "transactions": ["pickup"], "price": "$$", "location": {"address1": "1747
+        Wynkoop St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80202", "country": "US", "state": "CO", "display_address": ["1747 Wynkoop
+        St", "Denver, CO 80202"]}, "phone": "+13034462337", "display_phone": "(303)
+        446-2337", "distance": 148.83176113296932}, {"id": "tnXYXUAoYnfE_Gvh0IiIQg",
+        "alias": "ophelias-electric-soapbox-denver", "name": "Ophelia''s Electric
+        Soapbox", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/0mZGxSVvSCI9Qd63p8Gjvw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/ophelias-electric-soapbox-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 851, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "venues", "title":
+        "Venues & Event Spaces"}], "rating": 4.0, "coordinates": {"latitude": 39.7526969909668,
+        "longitude": -104.991821289062}, "transactions": [], "price": "$$", "location":
+        {"address1": "1215 20th St", "address2": "", "address3": "", "city": "Denver",
+        "zip_code": "80202", "country": "US", "state": "CO", "display_address": ["1215
+        20th St", "Denver, CO 80202"]}, "phone": "+13039938023", "display_phone":
+        "(303) 993-8023", "distance": 638.0011427956482}, {"id": "G6ckyL7AK1qNyRop7xHa4g",
+        "alias": "marcos-coal-fired-ballpark-denver", "name": "Marco''s Coal Fired-
+        Ballpark", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/GENJNpKXqteiMILxDNXmag/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/marcos-coal-fired-ballpark-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1060, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "italian", "title": "Italian"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.75452, "longitude": -104.99106},
+        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "2129 Larimer St", "address2": "", "address3": "", "city": "Denver", "zip_code":
+        "80205", "country": "US", "state": "CO", "display_address": ["2129 Larimer
+        St", "Denver, CO 80205"]}, "phone": "+13032967000", "display_phone": "(303)
+        296-7000", "distance": 762.252337447241}, {"id": "BKRLsUCryeR1JJtyGVWW_g",
+        "alias": "blue-sushi-sake-grill-denver", "name": "Blue Sushi Sake Grill",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ChBkyTy2cKgTCqSaPdd3UA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/blue-sushi-sake-grill-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 858, "categories": [{"alias": "sushi", "title": "Sushi Bars"},
+        {"alias": "japanese", "title": "Japanese"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.751248413952, "longitude": -105.000414848328}, "transactions":
+        [], "price": "$$", "location": {"address1": "1616 16th St", "address2": "",
+        "address3": "", "city": "Denver", "zip_code": "80202", "country": "US", "state":
+        "CO", "display_address": ["1616 16th St", "Denver, CO 80202"]}, "phone": "+13036403655",
+        "display_phone": "(303) 640-3655", "distance": 147.3153670444076}, {"id":
+        "uAsOPByhA_JiDi1d8K7cjw", "alias": "5280-burger-bar-denver-denver", "name":
+        "5280 Burger Bar - Denver", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/9VjVU7E-IFzdL7XwBWLHIw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/5280-burger-bar-denver-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 1163, "categories": [{"alias": "burgers", "title": "Burgers"},
+        {"alias": "tradamerican", "title": "American (Traditional)"}], "rating": 4.0,
+        "coordinates": {"latitude": 39.74388, "longitude": -104.99082}, "transactions":
+        ["pickup"], "price": "$$", "location": {"address1": "500 16th St", "address2":
+        "Ste 160", "address3": "", "city": "Denver", "zip_code": "80202", "country":
+        "US", "state": "CO", "display_address": ["500 16th St", "Ste 160", "Denver,
+        CO 80202"]}, "phone": "+13038251020", "display_phone": "(303) 825-1020", "distance":
+        1196.563109796485}, {"id": "CKjQicdYAfPShHmQkQSVIQ", "alias": "bistro-vendome-denver-4",
+        "name": "Bistro Vendome", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/MTO_q2u2ROhhvBiyt2bP_g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/bistro-vendome-denver-4?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 696, "categories": [{"alias": "french", "title": "French"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.7476916, "longitude": -104.9991479},
+        "transactions": [], "price": "$$", "location": {"address1": "1420 Larimer
+        St", "address2": "", "address3": "", "city": "Denver", "zip_code": "80202",
+        "country": "US", "state": "CO", "display_address": ["1420 Larimer St", "Denver,
+        CO 80202"]}, "phone": "+13038253232", "display_phone": "(303) 825-3232", "distance":
+        526.3990656962476}, {"id": "zhsiD46GZOGjgW9OuRaF6g", "alias": "freshcraft-denver",
+        "name": "Freshcraft", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/x_JUL97BYoCNq_eq_y5pAg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/freshcraft-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 921, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "comfortfood", "title": "Comfort Food"}], "rating": 4.0, "coordinates": {"latitude":
+        39.74992, "longitude": -104.99954}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "1530 Blake St", "address2": "Ste
+        A", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
+        "state": "CO", "display_address": ["1530 Blake St", "Ste A", "Denver, CO 80202"]},
+        "phone": "+13037589608", "display_phone": "(303) 758-9608", "distance": 270.625408028053},
+        {"id": "oJc3khNkjW3aAQZDMEWe4Q", "alias": "avanti-food-and-beverage-denver",
+        "name": "Avanti Food & Beverage", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/qs8ilZMvAuY7OutmU7PEYQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/avanti-food-and-beverage-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 966, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "food_court", "title": "Food Court"}], "rating": 4.0, "coordinates": {"latitude":
+        39.7622413635254, "longitude": -105.00611114502}, "transactions": [], "price":
+        "$$", "location": {"address1": "3200 Pecos St", "address2": null, "address3":
+        "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
+        "display_address": ["3200 Pecos St", "Denver, CO 80211"]}, "phone": "+17202694778",
+        "display_phone": "(720) 269-4778", "distance": 1243.8609255141696}, {"id":
+        "XBJYkhpPPQFhIJvp2gjmbQ", "alias": "butchers-bistro-denver", "name": "Butcher''s
+        Bistro", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/NYAL27bbChQxrSm9MhsCLw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/butchers-bistro-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 426, "categories": [{"alias": "butcher", "title": "Butcher"},
+        {"alias": "newamerican", "title": "American (New)"}, {"alias": "steak", "title":
+        "Steakhouses"}], "rating": 4.5, "coordinates": {"latitude": 39.7554817, "longitude":
+        -104.9898071}, "transactions": [], "price": "$$", "location": {"address1":
+        "2233 Larimer St", "address2": null, "address3": "", "city": "Denver", "zip_code":
+        "80205", "country": "US", "state": "CO", "display_address": ["2233 Larimer
+        St", "Denver, CO 80205"]}, "phone": "+13032962750", "display_phone": "(303)
+        296-2750", "distance": 897.6172942578727}, {"id": "CQNv4SXqFltcwNsx-qHbLQ",
+        "alias": "steubens-uptown-denver", "name": "Steuben''s Uptown", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/iPEj2KIB41JR844HgsWXyQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/steubens-uptown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 2530, "categories": [{"alias": "diners", "title": "Diners"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "cocktailbars",
+        "title": "Cocktail Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.74349,
+        "longitude": -104.98017}, "transactions": ["pickup", "delivery"], "price":
+        "$$", "location": {"address1": "523 E 17th Ave", "address2": null, "address3":
+        "", "city": "Denver", "zip_code": "80203", "country": "US", "state": "CO",
+        "display_address": ["523 E 17th Ave", "Denver, CO 80203"]}, "phone": "+13038301001",
+        "display_phone": "(303) 830-1001", "distance": 1895.4463257533027}, {"id":
+        "N_tX1pJz92Ls-4sMQvMLpA", "alias": "postino-lohi-denver-7", "name": "Postino
+        LoHi", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/fJ4PfnrBf9ylz43XB9Chrw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/postino-lohi-denver-7?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 471, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "wine_bars", "title": "Wine Bars"}, {"alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"}], "rating": 4.5, "coordinates": {"latitude":
+        39.76151, "longitude": -105.01045}, "transactions": [], "price": "$$", "location":
+        {"address1": "2715 17th St", "address2": "", "address3": "", "city": "Denver",
+        "zip_code": "80211", "country": "US", "state": "CO", "display_address": ["2715
+        17th St", "Denver, CO 80211"]}, "phone": "+13034336363", "display_phone":
+        "(303) 433-6363", "distance": 1392.8929414722893}, {"id": "gGXnG-Rf5UUr6wT8krXT5w",
+        "alias": "williams-and-graham-denver", "name": "Williams & Graham", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/XF-BSjZ7rqPZbJ1KAhuPuA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/williams-and-graham-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 740, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
+        "tradamerican", "title": "American (Traditional)"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.76195, "longitude": -105.011}, "transactions": [], "price":
+        "$$", "location": {"address1": "3160 Tejon St", "address2": null, "address3":
+        "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
+        "display_address": ["3160 Tejon St", "Denver, CO 80211"]}, "phone": "+13039978886",
+        "display_phone": "(303) 997-8886", "distance": 1451.1425869789553}], "total":
+        572, "region": {"center": {"longitude": -104.99942779541016, "latitude": 39.75233437973034}}}'
+    http_version: 
+  recorded_at: Thu, 04 Apr 2019 02:23:07 GMT
+recorded_with: VCR 4.0.0
