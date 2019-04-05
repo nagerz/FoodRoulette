@@ -1,11 +1,24 @@
 class RestaurantFacade
   def recommendation
-    restaurant = random_restaurant
+    restaurant = random_restaurant[0]
     if new_restaurant(restaurant).save
       Recommendation.new(restaurant)
     else
       recommendation
     end
+  end
+
+  def group_recommendations
+    restaurants = random_restaurant(3)
+    reccommendations = []
+    restaurants.each do |restaurant|
+      if new_restaurant(restaurant).save
+        reccommendations << Recommendation.new(restaurant)
+      else
+        group_recommendations
+      end
+    end
+    reccommendations
   end
 
   def new_restaurant(restaurant)
@@ -31,8 +44,8 @@ class RestaurantFacade
                 )
   end
 
-  def random_restaurant
-    restaurants_data.sample
+  def random_restaurant(limit = 1)
+    restaurants_data.sample(limit)
   end
 
   def restaurants_data
