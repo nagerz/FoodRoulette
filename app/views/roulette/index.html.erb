@@ -1,0 +1,14 @@
+<% restaurants.each do |restaurant| %>
+  <div class="restaurant">
+    <li class="name">Name: <%= restaurant.name %></li>
+    <li class="address">Address: <%= restaurant.address %></li>
+    <li class="price_range">Price Range: <%= restaurant.price_range %></li>
+    <li class="cuisine">Cuisine: <%= restaurant.cuisine %></li>
+    <li class="rating">Rating: <%= restaurant.rating %></li>
+    <li class="distance">Distance: <%= restaurant.distance %> miles away</li>
+    <br>
+  </div>
+<% end %>
+
+ <%= button_to 'Roulette Again', roulettes_path, method: :get %>
+<%= button_to 'Send to Friends', roulettes_path, method: :get %>
