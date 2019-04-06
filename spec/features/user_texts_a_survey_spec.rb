@@ -6,12 +6,12 @@ describe "As a user" do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit restaurants_path
+      visit group_roulette_path
       click_on "Send to Friends"
 
       expect(current_path).to eq("/surveys/new")
 
-      fill_in :phone_numbers, with: "909-754-0068,715-574-0144"
+      fill_in :phone_numbers, with: "+19097540068,+17155740144"
 
       click_on "Send Text"
       survey = Survey.last

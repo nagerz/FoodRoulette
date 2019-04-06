@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'auth/google/callback', to: 'sessions#create'
 
   get '/roulette', to: 'roulette#show', as: :roulette
-  get '/roulettes', to: 'roulette#index'
+  get '/roulettes', to: 'roulette#index', as: :group_roulette
   get '/refine', to: 'refine#show'
   get '/survey', to: 'survey#show'
   get '/about', to: 'about#show'
