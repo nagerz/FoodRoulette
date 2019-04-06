@@ -22,7 +22,7 @@ class TwilioTextMessenger
         from: ENV['TWILIO_PHONE_NUMBER'],
         to: phone_number,
         body: message,
-        status_callback: 'http://localhost:3000/twilio/status'
+        #status_callback: 'http://localhost:3000/twilio/status'
         # status_callback: 'https://postb.in/lPR0Of7g'
       })
       status << response.status

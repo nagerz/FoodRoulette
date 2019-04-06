@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "As a user" do
-  context "I can send a survey to my friends" do
-    it "by entering the survey data into a form", :vcr do
+  context "When I complete the survey data form and send survey" do
+    xit "sends a survey text to mulitple numbers", :vcr do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -22,6 +22,42 @@ describe "As a user" do
       survey = Survey.last
 
       expect(current_path).to eq("/surveys/#{survey.id}")
+      expect(page).to have_content("Your survey has been sent!")
+      expect(page).to have_link("Click here to see your results")
+    end
+
+    it "saves survey restaurants", :vcr do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit group_roulette_path
+
+      click_on "Send to Friends"
+
+      expect(current_path).to eq(new_survey_path)
+
+      expect(Survey.count).to eq(0)
+      expect(SurveyRestaurant.count).to eq(0)
+
+      fill_in "Your Name:", with: "ADag"
+      fill_in "Your Friends' Phone Numbers (e.g. '+12223334444,+15556667777'):", with: "+19097540068,+17155740144"
+      fill_in "Event Name:", with: "Julia's bday!"
+      fill_in "Date/Time of Event (optional):", with: "This weekend?"
+
+      click_on "Send Text"
+
+      expect(current_path).to eq("/surveys/#{survey.id}")
+
+      expect(Survey.count).to eq(1)
+      expect(SurveyRestaurant.count).to eq(3)
+
+      survey = Survey.last
+
+      expect(survey.survery_restaurants.count).to eq(3)
+      expect(survey.survery_restaurants.first.name).to eq("name1")
+      expect(survey.survery_restaurants.second.name).to eq("name2")
+      expect(survey.survery_restaurants.third.name).to eq("name3")
+
       expect(page).to have_content("Your survey has been sent!")
       expect(page).to have_link("Click here to see your results")
     end
