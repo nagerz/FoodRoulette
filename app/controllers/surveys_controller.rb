@@ -8,7 +8,6 @@ class SurveysController < ApplicationController
   end
 
   def create
-    binding.pry
     data = { }
     data[:sender] = survey_params[:sender]
     data[:phone_numbers] = survey_params[:phone_numbers]
@@ -21,12 +20,12 @@ class SurveysController < ApplicationController
     TwilioTextMessenger.new(data).send_survey
 
     @survey = Survey.new(user_id: current_user.id, phone_numbers: survey_params[:phone_numbers])
-    if survey.save
+    if @survey.save
       redirect_to survey_path(@survey)
       flash[:success] = "Your survey has been sent!"
     else
-      flash[:alert] = "We're sorry. You're survey could not be sent at this time."
       redirect_to root_path
+      flash[:alert] = "We're sorry. You're survey could not be sent at this time."
     end
   end
 

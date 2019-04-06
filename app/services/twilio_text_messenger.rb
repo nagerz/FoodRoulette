@@ -22,20 +22,14 @@ class TwilioTextMessenger
         from: ENV['TWILIO_PHONE_NUMBER'],
         to: phone_number,
         body: message,
-        status_callback: 'http://localhost:3000/twilio/status'
-        # status_callback: 'https://postb.in/lPR0Of7g'
       })
       status << response.status
     end
   end
 
   def status
-    binding.pry
    # the status can be found in params['MessageStatus']
-
    # send back an empty response
-
    render_twiml Twilio::TwiML::Response.new
-
   end
 end

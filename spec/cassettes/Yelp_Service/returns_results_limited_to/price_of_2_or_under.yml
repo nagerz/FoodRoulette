@@ -27,11 +27,11 @@ http_interactions:
       Ratelimit-Dailylimit:
       - '5000'
       Ratelimit-Remaining:
-      - '4786'
+      - '4777'
       Ratelimit-Resettime:
       - '2019-04-07T00:00:00+00:00'
       X-Zipkin-Id:
-      - f4fd6a6fd1eb2169
+      - 126009feee086ee2
       X-B3-Sampled:
       - '0'
       X-Proxied:
@@ -41,13 +41,13 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 06 Apr 2019 18:42:06 GMT
+      - Sat, 06 Apr 2019 18:43:21 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-den19641-DEN
+      - cache-den19629-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -81,8 +81,8 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/euclid-hall-bar-and-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 2043, "categories": [{"alias": "newamerican", "title": "American
         (New)"}, {"alias": "bars", "title": "Bars"}], "rating": 4.0, "coordinates":
-        {"latitude": 39.74773, "longitude": -105.00001}, "transactions": ["pickup",
-        "delivery"], "price": "$$", "location": {"address1": "1317 14th St", "address2":
+        {"latitude": 39.74773, "longitude": -105.00001}, "transactions": ["delivery",
+        "pickup"], "price": "$$", "location": {"address1": "1317 14th St", "address2":
         "", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
         "state": "CO", "display_address": ["1317 14th St", "Denver, CO 80202"]}, "phone":
         "+13035954255", "display_phone": "(303) 595-4255", "distance": 514.1935094367549},
@@ -92,7 +92,7 @@ http_interactions:
         "review_count": 3039, "categories": [{"alias": "asianfusion", "title": "Asian
         Fusion"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
         "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.75954,
-        "longitude": -105.01139}, "transactions": ["pickup", "delivery"], "price":
+        "longitude": -105.01139}, "transactions": ["delivery", "pickup"], "price":
         "$$", "location": {"address1": "2030 W 30th Ave", "address2": "", "address3":
         "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
         "display_address": ["2030 W 30th Ave", "Denver, CO 80211"]}, "phone": "+13039933120",
@@ -123,7 +123,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/biker-jims-gourmet-dogs-denver-8?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 1180, "categories": [{"alias": "hotdog", "title": "Hot Dogs"}],
         "rating": 4.5, "coordinates": {"latitude": 39.7545196952158, "longitude":
-        -104.99033919367}, "transactions": ["pickup", "delivery"], "price": "$", "location":
+        -104.99033919367}, "transactions": ["delivery", "pickup"], "price": "$", "location":
         {"address1": "2148 Larimer St", "address2": "", "address3": null, "city":
         "Denver", "zip_code": "80205", "country": "US", "state": "CO", "display_address":
         ["2148 Larimer St", "Denver, CO 80205"]}, "phone": "+17207469355", "display_phone":
@@ -187,7 +187,7 @@ http_interactions:
         "review_count": 1060, "categories": [{"alias": "pizza", "title": "Pizza"},
         {"alias": "italian", "title": "Italian"}, {"alias": "bars", "title": "Bars"}],
         "rating": 4.0, "coordinates": {"latitude": 39.75452, "longitude": -104.99106},
-        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
         "2129 Larimer St", "address2": "", "address3": "", "city": "Denver", "zip_code":
         "80205", "country": "US", "state": "CO", "display_address": ["2129 Larimer
         St", "Denver, CO 80205"]}, "phone": "+13032967000", "display_phone": "(303)
@@ -236,7 +236,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/freshcraft-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 921, "categories": [{"alias": "bars", "title": "Bars"}, {"alias":
         "comfortfood", "title": "Comfort Food"}], "rating": 4.0, "coordinates": {"latitude":
-        39.74992, "longitude": -104.99954}, "transactions": ["pickup", "delivery"],
+        39.74992, "longitude": -104.99954}, "transactions": ["delivery", "pickup"],
         "price": "$$", "location": {"address1": "1530 Blake St", "address2": "Ste
         A", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
         "state": "CO", "display_address": ["1530 Blake St", "Ste A", "Denver, CO 80202"]},
@@ -268,7 +268,7 @@ http_interactions:
         "review_count": 2527, "categories": [{"alias": "diners", "title": "Diners"},
         {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "cocktailbars",
         "title": "Cocktail Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.74349,
-        "longitude": -104.98017}, "transactions": ["pickup", "delivery"], "price":
+        "longitude": -104.98017}, "transactions": ["delivery", "pickup"], "price":
         "$$", "location": {"address1": "523 E 17th Ave", "address2": null, "address3":
         "", "city": "Denver", "zip_code": "80203", "country": "US", "state": "CO",
         "display_address": ["523 E 17th Ave", "Denver, CO 80203"]}, "phone": "+13038301001",
@@ -321,7 +321,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/tupelo-honey-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 683, "categories": [{"alias": "southern", "title": "Southern"}],
         "rating": 4.0, "coordinates": {"latitude": 39.7534732, "longitude": -105.0020274},
-        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
         "1650 Wewatta St", "address2": "", "address3": null, "city": "Denver", "zip_code":
         "80202", "country": "US", "state": "CO", "display_address": ["1650 Wewatta
         St", "Denver, CO 80202"]}, "phone": "+17202740650", "display_phone": "(720)
@@ -361,7 +361,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/bijus-little-curry-shop-denver-6?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 586, "categories": [{"alias": "indpak", "title": "Indian"}],
         "rating": 4.0, "coordinates": {"latitude": 39.7596, "longitude": -104.98643},
-        "transactions": ["pickup", "delivery"], "price": "$$", "location": {"address1":
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
         "1441 26th St", "address2": null, "address3": "", "city": "Denver", "zip_code":
         "80205", "country": "US", "state": "CO", "display_address": ["1441 26th St",
         "Denver, CO 80205"]}, "phone": "+13032923500", "display_phone": "(303) 292-3500",
@@ -370,7 +370,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/ians-pizza-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 430, "categories": [{"alias": "pizza", "title": "Pizza"}],
         "rating": 4.5, "coordinates": {"latitude": 39.7562312792762, "longitude":
-        -104.99171739106}, "transactions": ["pickup", "delivery"], "price": "$", "location":
+        -104.99171739106}, "transactions": ["delivery", "pickup"], "price": "$", "location":
         {"address1": "2210 Blake St", "address2": "", "address3": "", "city": "Denver",
         "zip_code": "80205", "country": "US", "state": "CO", "display_address": ["2210
         Blake St", "Denver, CO 80205"]}, "phone": "+13032969000", "display_phone":
@@ -390,8 +390,8 @@ http_interactions:
         "review_count": 366, "categories": [{"alias": "newamerican", "title": "American
         (New)"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
         "sandwiches", "title": "Sandwiches"}], "rating": 4.5, "coordinates": {"latitude":
-        39.757937099326, "longitude": -105.00706276083}, "transactions": ["pickup",
-        "delivery"], "price": "$$", "location": {"address1": "1644 Platte St", "address2":
+        39.757937099326, "longitude": -105.00706276083}, "transactions": ["delivery",
+        "pickup"], "price": "$$", "location": {"address1": "1644 Platte St", "address2":
         "", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
         "state": "CO", "display_address": ["1644 Platte St", "Denver, CO 80202"]},
         "phone": "+13034553084", "display_phone": "(303) 455-3084", "distance": 902.276990248049},
@@ -423,7 +423,7 @@ http_interactions:
         "review_count": 495, "categories": [{"alias": "breakfast_brunch", "title":
         "Breakfast & Brunch"}, {"alias": "salad", "title": "Salad"}, {"alias": "sandwiches",
         "title": "Sandwiches"}], "rating": 4.0, "coordinates": {"latitude": 39.746505,
-        "longitude": -104.9944359}, "transactions": ["pickup", "delivery"], "price":
+        "longitude": -104.9944359}, "transactions": ["delivery", "pickup"], "price":
         "$", "location": {"address1": "900 Sixteenth St", "address2": "", "address3":
         "", "city": "Denver", "zip_code": "80202", "country": "US", "state": "CO",
         "display_address": ["900 Sixteenth St", "Denver, CO 80202"]}, "phone": "+13035340190",
@@ -444,7 +444,7 @@ http_interactions:
         false, "url": "https://www.yelp.com/biz/stoic-and-genuine-denver-4?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 509, "categories": [{"alias": "seafood", "title": "Seafood"}],
         "rating": 4.0, "coordinates": {"latitude": 39.7529246611917, "longitude":
-        -105.000501016723}, "transactions": ["pickup", "delivery"], "price": "$$",
+        -105.000501016723}, "transactions": ["delivery", "pickup"], "price": "$$",
         "location": {"address1": "1701 Wynkoop", "address2": "Ste 105", "address3":
         "", "city": "Denver", "zip_code": "80202", "country": "US", "state": "CO",
         "display_address": ["1701 Wynkoop", "Ste 105", "Denver, CO 80202"]}, "phone":
@@ -515,7 +515,7 @@ http_interactions:
         "review_count": 388, "categories": [{"alias": "pizza", "title": "Pizza"},
         {"alias": "italian", "title": "Italian"}, {"alias": "gluten_free", "title":
         "Gluten-Free"}], "rating": 4.0, "coordinates": {"latitude": 39.7511890740745,
-        "longitude": -105.000390504309}, "transactions": ["pickup", "delivery"], "price":
+        "longitude": -105.000390504309}, "transactions": ["delivery", "pickup"], "price":
         "$$", "location": {"address1": "1610 16th St", "address2": "", "address3":
         "", "city": "Denver", "zip_code": "80202", "country": "US", "state": "CO",
         "display_address": ["1610 16th St", "Denver, CO 80202"]}, "phone": "+13038251021",
@@ -567,7 +567,7 @@ http_interactions:
         "review_count": 765, "categories": [{"alias": "newamerican", "title": "American
         (New)"}, {"alias": "bars", "title": "Bars"}, {"alias": "burgers", "title":
         "Burgers"}], "rating": 4.0, "coordinates": {"latitude": 39.7444359, "longitude":
-        -104.9909603}, "transactions": ["pickup", "delivery"], "price": "$$", "location":
+        -104.9909603}, "transactions": ["delivery", "pickup"], "price": "$$", "location":
         {"address1": "535 16th St", "address2": "Ste 110", "address3": "", "city":
         "Denver", "zip_code": "80202", "country": "US", "state": "CO", "display_address":
         ["535 16th St", "Ste 110", "Denver, CO 80202"]}, "phone": "+17209321700",
@@ -575,155 +575,5 @@ http_interactions:
         1100, "region": {"center": {"longitude": -104.99942779541016, "latitude":
         39.75233437973034}}}'
     http_version: 
-  recorded_at: Sat, 06 Apr 2019 18:42:06 GMT
-- request:
-    method: post
-    uri: https://api.twilio.com/2010-04-01/Accounts/ACe3da591e4a18d595dd6c00b3052ecd6c/Messages.json
-    body:
-      encoding: UTF-8
-      string: Body=Your+friend+ADag+has+requested+your+vote+for+where+to+eat.+To+vote+for+Syrup+Downtown%2C+reply+%271%27+to+this+message.+To+vote+for+Stoic+%26+Genuine%2C+reply+%272%27+to+this+message.+To+vote+for+Osteria+Marco%2C+reply+%273%27%2C+to+this+message.+%28Julia%27s+bday%21+This+weekend%3F%29&From=%2B17206054499&StatusCallback=https%3A%2F%2Fpostb.in%2FlPR0Of7g&To=%2B19097540068
-    headers:
-      User-Agent:
-      - twilio-ruby/5.22.0 (ruby/x86_64-darwin17 2.4.1-p111)
-      Accept-Charset:
-      - utf-8
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - application/json
-      Authorization:
-      - Basic QUNlM2RhNTkxZTRhMThkNTk1ZGQ2YzAwYjMwNTJlY2Q2Yzo0MzhkMmE3YTM3ZGUxZmQ2NjY1NmUwMGJkMzEwNjBmNA==
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 201
-      message: CREATED
-    headers:
-      Date:
-      - Sat, 06 Apr 2019 18:42:06 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '1056'
-      Connection:
-      - keep-alive
-      Twilio-Concurrent-Requests:
-      - '1'
-      Twilio-Request-Id:
-      - RQ2f9f5a5f2fb9481495f65dc41a11882a
-      Twilio-Request-Duration:
-      - '0.075'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
-        If-Unmodified-Since
-      Access-Control-Allow-Methods:
-      - GET, POST, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag
-      Access-Control-Allow-Credentials:
-      - 'true'
-      X-Powered-By:
-      - AT-5000
-      X-Shenanigans:
-      - none
-      X-Home-Region:
-      - us1
-      X-Api-Domain:
-      - api.twilio.com
-      Strict-Transport-Security:
-      - max-age=31536000
-    body:
-      encoding: UTF-8
-      string: '{"sid": "SMd5152eb378e844c0966dec5e971701fe", "date_created": "Sat,
-        06 Apr 2019 18:42:06 +0000", "date_updated": "Sat, 06 Apr 2019 18:42:06 +0000",
-        "date_sent": null, "account_sid": "ACe3da591e4a18d595dd6c00b3052ecd6c", "to":
-        "+19097540068", "from": "+17206054499", "messaging_service_sid": null, "body":
-        "Sent from your Twilio trial account - Your friend ADag has requested your
-        vote for where to eat. To vote for Syrup Downtown, reply ''1'' to this message.
-        To vote for Stoic & Genuine, reply ''2'' to this message. To vote for Osteria
-        Marco, reply ''3'', to this message. (Julia''s bday! This weekend?)", "status":
-        "queued", "num_segments": "2", "num_media": "0", "direction": "outbound-api",
-        "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code":
-        null, "error_message": null, "uri": "/2010-04-01/Accounts/ACe3da591e4a18d595dd6c00b3052ecd6c/Messages/SMd5152eb378e844c0966dec5e971701fe.json",
-        "subresource_uris": {"media": "/2010-04-01/Accounts/ACe3da591e4a18d595dd6c00b3052ecd6c/Messages/SMd5152eb378e844c0966dec5e971701fe/Media.json"}}'
-    http_version: 
-  recorded_at: Sat, 06 Apr 2019 18:42:06 GMT
-- request:
-    method: post
-    uri: https://api.twilio.com/2010-04-01/Accounts/ACe3da591e4a18d595dd6c00b3052ecd6c/Messages.json
-    body:
-      encoding: UTF-8
-      string: Body=Your+friend+ADag+has+requested+your+vote+for+where+to+eat.+To+vote+for+Syrup+Downtown%2C+reply+%271%27+to+this+message.+To+vote+for+Stoic+%26+Genuine%2C+reply+%272%27+to+this+message.+To+vote+for+Osteria+Marco%2C+reply+%273%27%2C+to+this+message.+%28Julia%27s+bday%21+This+weekend%3F%29&From=%2B17206054499&StatusCallback=https%3A%2F%2Fpostb.in%2FlPR0Of7g&To=%2B17155740144
-    headers:
-      User-Agent:
-      - twilio-ruby/5.22.0 (ruby/x86_64-darwin17 2.4.1-p111)
-      Accept-Charset:
-      - utf-8
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - application/json
-      Authorization:
-      - Basic QUNlM2RhNTkxZTRhMThkNTk1ZGQ2YzAwYjMwNTJlY2Q2Yzo0MzhkMmE3YTM3ZGUxZmQ2NjY1NmUwMGJkMzEwNjBmNA==
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 201
-      message: CREATED
-    headers:
-      Date:
-      - Sat, 06 Apr 2019 18:42:07 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '1056'
-      Connection:
-      - keep-alive
-      Twilio-Concurrent-Requests:
-      - '1'
-      Twilio-Request-Id:
-      - RQd6efea762bb342118e62d3655fc31de0
-      Twilio-Request-Duration:
-      - '0.073'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
-        If-Unmodified-Since
-      Access-Control-Allow-Methods:
-      - GET, POST, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag
-      Access-Control-Allow-Credentials:
-      - 'true'
-      X-Powered-By:
-      - AT-5000
-      X-Shenanigans:
-      - none
-      X-Home-Region:
-      - us1
-      X-Api-Domain:
-      - api.twilio.com
-      Strict-Transport-Security:
-      - max-age=31536000
-    body:
-      encoding: UTF-8
-      string: '{"sid": "SMb49e70465b5541aa92f1c1cad85c0662", "date_created": "Sat,
-        06 Apr 2019 18:42:07 +0000", "date_updated": "Sat, 06 Apr 2019 18:42:07 +0000",
-        "date_sent": null, "account_sid": "ACe3da591e4a18d595dd6c00b3052ecd6c", "to":
-        "+17155740144", "from": "+17206054499", "messaging_service_sid": null, "body":
-        "Sent from your Twilio trial account - Your friend ADag has requested your
-        vote for where to eat. To vote for Syrup Downtown, reply ''1'' to this message.
-        To vote for Stoic & Genuine, reply ''2'' to this message. To vote for Osteria
-        Marco, reply ''3'', to this message. (Julia''s bday! This weekend?)", "status":
-        "queued", "num_segments": "2", "num_media": "0", "direction": "outbound-api",
-        "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code":
-        null, "error_message": null, "uri": "/2010-04-01/Accounts/ACe3da591e4a18d595dd6c00b3052ecd6c/Messages/SMb49e70465b5541aa92f1c1cad85c0662.json",
-        "subresource_uris": {"media": "/2010-04-01/Accounts/ACe3da591e4a18d595dd6c00b3052ecd6c/Messages/SMb49e70465b5541aa92f1c1cad85c0662/Media.json"}}'
-    http_version: 
-  recorded_at: Sat, 06 Apr 2019 18:42:07 GMT
+  recorded_at: Sat, 06 Apr 2019 18:43:21 GMT
 recorded_with: VCR 4.0.0

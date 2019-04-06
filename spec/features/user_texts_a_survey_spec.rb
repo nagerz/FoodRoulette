@@ -23,7 +23,7 @@ describe "As a user" do
 
       expect(current_path).to eq("/surveys/#{survey.id}")
       expect(page).to have_content("Your survey has been sent!")
-      expect(page).to have_link("Click here to see your results")
+      expect(page).to have_content("Results")
     end
   end
 end
