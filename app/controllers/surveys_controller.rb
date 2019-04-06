@@ -16,15 +16,14 @@ class SurveysController < ApplicationController
     data[:restaurant_1] = survey_params[:restaurant_1]
     data[:restaurant_2] = survey_params[:restaurant_2]
     data[:restaurant_3] = survey_params[:restaurant_3]
-    restaurant_names = [survey_params[:restaurant_1], survey_params[:restaurant_1], survey_params[:restaurant_1]]
-
+    restaurant_names = [survey_params[:restaurant_1], survey_params[:restaurant_2], survey_params[:restaurant_3]]
     TwilioTextMessenger.new(data).send_survey
 
     @survey = Survey.new(user_id: current_user.id, phone_numbers: survey_params[:phone_numbers])
     if @survey.save
       restaurant_names.each do |restaurant_name|
         restaurant = Restaurant.find_by(name: restaurant_name)
-        @survey.survey_restaurant.create(restaurant: restaurant)
+        @survey.survey_restaurants.create(restaurant: restaurant)
       end
       redirect_to survey_path(@survey)
       flash[:success] = "Your survey has been sent!"

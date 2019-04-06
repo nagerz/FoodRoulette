@@ -1,0 +1,149 @@
+{
+    "businesses": [
+        {
+            "id": "test1",
+            "alias": "snooze-an-a-m-eatery-denver-12",
+            "name": "name 1",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/QdozUJPNZ2rfQMJcZvMfgw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-12?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 3799,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.755459608447,
+                "longitude": -104.988913938884
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2262 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2262 Larimer St",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+13032970700",
+            "display_phone": "(303) 297-0700",
+            "distance": 963.6331565339298
+        },
+        {
+            "id": "test2",
+            "alias": "snooze-an-a-m-eatery-denver-12",
+            "name": "name 2",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/QdozUJPNZ2rfQMJcZvMfgw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-12?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 3799,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.755459608447,
+                "longitude": -104.988913938884
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2262 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2262 Larimer St",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+13032970700",
+            "display_phone": "(303) 297-0700",
+            "distance": 963.6331565339298
+        },
+        {
+            "id": "test3",
+            "alias": "snooze-an-a-m-eatery-denver-12",
+            "name": "name 3",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/QdozUJPNZ2rfQMJcZvMfgw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-12?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+            "review_count": 3799,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.755459608447,
+                "longitude": -104.988913938884
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2262 Larimer St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2262 Larimer St",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+13032970700",
+            "display_phone": "(303) 297-0700",
+            "distance": 963.6331565339298
+        }
+    ],
+    "total": 1800,
+    "region": {
+        "center": {
+            "longitude": -104.99942779541016,
+            "latitude": 39.75233437973034
+        }
+    }
+}
