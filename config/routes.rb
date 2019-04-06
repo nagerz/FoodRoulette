@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/about', to: 'about#show'
 
   get '/profile', to: 'users#show'
+  mount ActionCable.server => '/cable'
 end
