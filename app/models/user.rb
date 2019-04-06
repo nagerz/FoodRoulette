@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates_presence_of :last_name
   validates_presence_of :google_id
   validates_presence_of :token
-  validates_presence_of :refresh_token
+  # validates_presence_of :refresh_token
 
   enum role: [:user, :admin]
 
