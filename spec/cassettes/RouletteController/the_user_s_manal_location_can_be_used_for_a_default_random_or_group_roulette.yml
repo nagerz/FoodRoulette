@@ -27,27 +27,27 @@ http_interactions:
       Ratelimit-Dailylimit:
       - '5000'
       Ratelimit-Remaining:
-      - '4812'
+      - '4814'
       Ratelimit-Resettime:
       - '2019-04-07T00:00:00+00:00'
       X-Zipkin-Id:
-      - a8afa222ed7e23dd
+      - 96906462c7925db0
       X-B3-Sampled:
       - '0'
       X-Proxied:
-      - 10-64-66-176-uswest1aprod
+      - 10-69-80-169-uswest2aprod
       Transfer-Encoding:
       - chunked
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 06 Apr 2019 17:17:29 GMT
+      - Sat, 06 Apr 2019 17:17:27 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-den19650-DEN
+      - cache-den19631-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -573,7 +573,7 @@ http_interactions:
         570-8686", "distance": 4351.733245766641}], "total": 1100, "region": {"center":
         {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
     http_version: 
-  recorded_at: Sat, 06 Apr 2019 17:17:25 GMT
+  recorded_at: Sat, 06 Apr 2019 17:17:23 GMT
 - request:
     method: get
     uri: https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=Denver,%20CO&open_now=true&price=1,2&radius=8000
@@ -601,27 +601,27 @@ http_interactions:
       Ratelimit-Dailylimit:
       - '5000'
       Ratelimit-Remaining:
-      - '4811'
+      - '4813'
       Ratelimit-Resettime:
       - '2019-04-07T00:00:00+00:00'
       X-Zipkin-Id:
-      - 266ed7f71c66e761
+      - 8ae6b18f32ecfb0f
       X-B3-Sampled:
       - '0'
       X-Proxied:
-      - 10-64-78-253-uswest1aprod
+      - 10-64-137-205-uswest1bprod
       Transfer-Encoding:
       - chunked
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 06 Apr 2019 17:17:30 GMT
+      - Sat, 06 Apr 2019 17:17:28 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-den19643-DEN
+      - cache-den19634-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -665,7 +665,7 @@ http_interactions:
         "review_count": 3038, "categories": [{"alias": "asianfusion", "title": "Asian
         Fusion"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
         "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.75954,
-        "longitude": -105.01139}, "transactions": ["pickup", "delivery"], "price":
+        "longitude": -105.01139}, "transactions": ["delivery", "pickup"], "price":
         "$$", "location": {"address1": "2030 W 30th Ave", "address2": "", "address3":
         "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
         "display_address": ["2030 W 30th Ave", "Denver, CO 80211"]}, "phone": "+13039933120",
@@ -676,7 +676,7 @@ http_interactions:
         "review_count": 2527, "categories": [{"alias": "diners", "title": "Diners"},
         {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "cocktailbars",
         "title": "Cocktail Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.74349,
-        "longitude": -104.98017}, "transactions": ["pickup", "delivery"], "price":
+        "longitude": -104.98017}, "transactions": ["delivery", "pickup"], "price":
         "$$", "location": {"address1": "523 E 17th Ave", "address2": null, "address3":
         "", "city": "Denver", "zip_code": "80203", "country": "US", "state": "CO",
         "display_address": ["523 E 17th Ave", "Denver, CO 80203"]}, "phone": "+13038301001",
@@ -698,7 +698,7 @@ http_interactions:
         "review_count": 960, "categories": [{"alias": "newamerican", "title": "American
         (New)"}, {"alias": "burgers", "title": "Burgers"}, {"alias": "salad", "title":
         "Salad"}], "rating": 4.5, "coordinates": {"latitude": 39.73987, "longitude":
-        -104.92935}, "transactions": ["pickup", "delivery"], "price": "$$", "location":
+        -104.92935}, "transactions": ["delivery", "pickup"], "price": "$$", "location":
         {"address1": "4990 E Colfax Ave", "address2": "", "address3": "", "city":
         "Denver", "zip_code": "80220", "country": "US", "state": "CO", "display_address":
         ["4990 E Colfax Ave", "Denver, CO 80220"]}, "phone": "+17205507665", "display_phone":
@@ -708,7 +708,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/biker-jims-gourmet-dogs-denver-8?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 1180, "categories": [{"alias": "hotdog", "title": "Hot Dogs"}],
         "rating": 4.5, "coordinates": {"latitude": 39.7545196952158, "longitude":
-        -104.99033919367}, "transactions": ["pickup", "delivery"], "price": "$", "location":
+        -104.99033919367}, "transactions": ["delivery", "pickup"], "price": "$", "location":
         {"address1": "2148 Larimer St", "address2": "", "address3": null, "city":
         "Denver", "zip_code": "80205", "country": "US", "state": "CO", "display_address":
         ["2148 Larimer St", "Denver, CO 80205"]}, "phone": "+17207469355", "display_phone":
@@ -937,7 +937,7 @@ http_interactions:
         "review_count": 566, "categories": [{"alias": "breakfast_brunch", "title":
         "Breakfast & Brunch"}, {"alias": "cafes", "title": "Cafes"}], "rating": 4.5,
         "coordinates": {"latitude": 39.74466, "longitude": -104.96934}, "transactions":
-        ["pickup", "delivery"], "price": "$$", "location": {"address1": "1420 E 18th
+        ["delivery", "pickup"], "price": "$$", "location": {"address1": "1420 E 18th
         Ave", "address2": null, "address3": "", "city": "Denver", "zip_code": "80218",
         "country": "US", "state": "CO", "display_address": ["1420 E 18th Ave", "Denver,
         CO 80218"]}, "phone": "+13039540877", "display_phone": "(303) 954-0877", "distance":
@@ -1108,8 +1108,8 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/the-uber-sausage-denver-3?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 401, "categories": [{"alias": "hotdog", "title": "Hot Dogs"},
         {"alias": "sandwiches", "title": "Sandwiches"}], "rating": 4.5, "coordinates":
-        {"latitude": 39.73997, "longitude": -104.95446}, "transactions": ["pickup",
-        "delivery"], "price": "$", "location": {"address1": "2730 E Colfax Ave", "address2":
+        {"latitude": 39.73997, "longitude": -104.95446}, "transactions": ["delivery",
+        "pickup"], "price": "$", "location": {"address1": "2730 E Colfax Ave", "address2":
         "", "address3": "", "city": "Denver", "zip_code": "80206", "country": "US",
         "state": "CO", "display_address": ["2730 E Colfax Ave", "Denver, CO 80206"]},
         "phone": "+13038627894", "display_phone": "(303) 862-7894", "distance": 1434.112996673822},
@@ -1129,7 +1129,7 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/rocky-fin-poke-bar-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 230, "categories": [{"alias": "poke", "title": "Poke"}, {"alias":
         "hawaiian", "title": "Hawaiian"}], "rating": 5.0, "coordinates": {"latitude":
-        39.7402, "longitude": -104.97129}, "transactions": ["pickup", "delivery"],
+        39.7402, "longitude": -104.97129}, "transactions": ["delivery", "pickup"],
         "price": "$", "location": {"address1": "1245 E Colfax Ave", "address2": "Ste
         103", "address3": "", "city": "Denver", "zip_code": "80218", "country": "US",
         "state": "CO", "display_address": ["1245 E Colfax Ave", "Ste 103", "Denver,
@@ -1147,5 +1147,5 @@ http_interactions:
         570-8686", "distance": 4351.733245766641}], "total": 1100, "region": {"center":
         {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
     http_version: 
-  recorded_at: Sat, 06 Apr 2019 17:17:27 GMT
+  recorded_at: Sat, 06 Apr 2019 17:17:24 GMT
 recorded_with: VCR 4.0.0

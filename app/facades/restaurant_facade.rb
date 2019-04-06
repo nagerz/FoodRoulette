@@ -1,7 +1,7 @@
 class RestaurantFacade
-  def recommendation
-    restaurant_data = random_restaurant[0]
 
+  def recommendation
+    restaurant_data = random_restaurant(location)[0]
     if make_recommendation(restaurant_data)
       make_recommendation(restaurant_data)
     else
@@ -9,8 +9,8 @@ class RestaurantFacade
     end
   end
 
-  def group_recommendations
-    restaurants_data = random_restaurant(3)
+  def group_recommendations(location)
+    restaurants_data = random_restaurant(location, 3)
 
     recommendations = []
     restaurants_data.each do |restaurant_data|
@@ -54,16 +54,16 @@ class RestaurantFacade
                 )
   end
 
-  def random_restaurant(limit = 1)
-    restaurants_data.sample(limit)
+  def random_restaurant(location, limit = 1)
+    restaurants_data(location).sample(limit)
   end
 
   def existing_restaurant(restaurant_data)
     Restaurant.find_by(yelp_id: restaurant_data[:id])
   end
 
-  def restaurants_data
-    service.restaurants(zipcode = "80202")
+  def restaurants_data(location)
+    service.restaurants(location)
   end
 
   def service

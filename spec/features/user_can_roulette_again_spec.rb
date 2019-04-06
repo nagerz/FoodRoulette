@@ -12,6 +12,7 @@ describe 'As a user' do
 
     visit '/'
 
+  set_location('Denver, CO')
     click_button 'Roulette Now'
 
     first_parsed_html = Nokogiri::HTML.parse(page.html)
@@ -25,7 +26,6 @@ describe 'As a user' do
 
     restaurant_name_2 = second_parsed_html.css(".name")[0].text
     restaurant_address_2 = second_parsed_html.css(".address")[0].text
-
 
     expect(second_parsed_html.css(".name")[0].text).to_not eq(restaurant_name)
     expect(second_parsed_html.css(".address")[0].text).to_not eq(restaurant_address)
