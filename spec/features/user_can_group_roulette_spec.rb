@@ -10,12 +10,12 @@ require 'rails_helper'
 
       click_button 'Survey them!'
 
-      expect(current_path).to eq(roulettes_path)
+      expect(current_path).to eq(group_roulette_path)
       expect(page).to have_content('Name:', count: 3)
 
       click_button 'Roulette Again'
 
-      expect(current_path).to eq(roulettes_path)
+      expect(current_path).to eq(group_roulette_path)
 
       expect(page).to have_button('Send to Friends')
     end

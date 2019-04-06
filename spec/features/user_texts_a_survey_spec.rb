@@ -2,16 +2,20 @@ require 'rails_helper'
 
 describe "As a user" do
   context "I can send a survey to my friends" do
-    it "by entering the survey data into a form" do
+    it "by entering the survey data into a form", :vcr do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit group_roulette_path
+      save_and_open_page
       click_on "Send to Friends"
-
+      save_and_open_page
       expect(current_path).to eq(new_survey_path)
 
+      fill_in :sender, with: "ADag"
       fill_in :phone_numbers, with: "+19097540068,+17155740144"
+      fill_in :event, with: "Julia's bday!"
+      fill_in :date_time, with: "This weekend?"
 
       click_on "Send Text"
       survey = Survey.last

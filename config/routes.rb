@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/roulette', to: 'roulette#show', as: :roulette
   get '/roulettes', to: 'roulette#index', as: :group_roulette
   get '/refine', to: 'refine#show'
-  resources :survey, only: [:new, :show]
+  resources :surveys, only: [:new, :show, :create]
   get '/about', to: 'about#show'
 
   get '/profile', to: 'users#show'

@@ -1,13 +1,19 @@
-<%= form_for :survey do |f| %>
-    Your Name: <%= f.text_field :sender %>
-    Your Friends' Phone Numbers (e.g. "+12223334444,+15556667777"):
-    <%= f.text_field :phone_numbers %>
-    Event Name:
-    <%= f.text_field :event %>
-    Date/Time of Event (optional):
-    <%= f.text_field :date_time %>
-    <% f.hidden_field restaurant_1: @restaurant_1 %>
-    <% f.hidden_field restaurant_2: @restaurant_2 %>
-    <% f.hidden_field restaurant_3: @restaurant_3 %>
+<%= form_for @survey do |f| %>
+    <%= f.label :sender, "Your Name" %>
+    <%= f.text_field :sender %><br/>
+
+    <%= f.label :phone_numbers, "Your Friends' Phone Numbers (e.g. '+12223334444,+15556667777'):" %>
+    <%= f.text_field :phone_numbers %><br/>
+
+    <%= f.label :event, "Event Name:" %>
+    <%= f.text_field :event %><br/>
+
+    <%= f.label :date_time, "Date/Time of Event (optional):" %>
+    <%= f.text_field :date_time %><br/>
+
+    <%= f.hidden_field :restaurant_1, { :value => @restaurant_1 } %>
+    <%= f.hidden_field :restaurant_2, { :value => @restaurant_2 } %>
+    <%= f.hidden_field :restaurant_3, { :value => @restaurant_3 } %>
+
     <%= f.submit "Send Text" %>
 <% end %>
