@@ -16,10 +16,14 @@
 //= require_tree .
 function success(pos) {
   var crd = pos.coords;
-  document.getElementById("location").placeholder = `Using current location`;
   document.cookie = `lat_long=${crd.latitude + "|" + crd.longitude}`;
 }
+
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
-  document.getElementById("location").placeholder = `No current location`;
+}
+
+function WriteCookie() {
+   cookievalue = escape(document.location_form.location.value) + ";"
+   document.cookie = "manual_location=" + cookievalue;
 }

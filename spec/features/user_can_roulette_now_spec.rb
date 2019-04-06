@@ -13,6 +13,7 @@ describe "As a user" do
     visit '/'
 
     expect(current_path).to eq(root_path)
+  set_location('Denver, CO')
 
     click_button 'Roulette Now'
 

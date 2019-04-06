@@ -18,12 +18,10 @@
     <section class='hero-body'>
       <h1 class="welcome"> Welcome to FoodRoulette</h1>
       <h3 class="welcome-description"> Stop debating and start eating!</h3>
-      <article class="search-form">
-        <%= form_tag(root_path, method: :get, id: "search-form") do %>
-          <%= label_tag "" %><i class="fas fa-map-marker-alt"></i>
-          <%= text_field_tag :location, params[:position], placeholder: "Current Location" %>
-          <%= submit_tag("Search".html_safe, class: "search-submit-tag") %>
-        <% end %>
+      <article class="location-form">
+        <form name = "location_form" action = "">
+           <input type = "text" name = "location" placeholder="Search Location (ex. city, address, zip)">
+        </form>
       </article>
     </section>
   </section>
@@ -31,7 +29,7 @@
 
 <div class="home-roulette-now">
   <h5>Ready to eat?</h5>
-  <%= button_to 'Roulette Now', roulette_path, method: :get %>
+  <%= button_to 'Roulette Now', roulette_path, method: :get, :onclick => "WriteCookie();" %>
 </div>
 <div class="home-refine-search">
   <h5>Something in mind?</h5>
@@ -39,5 +37,6 @@
 </div>
 <div class="home-survey">
   <h5>Want input from a group?</h5>
-  <%= button_to 'Survey them!', group_roulette_path, method: :get %>
+
+  <%= button_to 'Survey them!', roulettes_path, method: :get, :onclick => "WriteCookie();" %>
 </div>

@@ -1,11 +1,12 @@
 FactoryBot.define do
   factory :restaurant do
+    sequence(:yelp_id) { |n| "yelp_id_#{n}" }
     name { "Resto Name" }
-    address  { "123 Address St." }
-    price_range { "$$" }
-    cuisine { "Spanish" }
+    address_1  { "123 Address St." }
+    price { "$$" }
+    category_1 { "Spanish" }
     rating { "4" }
-    distance { 0.81 }
-    hours { "M-F, 9AM-5PM" }
+    longitude { 98.6 }
+    latitude { -5.6 }
   end
 end
