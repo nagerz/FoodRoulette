@@ -2,10 +2,8 @@ class RestaurantFacade
   def recommendation
     restaurant_data = random_restaurant[0]
 
-    if existing_restaurant(restaurant_data)
-      Recommendation.new(restaurant_data, existing_restaurant(restaurant_data))
-    elsif new_restaurant(restaurant_data).save
-      Recommendation.new(restaurant_data, Restaurant.last)
+    if make_recommendation(restaurant_data)
+      make_recommendation(restaurant_data)
     else
       recommendation
     end
@@ -14,17 +12,23 @@ class RestaurantFacade
   def group_recommendations
     restaurants_data = random_restaurant(3)
 
-    reccommendations = []
+    recommendations = []
     restaurants_data.each do |restaurant_data|
-      if existing_restaurant(restaurant_data)
-        reccommendations << Recommendation.new(restaurant_data, existing_restaurant(restaurant_data))
-      elsif new_restaurant(restaurant_data).save
-        reccommendations << Recommendation.new(restaurant_data, Restaurant.last)
+      if make_recommendation(restaurant_data)
+        recommendations << make_recommendation(restaurant_data)
       else
         group_recommendations
       end
     end
-    reccommendations
+    recommendations
+  end
+
+  def make_recommendation(restaurant_data)
+    if existing_restaurant(restaurant_data)
+      Recommendation.new(restaurant_data, existing_restaurant(restaurant_data))
+    elsif new_restaurant(restaurant_data).save
+      Recommendation.new(restaurant_data, Restaurant.last)
+    end
   end
 
   def new_restaurant(restaurant_data)
