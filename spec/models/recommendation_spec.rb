@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Recommendation, type: :model do
   before :each do
     @restaurant_data = {
-        "id": "dnJvyhSPiIVlmpdM_3SCrg",
+        "id": "test_id",
         "alias": "snooze-an-a-m-eatery-denver-12",
         "name": "Snooze, An A.M. Eatery",
         "is_closed": false,
@@ -46,16 +46,26 @@ describe Recommendation, type: :model do
         "display_phone": "(303) 297-0700",
         "distance": 963.6331565339298
     }
+
+    @restaurant = create(:restaurant,
+                          yelp_id: "test_id",
+                          name: "Snooze, An A.M. Eatery",
+                          latitude: 39.755459608447,
+                          longitude: -104.988913938884,
+                          price: "$$",
+                          rating: 4.5,
+                          category_1: "Breakfast & Brunch"
+                        )
   end
 
   it "exists" do
-    rec = Recommendation.new(@restaurant_data)
+    rec = Recommendation.new(@restaurant_data, @restaurant)
 
     expect(rec).to be_a(Recommendation)
   end
 
   it "has attributes" do
-    rec = Recommendation.new(@restaurant_data)
+    rec = Recommendation.new(@restaurant_data, @restaurant)
 
     expect(rec.name).to eq("Snooze, An A.M. Eatery")
     expect(rec.address).to eq("2262 Larimer St  Denver, CO 80205")
