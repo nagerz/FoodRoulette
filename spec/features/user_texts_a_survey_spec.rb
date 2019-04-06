@@ -9,15 +9,16 @@ describe "As a user" do
       visit group_roulette_path
       click_on "Send to Friends"
 
-      expect(current_path).to eq("/surveys/new")
+      expect(current_path).to eq(new_survey_path)
 
       fill_in :phone_numbers, with: "+19097540068,+17155740144"
 
       click_on "Send Text"
       survey = Survey.last
+
       expect(current_path).to eq("/surveys/#{survey.id}")
-
-
+      expect(page).to have_content("Your survey has been sent!")
+      expect(page).to have_link("Results")
     end
   end
 end
