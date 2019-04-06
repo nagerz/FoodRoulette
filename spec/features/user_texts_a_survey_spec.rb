@@ -7,22 +7,23 @@ describe "As a user" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit group_roulette_path
-      save_and_open_page
+
       click_on "Send to Friends"
-      save_and_open_page
+
       expect(current_path).to eq(new_survey_path)
 
-      fill_in :sender, with: "ADag"
-      fill_in :phone_numbers, with: "+19097540068,+17155740144"
-      fill_in :event, with: "Julia's bday!"
-      fill_in :date_time, with: "This weekend?"
+      fill_in "Your Name:", with: "ADag"
+      fill_in "Your Friends' Phone Numbers (e.g. '+12223334444,+15556667777'):", with: "+19097540068,+17155740144"
+      fill_in "Event Name:", with: "Julia's bday!"
+      fill_in "Date/Time of Event (optional):", with: "This weekend?"
 
       click_on "Send Text"
+
       survey = Survey.last
 
       expect(current_path).to eq("/surveys/#{survey.id}")
       expect(page).to have_content("Your survey has been sent!")
-      expect(page).to have_link("Results")
+      expect(page).to have_link("Click here to see your results")
     end
   end
 end
