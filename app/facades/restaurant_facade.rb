@@ -1,8 +1,11 @@
 class RestaurantFacade
   def recommendation
-    restaurant = random_restaurant[0]
-    if new_restaurant(restaurant).save
-      Recommendation.new(restaurant)
+    restaurant_data = random_restaurant[0]
+    
+    if existing_restaurant(restaurant_data)
+      Recommendation.new(restaurant_data, existing_restaurant(restaurant_data))
+    elsif new_restaurant(restaurant_data).save
+      Recommendation.new(restaurant_data, Restaurant.last)
     else
       recommendation
     end
@@ -21,24 +24,24 @@ class RestaurantFacade
     reccommendations
   end
 
-  def new_restaurant(restaurant)
-    Restaurant.new(yelp_id: restaurant[:id],
-                   name: restaurant[:name],
-                   address_1: restaurant[:location][:address1],
-                   address_2: restaurant[:location][:address2],
-                   address_3: restaurant[:location][:address3],
-                   city: restaurant[:location][:city],
-                   state: restaurant[:location][:state],
-                   zip_code: restaurant[:location][:zip_code],
-                   country: restaurant[:location][:country],
-                   phone: restaurant[:phone],
-                   image_url: restaurant[:image_url],
-                   rating: restaurant[:rating],
-                   price: restaurant[:price],
-                   latitude: restaurant[:coordinates][:latitude],
-                   longitude: restaurant[:coordinates][:longitude],
-                   reviews: restaurant[:review_count],
-                   category_1: restaurant[:categories][0][:title]
+  def new_restaurant(restaurant_data)
+    Restaurant.new(yelp_id: restaurant_data[:id],
+                   name: restaurant_data[:name],
+                   address_1: restaurant_data[:location][:address1],
+                   address_2: restaurant_data[:location][:address2],
+                   address_3: restaurant_data[:location][:address3],
+                   city: restaurant_data[:location][:city],
+                   state: restaurant_data[:location][:state],
+                   zip_code: restaurant_data[:location][:zip_code],
+                   country: restaurant_data[:location][:country],
+                   phone: restaurant_data[:phone],
+                   image_url: restaurant_data[:image_url],
+                   rating: restaurant_data[:rating],
+                   price: restaurant_data[:price],
+                   latitude: restaurant_data[:coordinates][:latitude],
+                   longitude: restaurant_data[:coordinates][:longitude],
+                   reviews: restaurant_data[:review_count],
+                   category_1: restaurant_data[:categories][0][:title]
                    # category_2: restaurant[:categories][1][:title],
                    # category_3: restaurant[:categories][2][:title]
                 )
@@ -46,6 +49,10 @@ class RestaurantFacade
 
   def random_restaurant(limit = 1)
     restaurants_data.sample(limit)
+  end
+
+  def existing_restaurant(restaurant_data)
+    Restaurant.find_by(yelp_id: restaurant_data[:id])
   end
 
   def restaurants_data
