@@ -15,7 +15,7 @@ class RouletteController < ApplicationController
   end
 
   def index
-    if cookies['manual_location']
+    if cookies['manual_location'] && cookies['manual_location'] != ''
       render locals: {
         restaurants: RestaurantFacade.new.group_recommendations(cookies['manual_location'])
       }
@@ -23,6 +23,9 @@ class RouletteController < ApplicationController
       render locals: {
         restaurants: RestaurantFacade.new.group_recommendations(cookies['lat_long'])
       }
+    else
+      redirect_to root_path
+      flash[:alert] = "Please set a search location"
     end
   end
 end

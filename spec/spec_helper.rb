@@ -26,8 +26,8 @@ Capybara.configure do |config|
   config.default_driver        = :selenium
 end
 
-def set_location
-  fill_in 'location', with: 'Denver, CO'
+def set_location(location)
+  fill_in 'location', with: location
 end
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

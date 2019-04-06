@@ -7,7 +7,7 @@ describe 'As a user' do
 
     visit '/'
 
-    set_location
+  set_location('Denver, CO')
     click_button 'Roulette Now'
 
     first_parsed_html = Nokogiri::HTML.parse(page.html)
