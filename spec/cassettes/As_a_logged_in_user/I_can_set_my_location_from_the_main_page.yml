@@ -27,27 +27,27 @@ http_interactions:
       Ratelimit-Dailylimit:
       - '5000'
       Ratelimit-Remaining:
-      - '4810'
+      - '4733'
       Ratelimit-Resettime:
       - '2019-04-07T00:00:00+00:00'
       X-Zipkin-Id:
-      - 127415d8132d8df2
+      - 7b7dad5e5e0f880d
       X-B3-Sampled:
       - '0'
       X-Proxied:
-      - 10-64-100-85-uswest1aprod
+      - 10-69-80-169-uswest2aprod
       Transfer-Encoding:
       - chunked
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 06 Apr 2019 17:17:40 GMT
+      - Sat, 06 Apr 2019 20:24:35 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-den19624-DEN
+      - cache-den19625-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -57,7 +57,7 @@ http_interactions:
       string: '{"businesses": [{"id": "gagUrh3806qc5hZ14F0Odw", "alias": "denver-biscuit-co-denver-17",
         "name": "Denver Biscuit Co.", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/NiiTDBCR0Fgw0yD6wC66WQ/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/denver-biscuit-co-denver-17?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 3023, "categories": [{"alias": "sandwiches", "title": "Sandwiches"},
+        "review_count": 3024, "categories": [{"alias": "sandwiches", "title": "Sandwiches"},
         {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}], "rating": 4.5,
         "coordinates": {"latitude": 39.740384, "longitude": -104.949098}, "transactions":
         ["pickup"], "price": "$$", "location": {"address1": "3237 E Colfax Ave", "address2":
@@ -78,7 +78,7 @@ http_interactions:
         "LX8nS1dlW7MEZDDEmVcyGw", "alias": "root-down-denver", "name": "Root Down",
         "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/EtHR5JwQwZKs3b79GOOPuQ/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/root-down-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 3091, "categories": [{"alias": "newamerican", "title": "American
+        "review_count": 3092, "categories": [{"alias": "newamerican", "title": "American
         (New)"}, {"alias": "vegan", "title": "Vegan"}, {"alias": "vegetarian", "title":
         "Vegetarian"}], "rating": 4.5, "coordinates": {"latitude": 39.76306, "longitude":
         -105.0056}, "transactions": [], "price": "$$", "location": {"address1": "1600
@@ -88,7 +88,7 @@ http_interactions:
         993-4200", "distance": 4299.025222992226}, {"id": "Z8vO_mf1V09QDUPdyqJ6og",
         "alias": "linger-denver-2", "name": "Linger", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_5mQyB29yVKHu-uNp8P2Qw/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/linger-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 3038, "categories": [{"alias": "asianfusion", "title": "Asian
+        "review_count": 3039, "categories": [{"alias": "asianfusion", "title": "Asian
         Fusion"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
         "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 39.75954,
         "longitude": -105.01139}, "transactions": ["pickup", "delivery"], "price":
@@ -96,8 +96,18 @@ http_interactions:
         "", "city": "Denver", "zip_code": "80211", "country": "US", "state": "CO",
         "display_address": ["2030 W 30th Ave", "Denver, CO 80211"]}, "phone": "+13039933120",
         "display_phone": "(303) 993-3120", "distance": 4414.859401077679}, {"id":
-        "CQNv4SXqFltcwNsx-qHbLQ", "alias": "steubens-uptown-denver", "name": "Steuben''s
-        Uptown", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/iPEj2KIB41JR844HgsWXyQ/o.jpg",
+        "Ip6MAcRC_HTPxhuKi2ZD2w", "alias": "euclid-hall-bar-and-kitchen-denver", "name":
+        "Euclid Hall Bar & Kitchen", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/BIYnxEFUVhMZ-83SsvVBIA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/euclid-hall-bar-and-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 2043, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "bars", "title": "Bars"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.74773, "longitude": -105.00001}, "transactions": ["pickup",
+        "delivery"], "price": "$$", "location": {"address1": "1317 14th St", "address2":
+        "", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
+        "state": "CO", "display_address": ["1317 14th St", "Denver, CO 80202"]}, "phone":
+        "+13035954255", "display_phone": "(303) 595-4255", "distance": 2885.0080336399556},
+        {"id": "CQNv4SXqFltcwNsx-qHbLQ", "alias": "steubens-uptown-denver", "name":
+        "Steuben''s Uptown", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/iPEj2KIB41JR844HgsWXyQ/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/steubens-uptown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 2527, "categories": [{"alias": "diners", "title": "Diners"},
         {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "cocktailbars",
@@ -231,9 +241,18 @@ http_interactions:
         {"address1": "320 East Colfax Ave", "address2": null, "address3": "", "city":
         "Denver", "zip_code": "80203", "country": "US", "state": "CO", "display_address":
         ["320 East Colfax Ave", "Denver, CO 80203"]}, "phone": "+13038316233", "display_phone":
-        "(303) 831-6233", "distance": 1177.585087393935}, {"id": "hWdupym3JerJ2p_-wRj00A",
-        "alias": "snooze-an-a-m-eatery-denver-11", "name": "Snooze, An A.M. Eatery",
-        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/A3wqc0cQwqBf7Un1ckfkiQ/o.jpg",
+        "(303) 831-6233", "distance": 1177.585087393935}, {"id": "guaRJIAwPzbHZ09G3hX31g",
+        "alias": "acorn-denver-denver", "name": "Acorn - Denver", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/8CilLqqMUWeyIhmtubzcew/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/acorn-denver-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 976, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "venues", "title": "Venues & Event Spaces"}], "rating":
+        4.5, "coordinates": {"latitude": 39.768648, "longitude": -104.979813}, "transactions":
+        [], "price": "$$", "location": {"address1": "3350 Brighton Blvd", "address2":
+        "", "address3": "", "city": "Denver", "zip_code": "80216", "country": "US",
+        "state": "CO", "display_address": ["3350 Brighton Blvd", "Denver, CO 80216"]},
+        "phone": "+17205423721", "display_phone": "(720) 542-3721", "distance": 3772.918139213039},
+        {"id": "hWdupym3JerJ2p_-wRj00A", "alias": "snooze-an-a-m-eatery-denver-11",
+        "name": "Snooze, An A.M. Eatery", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/A3wqc0cQwqBf7Un1ckfkiQ/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-11?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 847, "categories": [{"alias": "breakfast_brunch", "title":
         "Breakfast & Brunch"}, {"alias": "coffee", "title": "Coffee & Tea"}, {"alias":
@@ -305,19 +324,8 @@ http_interactions:
         {"address1": "1215 20th St", "address2": "", "address3": "", "city": "Denver",
         "zip_code": "80202", "country": "US", "state": "CO", "display_address": ["1215
         20th St", "Denver, CO 80202"]}, "phone": "+13039938023", "display_phone":
-        "(303) 993-8023", "distance": 2658.241748787643}, {"id": "tFlkmpRhO-eXjVkjU0tVuw",
-        "alias": "luciles-creole-cafe-denver", "name": "Lucile''s Creole Cafe", "image_url":
-        "https://s3-media2.fl.yelpcdn.com/bphoto/Al6Vj03i5hYacTo1a29mrA/o.jpg", "is_closed":
-        false, "url": "https://www.yelp.com/biz/luciles-creole-cafe-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 918, "categories": [{"alias": "cajun", "title": "Cajun/Creole"},
-        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}], "rating": 4.0,
-        "coordinates": {"latitude": 39.71148, "longitude": -104.98318}, "transactions":
-        [], "price": "$$", "location": {"address1": "275 S Logan St", "address2":
-        null, "address3": "", "city": "Denver", "zip_code": "80209", "country": "US",
-        "state": "CO", "display_address": ["275 S Logan St", "Denver, CO 80209"]},
-        "phone": "+13032826258", "display_phone": "(303) 282-6258", "distance": 2885.193537233756},
-        {"id": "BanUNHQyAQhjv15m_e0fvw", "alias": "torta-grill-denver-2", "name":
-        "Torta Grill", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/lR1ShTJ498uMX8XewUerzg/o.jpg",
+        "(303) 993-8023", "distance": 2658.241748787643}, {"id": "BanUNHQyAQhjv15m_e0fvw",
+        "alias": "torta-grill-denver-2", "name": "Torta Grill", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/lR1ShTJ498uMX8XewUerzg/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/torta-grill-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 428, "categories": [{"alias": "mexican", "title": "Mexican"},
         {"alias": "sandwiches", "title": "Sandwiches"}], "rating": 4.5, "coordinates":
@@ -419,7 +427,7 @@ http_interactions:
         "d50DoPtrnFheFSwgVN-i9Q", "alias": "las-tortas-denver-2", "name": "Las Tortas",
         "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/GeAtmPOhNgzTXvjXmq9iew/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/las-tortas-denver-2?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 457, "categories": [{"alias": "mexican", "title": "Mexican"},
+        "review_count": 458, "categories": [{"alias": "mexican", "title": "Mexican"},
         {"alias": "sandwiches", "title": "Sandwiches"}], "rating": 4.5, "coordinates":
         {"latitude": 39.70809, "longitude": -104.92546}, "transactions": [], "price":
         "$", "location": {"address1": "5307 Leetsdale Dr", "address2": "", "address3":
@@ -436,8 +444,19 @@ http_interactions:
         "location": {"address1": "494 E 19th Ave", "address2": "", "address3": "",
         "city": "Denver", "zip_code": "80203", "country": "US", "state": "CO", "display_address":
         ["494 E 19th Ave", "Denver, CO 80203"]}, "phone": "+13038614710", "display_phone":
-        "(303) 861-4710", "distance": 1506.6528099606383}, {"id": "HS-dqjFTYcXPOwwtvsEGVQ",
-        "alias": "vert-kitchen-denver", "name": "Vert Kitchen", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/YY99a4IMQDU67x3aWyhkHg/o.jpg",
+        "(303) 861-4710", "distance": 1506.6528099606383}, {"id": "BKRLsUCryeR1JJtyGVWW_g",
+        "alias": "blue-sushi-sake-grill-denver", "name": "Blue Sushi Sake Grill",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ChBkyTy2cKgTCqSaPdd3UA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/blue-sushi-sake-grill-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
+        "review_count": 859, "categories": [{"alias": "sushi", "title": "Sushi Bars"},
+        {"alias": "japanese", "title": "Japanese"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.751248413952, "longitude": -105.000414848328}, "transactions":
+        [], "price": "$$", "location": {"address1": "1616 16th St", "address2": "",
+        "address3": "", "city": "Denver", "zip_code": "80202", "country": "US", "state":
+        "CO", "display_address": ["1616 16th St", "Denver, CO 80202"]}, "phone": "+13036403655",
+        "display_phone": "(303) 640-3655", "distance": 3116.209280628799}, {"id":
+        "HS-dqjFTYcXPOwwtvsEGVQ", "alias": "vert-kitchen-denver", "name": "Vert Kitchen",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/YY99a4IMQDU67x3aWyhkHg/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/vert-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
         "review_count": 463, "categories": [{"alias": "french", "title": "French"},
         {"alias": "sandwiches", "title": "Sandwiches"}, {"alias": "soup", "title":
@@ -502,7 +521,7 @@ http_interactions:
         "alias": "four-friends-kitchen-denver", "name": "Four Friends Kitchen", "image_url":
         "https://s3-media1.fl.yelpcdn.com/bphoto/gjQC7Zrb0C3HtuSmljnNwA/o.jpg", "is_closed":
         false, "url": "https://www.yelp.com/biz/four-friends-kitchen-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 835, "categories": [{"alias": "southern", "title": "Southern"},
+        "review_count": 836, "categories": [{"alias": "southern", "title": "Southern"},
         {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}], "rating": 4.0,
         "coordinates": {"latitude": 39.757276, "longitude": -104.900743}, "transactions":
         [], "price": "$$", "location": {"address1": "2893 Roslyn St", "address2":
@@ -539,17 +558,6 @@ http_interactions:
         "", "address3": "", "city": "Denver", "zip_code": "80206", "country": "US",
         "state": "CO", "display_address": ["2730 E Colfax Ave", "Denver, CO 80206"]},
         "phone": "+13038627894", "display_phone": "(303) 862-7894", "distance": 1434.112996673822},
-        {"id": "ZDD3sfQRbVFTb6-h7BsCeg", "alias": "syrup-downtown-denver", "name":
-        "Syrup Downtown", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/4EFvVIRnEGQGMa-zW6d5YA/o.jpg",
-        "is_closed": false, "url": "https://www.yelp.com/biz/syrup-downtown-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 1155, "categories": [{"alias": "breakfast_brunch", "title":
-        "Breakfast & Brunch"}, {"alias": "tradamerican", "title": "American (Traditional)"},
-        {"alias": "salad", "title": "Salad"}], "rating": 4.0, "coordinates": {"latitude":
-        39.7489837090198, "longitude": -104.991904357147}, "transactions": [], "price":
-        "$$", "location": {"address1": "999 18th St", "address2": "Ste 105", "address3":
-        "", "city": "Denver", "zip_code": "80202", "country": "US", "state": "CO",
-        "display_address": ["999 18th St", "Ste 105", "Denver, CO 80202"]}, "phone":
-        "+17207085957", "display_phone": "(720) 708-5957", "distance": 2381.0255732582095},
         {"id": "ALeBQxSLsm0He_FYdmA6UA", "alias": "rocky-fin-poke-bar-denver", "name":
         "Rocky Fin Poke Bar", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/-6m2XipgC6CJg0HH7mjlbQ/o.jpg",
         "is_closed": false, "url": "https://www.yelp.com/biz/rocky-fin-poke-bar-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
@@ -560,18 +568,8 @@ http_interactions:
         103", "address3": "", "city": "Denver", "zip_code": "80218", "country": "US",
         "state": "CO", "display_address": ["1245 E Colfax Ave", "Ste 103", "Denver,
         CO 80218"]}, "phone": "+13038611188", "display_phone": "(303) 861-1188", "distance":
-        539.8171882096158}, {"id": "JWbnx_g6AYSrPMQJDHLBMw", "alias": "lola-coastal-mexican-denver",
-        "name": "Lola Coastal Mexican", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/0e6XLO8YHoPnmC9WMEazHA/o.jpg",
-        "is_closed": false, "url": "https://www.yelp.com/biz/lola-coastal-mexican-denver?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 1089, "categories": [{"alias": "mexican", "title": "Mexican"},
-        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}], "rating": 4.0,
-        "coordinates": {"latitude": 39.759249956713, "longitude": -105.010725947174},
-        "transactions": ["pickup"], "price": "$$", "location": {"address1": "1575
-        Boulder St", "address2": "", "address3": "", "city": "Denver", "zip_code":
-        "80211", "country": "US", "state": "CO", "display_address": ["1575 Boulder
-        St", "Denver, CO 80211"]}, "phone": "+17205708686", "display_phone": "(720)
-        570-8686", "distance": 4351.733245766641}], "total": 1100, "region": {"center":
-        {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
+        539.8171882096158}], "total": 1100, "region": {"center": {"longitude": -104.97024536132812,
+        "latitude": 39.73552421220229}}}'
     http_version: 
-  recorded_at: Sat, 06 Apr 2019 17:17:36 GMT
+  recorded_at: Sat, 06 Apr 2019 20:24:30 GMT
 recorded_with: VCR 4.0.0
