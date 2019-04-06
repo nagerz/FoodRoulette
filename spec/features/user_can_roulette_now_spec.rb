@@ -16,7 +16,7 @@ describe "As a user" do
 
     click_button 'Roulette Now'
 
-    expect(current_path).to eq(restaurant_path)
+    expect(current_path).to eq(roulette_path)
 
     expect(page).to have_css(".name")
     expect(page).to have_css(".address")

@@ -4,11 +4,36 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:google_id) }
     it { should validate_presence_of(:email) }
+    it { should validate_uniqueness_of(:email) }
     it { should validate_presence_of(:first_name) }
     it { should validate_presence_of(:last_name) }
+    it { should validate_presence_of(:token) }
+    it { should validate_presence_of(:refresh_token) }
   end
 
-  describe 'class methods' do
+  describe 'relationships' do
+    it { should have_many(:surveys) }
+    it { should have_many(:visits) }
+    it { should have_many(:restaurants).through(:visits) }
+  end
+
+  describe 'roles' do
+    it 'can be created as default user' do
+      user = create(:user)
+
+      expect(user.role).to eq('user')
+      expect(user.user?).to be_truthy
+    end
+
+    it 'can be created as an Admin user' do
+      admin = create(:admin)
+
+      expect(admin.role).to eq('admin')
+      expect(admin.admin?).to be_truthy
+    end
+  end
+
+  describe 'Class Methods' do
     it '.update_or_create' do
       oauth_data = {
         provider: "google",

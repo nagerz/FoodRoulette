@@ -1,12 +1,13 @@
-class Restaurant
-  attr_reader :name, :address, :price_range, :cuisine, :rating, :distance
+class Restaurant < ApplicationRecord
+  has_many :survey_restaurants
+  has_many :visits
+  has_many :users, through: :visits
 
-  def initialize(data)
-    @name = data[:name]
-    @address = "#{data[:location][:address1]} #{data[:location][:address2]} #{data[:location][:city]}, #{data[:location][:state]} #{data[:location][:zip_code]}"
-    @price_range = data[:price]
-    @cuisine = data[:categories].first[:title]
-    @rating = data[:rating]
-    @distance = (data[:distance] / 1609.344).round(2)
-  end
+  validates :yelp_id, uniqueness: true, presence: true
+  validates_presence_of :name
+  validates_presence_of :latitude
+  validates_presence_of :longitude
+  validates_presence_of :price
+  validates_presence_of :rating
+  validates_presence_of :category_1
 end

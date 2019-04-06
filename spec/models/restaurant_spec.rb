@@ -1,68 +1,20 @@
 require 'rails_helper'
 
 describe Restaurant, type: :model do
-  before :each do
-    @restaurant_data = {
-        "id": "dnJvyhSPiIVlmpdM_3SCrg",
-        "alias": "snooze-an-a-m-eatery-denver-12",
-        "name": "Snooze, An A.M. Eatery",
-        "is_closed": false,
-        "url": "https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-12?adjust_creative=kstLs0KgHxdskM-IpaNJoA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kstLs0KgHxdskM-IpaNJoA",
-        "review_count": 3799,
-        "categories": [
-            {
-                "alias": "breakfast_brunch",
-                "title": "Breakfast & Brunch"
-            },
-            {
-                "alias": "sandwiches",
-                "title": "Sandwiches"
-            },
-            {
-                "alias": "coffee",
-                "title": "Coffee & Tea"
-            }
-        ],
-        "rating": 4.5,
-        "coordinates": {
-            "latitude": 39.755459608447,
-            "longitude": -104.988913938884
-        },
-        "price": "$$",
-        "location": {
-            "address1": "2262 Larimer St",
-            "address2": "",
-            "address3": "",
-            "city": "Denver",
-            "zip_code": "80205",
-            "country": "US",
-            "state": "CO",
-            "display_address": [
-                "2262 Larimer St",
-                "Denver, CO 80205"
-            ]
-        },
-        "phone": "+13032970700",
-        "display_phone": "(303) 297-0700",
-        "distance": 963.6331565339298
-    }
+  describe 'validations' do
+    it { should validate_presence_of(:yelp_id) }
+    it { should validate_uniqueness_of(:yelp_id) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:latitude) }
+    it { should validate_presence_of(:longitude) }
+    it { should validate_presence_of(:price) }
+    it { should validate_presence_of(:rating) }
+    it { should validate_presence_of(:category_1) }
   end
 
-  it "exists" do
-    rec = Restaurant.new(@restaurant_data)
-
-    expect(rec).to be_a(Restaurant)
-  end
-
-  it "has attributes" do
-    rec = Restaurant.new(@restaurant_data)
-
-    expect(rec.name).to eq("Snooze, An A.M. Eatery")
-    expect(rec.address).to eq("2262 Larimer St  Denver, CO 80205")
-    expect(rec.price_range).to eq("$$")
-    expect(rec.cuisine).to eq("Breakfast & Brunch")
-    expect(rec.rating).to eq(4.5)
-    # expect(rec.hours).to eq(rec)
-    expect(rec.distance).to eq(0.6)
+  describe 'relationships' do
+    it { should have_many(:survey_restaurants) }
+    it { should have_many(:visits) }
+    it { should have_many(:users).through(:visits) }
   end
 end

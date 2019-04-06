@@ -1,11 +1,3 @@
-<!--- expect(page).to have_css(".name")
-expect(page).to have_css(".address")
-expect(page).to have_css(".price_range")
-expect(page).to have_css(".cuisine")
-expect(page).to have_css(".rating")
-expect(page).to have_css(".hours") --->
-
-
 <li class="name">Name: <%= restaurant.name %></li>
 <li class="address">Address: <%= restaurant.address %></li>
 <li class="price_range">Price Range: <%= restaurant.price_range %></li>
@@ -13,4 +5,4 @@ expect(page).to have_css(".hours") --->
 <li class="rating">Rating: <%= restaurant.rating %></li>
 <li class="distance">Distance: <%= restaurant.distance %> miles away</li>
 
-<%= button_to 'Roulette Again', restaurant_path, method: :get %>
+<%= button_to 'Roulette Again', roulette_path, method: :get %>
