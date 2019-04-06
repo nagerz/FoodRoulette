@@ -15,7 +15,7 @@ describe RouletteController, type: :controller do
     expect(response.status).to eq(200)
   end
 
-  it 'the user\'s manal location can be used for a default random or group roulette', :vcr do
+  it 'the user\'s manual location can be used for a default random or group roulette', :vcr do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     cookies['manual_location'] = 'Denver, CO'
