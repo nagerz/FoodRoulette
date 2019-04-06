@@ -1,9 +1,13 @@
 class YelpService
 
   def restaurants(location)
-    latitude = location.split("|")[0]
-    longitude = location.split("|")[1]
-    yelp_json("v3/businesses/search?latitude=#{latitude}&longitude=#{longitude}&radius=8000&open_now=true&price=1,2&limit=50&categories=restaurants").first[1]
+    if location.include?('|')
+      latitude = location.split("|")[0]
+      longitude = location.split("|")[1]
+      yelp_json("v3/businesses/search?latitude=#{latitude}&longitude=#{longitude}&radius=8000&open_now=true&price=1,2&limit=50&categories=restaurants").first[1]
+    else
+      yelp_json("v3/businesses/search?location=#{location}&radius=8000&open_now=true&price=1,2&limit=50&categories=restaurants").first[1]
+    end
   end
 
   def yelp_json(url)

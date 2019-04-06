@@ -7,7 +7,7 @@ require 'rails_helper'
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit '/'
-
+      set_location
       click_button 'Survey them!'
 
       expect(current_path).to eq(roulettes_path)
