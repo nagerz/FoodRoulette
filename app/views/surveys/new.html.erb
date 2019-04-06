@@ -1,0 +1,9 @@
+<%= form_for :survey do |f| %>
+    Your Name: <%= f.text_field :sender %>
+    Your Friends' Phone Numbers (e.g. "+12223334444,+15556667777"):
+    <%= f.text_field :phone_numbers %>
+    <% f.hidden_field restaurant_1: @restaurant_1 %>
+    <% f.hidden_field restaurant_2: @restaurant_2 %>
+    <% f.hidden_field restaurant_3: @restaurant_3 %>
+    <%= f.submit %>
+<% end %>

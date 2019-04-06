@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'auth/google/callback', to: 'sessions#create'
 
   get '/restaurant', to: 'restaurants#show', as: :restaurant
+  get '/restaurants', to: 'restaurants#index', as: :restaurants
+
   get '/refine', to: 'refine#show'
   get '/survey', to: 'survey#show'
   get '/about', to: 'about#show'
