@@ -1,6 +1,6 @@
 class RestaurantFacade
-  def recommendation
-    restaurant = random_restaurant[0]
+  def recommendation(location)
+    restaurant = random_restaurant(location)[0]
     if new_restaurant(restaurant).save
       Recommendation.new(restaurant)
     else
@@ -8,8 +8,8 @@ class RestaurantFacade
     end
   end
 
-  def group_recommendations
-    restaurants = random_restaurant(3)
+  def group_recommendations(location)
+    restaurants = random_restaurant(location, 3)
     reccommendations = []
     restaurants.each do |restaurant|
       if new_restaurant(restaurant).save
@@ -44,12 +44,12 @@ class RestaurantFacade
                 )
   end
 
-  def random_restaurant(limit = 1)
-    restaurants_data.sample(limit)
+  def random_restaurant(location, limit = 1)
+    restaurants_data(location).sample(limit)
   end
 
-  def restaurants_data
-    service.restaurants(zipcode = "80202")
+  def restaurants_data(location)
+    service.restaurants(location)
   end
 
   def service
