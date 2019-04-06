@@ -6,7 +6,11 @@ describe "As a user" do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit group_roulette_path
+      visit root_path
+
+      set_location('Denver, CO')
+
+      click_button 'Survey them!'
 
       click_on "Send to Friends"
 
@@ -16,7 +20,6 @@ describe "As a user" do
       fill_in "Your Friends' Phone Numbers (e.g. '+12223334444,+15556667777'):", with: "+19097540068,+17155740144"
       fill_in "Event Name:", with: "Julia's bday!"
       fill_in "Date/Time of Event (optional):", with: "This weekend?"
-
       click_on "Send Text"
 
       survey = Survey.last

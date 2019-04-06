@@ -1,11 +1,11 @@
 class RestaurantFacade
 
-  def recommendation
+  def recommendation(location)
     restaurant_data = random_restaurant(location)[0]
     if make_recommendation(restaurant_data)
       make_recommendation(restaurant_data)
     else
-      recommendation
+      recommendation(location)
     end
   end
 
@@ -17,7 +17,7 @@ class RestaurantFacade
       if make_recommendation(restaurant_data)
         recommendations << make_recommendation(restaurant_data)
       else
-        group_recommendations
+        group_recommendations(location)
       end
     end
     recommendations

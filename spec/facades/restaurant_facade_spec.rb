@@ -22,7 +22,7 @@ RSpec.describe RestaurantFacade do
 
         expect(Restaurant.all.count).to eq(1)
 
-        new_recommendation = @facade.recommendation
+        new_recommendation = @facade.recommendation('80202')
 
         expect(Restaurant.all.count).to eq(1)
         expect(new_recommendation).to be_a(Recommendation)
@@ -38,7 +38,7 @@ RSpec.describe RestaurantFacade do
 
         expect(Restaurant.all.count).to eq(0)
 
-        new_recommendation = @facade.recommendation
+        new_recommendation = @facade.recommendation('80202')
 
         expect(Restaurant.all.count).to eq(1)
         expect(Restaurant.first.yelp_id).to eq("test123")
@@ -55,7 +55,7 @@ RSpec.describe RestaurantFacade do
 
         expect(Restaurant.all.count).to eq(0)
 
-        new_recommendation = @facade.recommendation
+        new_recommendation = @facade.recommendation('80202')
 
         expect(Restaurant.all.count).to eq(1)
         expect(Restaurant.first.yelp_id).to eq("test123")
