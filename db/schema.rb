@@ -84,9 +84,19 @@ ActiveRecord::Schema.define(version: 2019_04_07_035443) do
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.integer "value"
+    t.bigint "voter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_votes_on_survey_id"
+  end
+
   add_foreign_key "survey_restaurants", "restaurants"
   add_foreign_key "survey_restaurants", "surveys"
   add_foreign_key "surveys", "users"
   add_foreign_key "visits", "restaurants"
   add_foreign_key "visits", "users"
+  add_foreign_key "votes", "surveys"
 end

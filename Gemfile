@@ -24,9 +24,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'omniauth-google-oauth2'
 gem 'twilio-ruby'
-
+gem 'ngrok-tunnel'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -58,6 +60,7 @@ group :development, :test do
   gem 'webmock'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'ngrok-rspec'
 end
 
 group :development do

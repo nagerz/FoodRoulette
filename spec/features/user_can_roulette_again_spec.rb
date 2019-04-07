@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'As a user' do
   #Need to add functionality to not repeat recommendation
-  xit 'I can roulette again', :vcr do
+  it 'I can roulette again', :vcr do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

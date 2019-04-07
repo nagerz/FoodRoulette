@@ -5,4 +5,10 @@
 <li class="rating">Rating: <%= restaurant.rating %></li>
 <li class="distance">Distance: <%= restaurant.distance %> miles away</li>
 
+
+<%= button_to 'Take Me There!', directions_path, method: :get, params: { restaurant_address: restaurant.address,
+                                                                         user_address: cookies[:manual_location],
+                                                                         user_lat_long: cookies[:lat_long],
+                                                                         user_id: current_user.id,
+                                                                         restaurant_id: restaurant.database_id  } %>
 <%= button_to 'Roulette Again', roulette_path, method: :get %>
