@@ -83,12 +83,12 @@ ActiveRecord::Schema.define(version: 2019_04_07_043309) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.bigint "survey_id"
+    t.bigint "survey_restaurant_id"
     t.integer "value"
     t.bigint "voter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_votes_on_survey_id"
+    t.index ["survey_restaurant_id"], name: "index_votes_on_survey_restaurant_id"
   end
 
   add_foreign_key "survey_restaurants", "restaurants"
@@ -96,5 +96,5 @@ ActiveRecord::Schema.define(version: 2019_04_07_043309) do
   add_foreign_key "surveys", "users"
   add_foreign_key "visits", "restaurants"
   add_foreign_key "visits", "users"
-  add_foreign_key "votes", "surveys"
+  add_foreign_key "votes", "survey_restaurants"
 end
