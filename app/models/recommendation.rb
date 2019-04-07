@@ -1,6 +1,12 @@
 class Recommendation
-  attr_reader :name, :address, :price_range, :cuisine, :rating, :distance, :restaurant_id
-
+  attr_reader :name,
+              :address,
+              :price_range,
+              :cuisine,
+              :rating,
+              :distance,
+              :restaurant_id,
+              :database_id
   def initialize(data, restaurant)
     @name = data[:name]
     @address = "#{data[:location][:address1]} #{data[:location][:address2]} #{data[:location][:city]}, #{data[:location][:state]} #{data[:location][:zip_code]}"
@@ -9,5 +15,6 @@ class Recommendation
     @rating = data[:rating]
     @distance = (data[:distance] / 1609.344).round(2)
     @restaurant_id = restaurant.yelp_id
+    @database_id = restaurant.id
   end
 end
