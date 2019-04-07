@@ -1,15 +1,23 @@
-App.cable.subscriptions.create { channel: "ResultChannel", room: "Results Room" },
-  received: (data) ->
-    @appendLine(data)
+App.surveys = App.cable.subscriptions.create "ResultChannel",
+connected: ->
+#functions to do things when we begin and end communication with the server
+disconnected: ->
 
-  appendLine: (data) ->
-    html = @createLine(data)
-    $("[data-results-room='Results Room']").append(html)
+received: (data) ->
+# Handle the result
 
-  createLine: (data) ->
-    """
-    <article class="result-line">
-      <span class="speaker">#{data["sent_by"]}</span>
-      <span class="body">#{data["body"]}</span>
-    </article>
-    """
+result:   ->
+  var surveyId = 1;
+  #sets up and id for or dog(passed from the back-end
+  #when the connection is first made)
+  @perform("result", {id: surveyId})
+  #perform is a magic Action Cable command
+  #that tells it to send the data(id) to the back-end side
+  #of the channel, using the result method.
+
+
+
+
+
+#set up the front end to make a connection
+#with the server
