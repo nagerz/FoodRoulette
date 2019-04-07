@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   get '/refine', to: 'refine#show'
   get '/about', to: 'about#show'
   get '/directions', to: 'directions#show'
+  
   resources :surveys, only: [:new, :show, :create]
-  post 'twilio/status', to: 'twilio_text_messenger#status'
+  resources :responses, only: [:create]
 
   get '/profile', to: 'users#show'
 end
