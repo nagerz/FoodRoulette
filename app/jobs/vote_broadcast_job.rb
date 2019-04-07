@@ -3,7 +3,7 @@ class VoteBroadcastJob < ApplicationJob
 
   def perform(vote)
     # id = vote.survey_results.id
-    # binding.pry
+    binding.pry
     ActionCable.server.broadcast "survey_results_channel", {:vote=>"Vote: #{vote.value}\n"}
   end
 
