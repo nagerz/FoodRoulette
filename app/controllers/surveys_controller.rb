@@ -1,5 +1,13 @@
 class SurveysController < ApplicationController
 
+  def show
+    survey = Survey.find(params[:id])
+
+    render locals: {
+      facade: SurveyFacade.new(survey)
+    }
+  end
+
   def new
     @survey = Survey.new
     @restaurant_1 = params["restaurant_1"]
@@ -33,9 +41,41 @@ class SurveysController < ApplicationController
     end
   end
 
+  def update
+    survey = Survey.find(params[:id])
+
+    if survey.active?
+      restaurant = Restaurant.find(params[:restaurant])
+      votes = restaurant.votes += 1
+      restaurant.update_attribute(votes: votes)
+
+      numbers_sent = survey.phone_numbers.split(",").count
+      survey.numbers_recieved << params[:phone]
+      if survey.numbers_received.count = numbers_sent
+        redirect_to end_survey_path(survey)
+      end
+    else
+      redirect_to survey_path(survey)
+    end
+  end
+
+  def end
+    survey = Survey.find(params[:id])
+
+    end_survey(survey)
+    redirect_to survey_path(survey)
+  end
+
   private
 
   def survey_params
     params.require(:survey).permit(:sender, :phone_numbers, :restaurant_1, :restaurant_2, :restaurant_3, :event, :date_time)
+  end
+
+  def end_survey(survey)
+    survey.update_attribute(:status, 1)
+
+    ##tally rank
+    ##close channel?
   end
 end
