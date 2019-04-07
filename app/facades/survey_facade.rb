@@ -1,6 +1,7 @@
-class SurveyFacade
+class SurveyFacade < SimpleDelegator
 
   def initialize(survey)
+    super(survey)
     @survey = survey
   end
 

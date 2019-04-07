@@ -2,19 +2,20 @@
 
 <h3>Survey status: <%= facade.status %></h3>
 
-<p>Total Votes Recieved: <%= facade.vote_count %></p>
+<p>Total Votes Received: <%= facade.votes %></p>
 
 <% facade.survey_restaurants.each do |survey_restaurant| %>
   <section class='survey-restaurant'>
-    <section class='survey-resturant-<%= survey_restaurant.id %>'>
-  <p><%= survey_restaurant.restaurant.name %></p>
-  <p>Votes recieved: <%= survey_restaurant.votes %>
+    <section class='survey-restaurant-<%= survey_restaurant.id %>'>
+      <p><%= survey_restaurant.restaurant.name %></p>
+      <p>Votes recieved: <%= survey_restaurant.votes %>
 
-  <%= button_to 'Vote for this', survey_path(facade.survey), method: :patch,
-      params: { phone: "number_1",
-                restaurant: restaurant,
-               } %>
-
+      <%= button_to 'Vote for this', survey_path(facade), method: :patch,
+          params: { phone: "number_1",
+                    restaurant: survey_restaurant,
+                   } %>
+    </section>
+  </section>
 <% end %>
 
-<%= button_to 'End Survey Now', end_survey_path(facade.survey), method: :post %>
+<%= button_to 'End Survey Now', end_survey_path(facade), method: :post %>

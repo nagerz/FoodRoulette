@@ -45,12 +45,13 @@ class SurveysController < ApplicationController
     survey = Survey.find(params[:id])
 
     if survey.active?
-      restaurant = Restaurant.find(params[:restaurant])
-      votes = restaurant.votes += 1
-      restaurant.update_attribute(votes: votes)
+      ##check non-repeated phone number first
+      survey_restaurant = SurveyRestaurant.find(params[:restaurant])
+      votes = survey_restaurant.votes += 1
+      survey_restaurant.update_attribute(:votes, votes)
 
       numbers_sent = survey.phone_numbers.split(",").count
-      survey.numbers_recieved << params[:phone]
+      survey.numbers_received << params[:phone]
       if survey.numbers_received.count = numbers_sent
         redirect_to end_survey_path(survey)
       end

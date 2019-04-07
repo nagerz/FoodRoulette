@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_011740) do
+ActiveRecord::Schema.define(version: 2019_04_07_035443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_011740) do
   create_table "survey_restaurants", force: :cascade do |t|
     t.bigint "survey_id"
     t.bigint "restaurant_id"
-    t.integer "votes"
+    t.integer "votes", default: 0
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_011740) do
     t.datetime "updated_at", null: false
     t.text "phone_numbers"
     t.integer "status", default: 0
+    t.integer "votes", default: 0
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
