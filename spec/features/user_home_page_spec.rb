@@ -18,9 +18,6 @@ RSpec.feature 'Home page' do
 
       expect(current_path).to eq(root_path)
 
-      #At the top of the page, I see a location search bar
-      expect(page).to have_button('Search')
-
       #I see the app’s logo
       expect(page).to have_css(".home-header-logo")
 
