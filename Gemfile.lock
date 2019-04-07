@@ -128,6 +128,11 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    ngrok-rspec (1.1.18)
+      capybara (>= 2.4)
+      ngrok-tunnel (~> 2.0)
+      rspec (>= 2.99)
+    ngrok-tunnel (2.1.1)
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
@@ -189,6 +194,10 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.4.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -289,6 +298,8 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)
+  ngrok-rspec
+  ngrok-tunnel
   omniauth-google-oauth2
   pg (>= 0.18, < 2.0)
   pry

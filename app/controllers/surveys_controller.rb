@@ -17,7 +17,7 @@ class SurveysController < ApplicationController
     data[:restaurant_2] = survey_params[:restaurant_2]
     data[:restaurant_3] = survey_params[:restaurant_3]
 
-    TwilioTextMessenger.new(data).send_survey
+    TwilioTextMessenger.new.send_survey(data)
 
     @survey = Survey.new(user_id: current_user.id, phone_numbers: survey_params[:phone_numbers])
     if @survey.save

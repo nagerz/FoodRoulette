@@ -96,4 +96,9 @@ end
     config.infer_spec_type_from_file_location!
 
     config.filter_rails_from_backtrace!
+
+    Capybara.server_port = 3001
+    Ngrok::Rspec.tunnel = { port: Capybara.server_port }
+    
+    config.include Ngrok::Rspec
   end
