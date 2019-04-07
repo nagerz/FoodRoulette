@@ -33,13 +33,18 @@ class TwilioTextMessenger
     })
   end
 
-  def send_vote_result(survey_id)
-    message = "Thanks for voting! If you'd like to see which restaurant is winning, go to #{}"
+  def send_survey_result(survey_id)
+    @survey ||= Survey.find(survey_id)
+    phone_numbers = @survey.phone_numbers
+    event = @survey.event_name
+    winner = @survey.winner
+
+    message = "The survey for #{event} is now closed! #{winner} is the winner!"
 
     client = Twilio::REST::Client.new
     response = client.messages.create({
       from: ENV['TWILIO_PHONE_NUMBER'],
-      to: phone_number,
+      to: phone_numbers,
       body: message,
     })
   end
