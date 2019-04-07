@@ -7,7 +7,7 @@ received: (data) ->
 # Handle the result
 
 result:   ->
-  var surveyId = 1;
+  # var surveyId = 1;
   #sets up and id for or dog(passed from the back-end
   #when the connection is first made)
   @perform("result", {id: surveyId})
