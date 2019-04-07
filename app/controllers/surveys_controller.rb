@@ -7,6 +7,14 @@ class SurveysController < ApplicationController
     @restaurant_3 = params["restaurant_3"]
   end
 
+  def show
+  survey = Survey.find(params[:id])
+
+  render locals: {
+    facade: SurveyFacade.new(survey)
+  }
+  end
+
   def create
     data = { }
     data[:sender] = survey_params[:sender]
