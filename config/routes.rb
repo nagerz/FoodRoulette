@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/roulettes', to: 'roulette#index', as: :group_roulette
   get '/refine', to: 'refine#show'
   get '/about', to: 'about#show'
+  get '/directions', to: 'directions#show'
   resources :surveys, only: [:new, :show, :create]
   post 'twilio/status', to: 'twilio_text_messenger#status'
 
