@@ -22,7 +22,18 @@ class TwilioTextMessenger
     end
   end
 
-  def send_vote_receipt
+  def send_vote_receipt(survey_id)
+    message = "Thanks for voting! If you'd like to see which restaurant is winning, go to #{}"
+
+    client = Twilio::REST::Client.new
+    response = client.messages.create({
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      to: phone_number,
+      body: message,
+    })
+  end
+
+  def send_vote_result(survey_id)
     message = "Thanks for voting! If you'd like to see which restaurant is winning, go to #{}"
 
     client = Twilio::REST::Client.new
