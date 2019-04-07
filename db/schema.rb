@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_135546) do
+ActiveRecord::Schema.define(version: 2019_04_07_043309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,9 +82,19 @@ ActiveRecord::Schema.define(version: 2019_04_06_135546) do
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.integer "value"
+    t.bigint "voter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_votes_on_survey_id"
+  end
+
   add_foreign_key "survey_restaurants", "restaurants"
   add_foreign_key "survey_restaurants", "surveys"
   add_foreign_key "surveys", "users"
   add_foreign_key "visits", "restaurants"
   add_foreign_key "visits", "users"
+  add_foreign_key "votes", "surveys"
 end
