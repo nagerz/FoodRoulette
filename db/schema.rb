@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_035443) do
+ActiveRecord::Schema.define(version: 2019_04_07_232516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "phone_numbers", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "digits"
+    t.index ["survey_id"], name: "index_phone_numbers_on_survey_id"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "yelp_id"
@@ -42,7 +48,6 @@ ActiveRecord::Schema.define(version: 2019_04_07_035443) do
   create_table "survey_restaurants", force: :cascade do |t|
     t.bigint "survey_id"
     t.bigint "restaurant_id"
-    t.integer "votes", default: 0
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,9 +59,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_035443) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "phone_numbers"
     t.integer "status", default: 0
-    t.integer "votes", default: 0
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
@@ -86,13 +89,16 @@ ActiveRecord::Schema.define(version: 2019_04_07_035443) do
 
   create_table "votes", force: :cascade do |t|
     t.bigint "survey_id"
-    t.integer "value"
-    t.bigint "voter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "survey_restaurant_id"
+    t.bigint "phone_number_id"
+    t.index ["phone_number_id"], name: "index_votes_on_phone_number_id"
     t.index ["survey_id"], name: "index_votes_on_survey_id"
+    t.index ["survey_restaurant_id"], name: "index_votes_on_survey_restaurant_id"
   end
 
+  add_foreign_key "phone_numbers", "surveys"
   add_foreign_key "survey_restaurants", "restaurants"
   add_foreign_key "survey_restaurants", "surveys"
   add_foreign_key "surveys", "users"

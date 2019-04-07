@@ -7,21 +7,18 @@ class Survey < ApplicationRecord
 
   enum status: %i[active inactive]
 
-  #vote model
   def find_survey
     #most recent survey where incoming number is one of the outgoing numbers
   end
 
-  #vote model
   def unique_vote?
     #true if all survey.votes.number do not match the incoming number
   end
 
   #vote model
-  def add_survey_restaurant(response, survey)
+  def find_survey_restaurant(response)
     index = response.to_i - 1
-    survey.survey_restaurants[index]
-    survey_restaurant.update_attribute(:vote, vote)
+    self.survey_restaurants[index]
   end
 
   #instance method on found survey

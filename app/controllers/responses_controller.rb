@@ -4,7 +4,9 @@ class ResponsesController < ApplicationController
   def create
     message_body = params["Body"]
     from_number = params["From"]
-    sms_id = params["SmsSid"]
+
+    create_vote(from_number, message_body)
+    vote = Vote.new( voter: from_number)
 
     TwilioTextMessenger.new.send_vote_receipt
   end
