@@ -9,6 +9,7 @@ class SurveyResultsChannel < ApplicationCable::Channel
   end
 
   def vote(data)
-    Vote.create!(value: data['vote_value'].to_i)
+    sr = SurveyRestaurant.last
+    Vote.create!(value: data['vote_value'].to_i, survey_restaurant: sr)
   end
 end

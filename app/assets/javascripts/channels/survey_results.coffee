@@ -6,7 +6,10 @@ App.survey_results = App.cable.subscriptions.create "SurveyResultsChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('#votes').append data['vote']
+    $('#votes').append data['total_votes']
+    $('#votes').append data['sr_1_votes']
+    $('#votes').append data['sr_2_votes']
+    $('#votes').append data['sr_3_votes']
 
   vote: (vote_value) ->
     @perform 'vote', vote_value: vote_value
