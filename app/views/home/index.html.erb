@@ -29,14 +29,11 @@
 
 <div class="home-roulette-now">
   <h5>Ready to eat?</h5>
-  <%= button_to 'Roulette Now', roulette_path, method: :get, :onclick => "WriteCookie();" %>
+  <%= button_to 'Roulette Now', roulette_path, method: :get, :onclick => "WriteCookie();", class: 'button' %>
 </div>
-<div class="home-refine-search">
-  <h5>Something in mind?</h5>
-  <%= button_to 'Select Options', refine_path, method: :get %>
-</div>
+
 <div class="home-survey">
   <h5>Want input from a group?</h5>
 
-  <%= button_to 'Survey them!', group_roulette_path, method: :get, :onclick => "WriteCookie();" %>
+  <%= button_to 'Survey them!', group_roulette_path, method: :get, :onclick => "WriteCookie();", class: 'button' %>
 </div>

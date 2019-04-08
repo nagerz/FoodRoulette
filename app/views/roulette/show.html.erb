@@ -10,5 +10,5 @@
                                                                          user_address: cookies[:manual_location],
                                                                          user_lat_long: cookies[:lat_long],
                                                                          user_id: current_user.id,
-                                                                         restaurant_id: restaurant.database_id  } %>
-<%= button_to 'Roulette Again', roulette_path, method: :get %>
+                                                                         restaurant_id: restaurant.database_id  }, class: 'button'%>
+<%= button_to 'Roulette Again', roulette_path, method: :get, class: 'button' %>
