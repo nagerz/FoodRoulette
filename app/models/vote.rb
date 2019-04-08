@@ -1,5 +1,4 @@
 class Vote < ApplicationRecord
-  after_create_commit {VoteBroadcastJob.perform_later self}
   belongs_to :survey
   belongs_to :survey_restaurant
   belongs_to :phone_number
