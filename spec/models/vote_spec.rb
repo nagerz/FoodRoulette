@@ -32,7 +32,7 @@ describe Vote, type: :model do
     end
 
     it ".valid_response?" do
-      expect(Vote.valid_response?("1")).to eq(true)
+      expect(valid_response?("1")).to eq(true)
       expect(Vote.valid_response?("2")).to eq(true)
       expect(Vote.valid_response?("3")).to eq(true)
       expect(Vote.valid_response?("4")).to eq(false)
