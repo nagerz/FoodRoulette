@@ -18,6 +18,7 @@ require 'rails_helper'
       expect(User.first.restaurants.count).to eq(0)
 
       click_button 'Take Me There!'
+    
       expect(current_url[0..30]).to eq('https://www.google.com/maps/dir')
 
       expect(User.first.visits.count).to eq(1)

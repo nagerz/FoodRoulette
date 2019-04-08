@@ -6,9 +6,10 @@ class Vote < ApplicationRecord
 
   def self.create_vote(phone_number_string, response)
     if valid_response?(response)
+      response = response.to_i
       phone_number = PhoneNumber.find_by(digits: phone_number_string)
       survey = phone_number.survey
-      if survey.unique_vote?(phone_number)
+      if survey.unique_vote?(phone_number_string)
         survey_restaurant = survey.find_survey_restaurant(response)
         if survey.active?
           vote = Vote.new(phone_number: phone_number, survey: survey, survey_restaurant: survey_restaurant)
@@ -18,7 +19,6 @@ class Vote < ApplicationRecord
           end
         end
       end
-    #Vote.last
     else
       send_invalid_response_text(phone_number_string, response)
     end
@@ -29,7 +29,10 @@ class Vote < ApplicationRecord
     if response.empty? || response.length != 1 || !response.to_i.between?(1,3)
       false
     else
-      response.to_i
+      true
     end
+  end
+
+  def self.send_invalid_response_text(phone_number_string, response)
   end
 end

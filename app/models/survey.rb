@@ -9,8 +9,8 @@ class Survey < ApplicationRecord
 
   enum status: %i[active inactive]
 
-  def unique_vote?(phone_number)
-    Vote.joins(:phone_number).where(survey: self.id, phone_numbers: {digits: phone_number}).empty?
+  def unique_vote?(phone_number_digits)
+    Vote.joins(:phone_number).where(survey: self.id, phone_numbers: {digits: phone_number_digits}).empty?
   end
 
   def find_survey_restaurant(response)

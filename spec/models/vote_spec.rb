@@ -25,14 +25,14 @@ describe Vote, type: :model do
       expect(invalid_response).to eq(nil)
 
       unique_vote = Vote.create_vote("+15556667777", "2")
-      expect(duplicate_vote).to be_a(Vote)
-      expect(duplicate_vote.survey_restaurant).to eq(@survey_restaurant2)
-      expect(duplicate_vote.survey).to eq(@survey1)
-      expect(duplicate_vote.phone_number).to eq(@phone_number2)
+      expect(unique_vote).to be_a(Vote)
+      expect(unique_vote.survey_restaurant).to eq(@survey_restaurant2)
+      expect(unique_vote.survey).to eq(@survey1)
+      expect(unique_vote.phone_number).to eq(@phone_number2)
     end
 
     it ".valid_response?" do
-      expect(valid_response?("1")).to eq(true)
+      expect(Vote.valid_response?("1")).to eq(true)
       expect(Vote.valid_response?("2")).to eq(true)
       expect(Vote.valid_response?("3")).to eq(true)
       expect(Vote.valid_response?("4")).to eq(false)
