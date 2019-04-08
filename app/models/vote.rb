@@ -12,6 +12,7 @@ class Vote < ApplicationRecord
           vote = Vote.new(phone_number: phone_number, survey: survey, survey_restaurant: survey_restaurant)
           if vote.save
             survey.check_end_survey
+            vote
           end
         end
       end
@@ -19,6 +20,7 @@ class Vote < ApplicationRecord
     else
       send_invalid_response_text(phone_number_string, response)
     end
+
   end
 
   def valid_response?(response)
