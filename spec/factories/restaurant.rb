@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :restaurant do
     sequence(:yelp_id) { |n| "yelp_id_#{n}" }
-    name { "Resto Name" }
+    sequence(:name) { |n| "Resto Name_#{n}" }
     address_1  { "123 Address St." }
     price { "$$" }
     category_1 { "Spanish" }

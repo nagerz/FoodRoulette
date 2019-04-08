@@ -46,6 +46,13 @@ def stub_get_json(url, filename)
     .to_return(status: 200, body: json_response)
 end
 
+def stub_post_json(url, filename)
+  json_response = File.open("./spec/fixtures/#{filename}")
+
+  stub_request(:post, url)
+    .to_return(status: 200, body: json_response)
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
