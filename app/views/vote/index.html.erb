@@ -1,0 +1,15 @@
+<h1>Dining option for <%= facade.event %><h1>
+<h1>Vote for your choice!<h1>
+
+<% facade.survey_restaurants.each do |survey_restaurant| %>
+  <section class='survey-restaurant'>
+    <section class='survey-restaurant-<%= survey_restaurant.id %>'>
+      <p><%= survey_restaurant.restaurant.name %></p>
+
+      <%= button_to 'Vote for this', survey_path(facade), method: :patch,
+          params: { phone: facade.user_phone_number,
+                    restaurant_code: survey_restaurant,
+                   } %>
+    </section>
+  </section>
+<% end %>

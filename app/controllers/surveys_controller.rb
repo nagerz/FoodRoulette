@@ -40,7 +40,7 @@ class SurveysController < ApplicationController
          @survey.survey_restaurants.create(restaurant: restaurant)
        end
 
-       redirect_to survey_path(@survey)
+       redirect_to vote_path(survey: @survey)
        flash[:success] = "Your survey has been sent!"
      else
        redirect_to root_path
