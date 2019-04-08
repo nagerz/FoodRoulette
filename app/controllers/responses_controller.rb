@@ -6,7 +6,6 @@ class ResponsesController < ApplicationController
     from_number = params["From"]
 
     create_vote(from_number, message_body)
-    vote = Vote.new( voter: from_number)
 
     TwilioTextMessenger.new.send_vote_receipt
   end
