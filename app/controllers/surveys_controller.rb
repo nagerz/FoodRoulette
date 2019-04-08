@@ -1,87 +1,89 @@
 class SurveysController < ApplicationController
 
-  def show
-    survey = Survey.find(params[:id])
+   def show
+     survey = Survey.find(params[:id])
 
-    render locals: {
-      facade: SurveyFacade.new(survey)
-    }
-  end
+     render locals: {
+       facade: SurveyFacade.new(survey)
+     }
+   end
 
-  def new
-    @survey = Survey.new
-    @restaurant_1 = params["restaurant_1"]
-    @restaurant_2 = params["restaurant_2"]
-    @restaurant_3 = params["restaurant_3"]
-  end
+   def new
+     @survey = Survey.new
+     @restaurant_1 = params["restaurant_1"]
+     @restaurant_2 = params["restaurant_2"]
+     @restaurant_3 = params["restaurant_3"]
+   end
 
-  def create
-    data = { }
-    data[:sender] = survey_params[:sender]
-    data[:phone_numbers] = survey_params[:phone_numbers]
-    data[:event] = survey_params[:event]
-    data[:date_time] = survey_params[:date_time]
-    data[:restaurant_1] = survey_params[:restaurant_1]
-    data[:restaurant_2] = survey_params[:restaurant_2]
-    data[:restaurant_3] = survey_params[:restaurant_3]
-<<<<<<< HEAD
-    restaurant_names = [survey_params[:restaurant_1], survey_params[:restaurant_2], survey_params[:restaurant_3]]
-    TwilioTextMessenger.new(data).send_survey
-=======
+   def create
+     data = { }
+     data[:sender] = survey_params[:sender]
+     data[:phone_numbers] = survey_params[:phone_numbers]
+     data[:event] = survey_params[:event]
+     data[:date_time] = survey_params[:date_time]
+     data[:restaurant_1] = survey_params[:restaurant_1]
+     data[:restaurant_2] = survey_params[:restaurant_2]
+     data[:restaurant_3] = survey_params[:restaurant_3]
+     restaurant_names = [survey_params[:restaurant_1], survey_params[:restaurant_2], survey_params[:restaurant_3]]
 
-    TwilioTextMessenger.new.send_survey(data)
->>>>>>> master
+     TwilioTextMessenger.new.send_survey(data)
 
-    @survey = Survey.new(user_id: current_user.id, phone_numbers: survey_params[:phone_numbers])
-    if @survey.save
-      restaurant_names.each do |restaurant_name|
-        restaurant = Restaurant.find_by(name: restaurant_name)
-        @survey.survey_restaurants.create(restaurant: restaurant)
-      end
-      redirect_to survey_path(@survey)
-      flash[:success] = "Your survey has been sent!"
-    else
-      redirect_to root_path
-      flash[:alert] = "We're sorry. You're survey could not be sent at this time."
-    end
-  end
+     @survey = Survey.new(user_id: current_user.id)
 
-  def update
-    survey = Survey.find(params[:id])
+     if @survey.save
+       survey_params[:phone_numbers].split(/\s*,\s*/).each do |number|
+         PhoneNumber.create(digits: number, survey: @survey)
+       end
 
-    if survey.active?
-      ##check non-repeated phone number first
-      survey_restaurant = SurveyRestaurant.find(params[:restaurant])
-      votes = survey_restaurant.votes += 1
-      survey_restaurant.update_attribute(:votes, votes)
+       restaurant_names.each do |restaurant_name|
+         restaurant = Restaurant.find_by(name: restaurant_name)
+         @survey.survey_restaurants.create(restaurant: restaurant)
+       end
 
-      numbers_sent = survey.phone_numbers.split(",").count
-      survey.numbers_received << params[:phone]
-      if survey.numbers_received.count = numbers_sent
-        redirect_to end_survey_path(survey)
-      end
-    else
-      redirect_to survey_path(survey)
-    end
-  end
+       redirect_to survey_path(@survey)
+       flash[:success] = "Your survey has been sent!"
+     else
+       redirect_to root_path
+       flash[:alert] = "We're sorry. You're survey could not be sent at this time."
+     end
+   end
 
-  def end
-    survey = Survey.find(params[:id])
+   def update
+     survey = Survey.find(params[:id])
 
-    end_survey(survey)
-    redirect_to survey_path(survey)
-  end
+     if survey.active?
+       ##check non-repeated phone number first
+       survey_restaurant = SurveyRestaurant.find(params[:restaurant])
+       votes = survey_restaurant.votes += 1
+       survey_restaurant.update_attribute(:votes, votes)
 
-  private
+       numbers_sent = survey.phone_numbers.split(",").count
+       survey.numbers_received << params[:phone]
+       if survey.numbers_received.count = numbers_sent
+         redirect_to end_survey_path(survey)
+       end
+     else
+       redirect_to survey_path(survey)
+     end
+   end
 
-  def survey_params
-    params.require(:survey).permit(:sender, :phone_numbers, :restaurant_1, :restaurant_2, :restaurant_3, :event, :date_time)
-  end
+   def end
+     survey = Survey.find(params[:id])
 
-  def end_survey(survey)
-    survey.update_attribute(:status, 1)
+     end_survey(survey)
+     redirect_to survey_path(survey)
+   end
 
-    ##tally rank
-    ##close channel?
-  end
+   private
+
+   def survey_params
+     params.require(:survey).permit(:sender, :phone_numbers, :restaurant_1, :restaurant_2, :restaurant_3, :event, :date_time)
+   end
+
+   def end_survey(survey)
+     survey.update_attribute(:status, 1)
+
+     ##tally rank
+     ##close channel?
+   end
 end

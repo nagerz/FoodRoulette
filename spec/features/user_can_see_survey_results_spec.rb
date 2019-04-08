@@ -11,7 +11,11 @@ describe "As a user" do
       @restaurant_3 = create(:restaurant)
       @restaurant_4 = create(:restaurant)
 
-      @survey = create(:survey, phone_numbers: "num1, num2, num3")
+      @survey = create(:survey)
+
+      @phone_1 = create(:phone_number, survey: @survey)
+      @phone_2 = create(:phone_number, survey: @survey)
+      @phone_3 = create(:phone_number, survey: @survey)
 
       @sr_1 = @survey.survey_restaurants.create(restaurant: @restaurant_1)
       @sr_2 = @survey.survey_restaurants.create(restaurant: @restaurant_2)
