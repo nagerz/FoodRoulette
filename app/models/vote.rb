@@ -18,14 +18,14 @@ class Vote < ApplicationRecord
           end
         end
       end
-    Vote.last
+    #Vote.last
     else
       send_invalid_response_text(phone_number_string, response)
     end
 
   end
 
-  def valid_response?(response)
+  def self.valid_response?(response)
     if response.empty? || response.length != 1 || !response.to_i.between?(1,3)
       false
     else
