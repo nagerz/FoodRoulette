@@ -10,22 +10,31 @@ RSpec.describe Survey, type: :model do
   describe "instance methods" do
     before :each do
       @user = create(:user)
-      @survey = create(:survey, user: @user, status: 0)
+      @survey1 = create(:survey, user: @user, status: 0)
+      @survey2 = create(:survey, user: @user, status: 0)
       @restaurant1 = create(:restaurant)
       @restaurant2 = create(:restaurant)
       @restaurant3 = create(:restaurant)
-      @survey_restaurant1 = create(:survey_restaurant, survey: @survey, restaurant: @restaurant1)
-      @survey_restaurant2 = create(:survey_restaurant, survey: @survey, restaurant: @restaurant2)
-      @survey_restaurant3 = create(:survey_restaurant, survey: @survey, restaurant: @restaurant3)
-      @phone_number = create(:phone_number, digits: "+12223334444", survey: @survey)
-      @vote = create(:vote, survey: @survey, phone_number: @phone_number, survey_restaurant: @survey_restaurant1)
+      @survey_restaurant1 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant1)
+      @survey_restaurant2 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant2)
+      @survey_restaurant3 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant3)
+      @survey_restaurant4 = create(:survey_restaurant, survey: @survey2, restaurant: @restaurant1)
+      @survey_restaurant5 = create(:survey_restaurant, survey: @survey2, restaurant: @restaurant2)
+      @survey_restaurant6 = create(:survey_restaurant, survey: @survey2, restaurant: @restaurant3)
+      @phone_number1 = create(:phone_number, digits: "+12223334444", survey: @survey1)
+      @phone_number2 = create(:phone_number, digits: "+15556667777", survey: @survey1)
+      @phone_number3 = create(:phone_number, digits: "+12223334444", survey: @survey2)
+      @phone_number4 = create(:phone_number, digits: "+15556667777", survey: @survey2)
+      @vote1 = create(:vote, survey: @survey1, phone_number: @phone_number1, survey_restaurant: @survey_restaurant1)
+      @vote2 = create(:vote, survey: @survey2, phone_number: @phone_number3, survey_restaurant: @survey_restaurant5)
+      @vote3 = create(:vote, survey: @survey2, phone_number: @phone_number4, survey_restaurant: @survey_restaurant5)
       @active_survey = create(:survey, user: @user, status: 0)
       @inactive_survey = create(:survey, user: @user, status: 1)
     end
 
     it "#unique_vote?" do
-      expect(@survey.unique_vote?("+12223334444")).to eq(false)
-      expect(@survey.unique_vote?("+15556667777")).to eq(true)
+      expect(@survey1.unique_vote?("+12223334444")).to eq(false)
+      expect(@survey1.unique_vote?("+15556667777")).to eq(true)
     end
 
     it "#active?" do
@@ -34,9 +43,14 @@ RSpec.describe Survey, type: :model do
     end
 
     it "#find_survey_restaurant" do
-      expect(@survey.find_survey_restaurant("3")).to eq(@survey_restaurant3)
-      expect(@survey.find_survey_restaurant("1")).to eq(@survey_restaurant1)
-      expect(@survey.find_survey_restaurant("2")).to eq(@survey_restaurant2)
+      expect(@survey1.find_survey_restaurant("3")).to eq(@survey_restaurant3)
+      expect(@survey1.find_survey_restaurant("1")).to eq(@survey_restaurant1)
+      expect(@survey1.find_survey_restaurant("2")).to eq(@survey_restaurant2)
+    end
+
+    it "#check_end_survey" do
+      expect(@survey1.check_end_survey)
+
     end
   end
 
