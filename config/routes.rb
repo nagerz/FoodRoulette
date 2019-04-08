@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   resources :responses, only: [:create]
 
   get '/profile', to: 'users#show'
+
+  get '/vote', to: 'vote#index'
   # mount ActionCable.server => '/cable'
 end
