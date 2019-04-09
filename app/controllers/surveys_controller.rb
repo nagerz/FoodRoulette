@@ -53,7 +53,7 @@ class SurveysController < ApplicationController
     Vote.create_vote(params[:phone], params[:restaurant_code], survey)
     redirect_to survey_path(survey)
 
-    flash[:alert] = "Your vote has been cast" unless params[:phone]
+    flash[:success] = "Your vote has been cast" unless params[:phone]
   end
 
   def vote
