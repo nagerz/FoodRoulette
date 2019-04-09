@@ -16,6 +16,15 @@
   </head>
 
   <body>
+    <% if controller_name == "home" || controller_name == "login" %>
+      <section class="home-logo">
+        <%= image_tag('logo.png', class: "home-logo-1", alt: "Roulette Logo") %>
+        <%= image_tag('logo-3.png', class: "home-logo-2", alt: "Roulette Logo 2") %>
+      </section>
+    <% else %>
+      <%= render 'partials/nav' %>
+    <% end %>
+
     <%= yield %>
   </body>
 
