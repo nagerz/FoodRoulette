@@ -13,4 +13,7 @@ class SurveyFacade < SimpleDelegator
     end
   end
 
+  def user_phone_number
+  end
+
 end
