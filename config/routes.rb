@@ -22,5 +22,11 @@ Rails.application.routes.draw do
 
   get '/about', to: 'about#show'
 
+  namespace :api do
+    namespace :v1 do
+      resources :surveys, only: :show do
+      end
+    end
+  end
   # mount ActionCable.server => '/cable'
 end
