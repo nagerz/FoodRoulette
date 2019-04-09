@@ -1,7 +1,7 @@
 @import 'bootstrap';
 
 body {
-  background-color: #56004C;
+  background-color: #75DBCD;
   font-family: 'Montserrat', sans-serif;
 
 }
@@ -17,7 +17,7 @@ body {
 }
 
 .location-form-padding {
-  background-color: #75DBCD;
+  background-color: #D8F793;
   border-radius: 29px;
   margin-left: 300px;
   margin-right: 300px;
@@ -49,13 +49,21 @@ body {
   display: inline;
   font-size: 30px;
   font-weight: bold;
-  color: #D8F793;
+  color: #56004C;
   margin: 20px
 }
 
 #home-button {
   margin: 20px;
   font-size: 22px;
+}
+
+
+#login-button {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: #FF6B35;
 }
 
 .button {
