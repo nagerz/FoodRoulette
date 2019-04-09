@@ -1,5 +1,4 @@
 class SurveysController < ApplicationController
-
   def show
    survey = Survey.find(params[:id])
 
@@ -51,16 +50,27 @@ class SurveysController < ApplicationController
   def update
     survey = Survey.find(params[:id])
 
-    Vote.create_vote(params[:phone], params[:restaurant_code])
+    Vote.create_vote(params[:phone], params[:restaurant_code], survey)
     redirect_to survey_path(survey)
+
+    flash[:success] = "Your vote has been cast" unless params[:phone]
   end
 
   def vote
     survey = Survey.find(params[:id])
 
-    render locals: {
-      facade: SurveyFacade.new(survey)
-    }
+    if current_user != survey.user
+      four_oh_four
+    else
+      if valid_user_vote?(survey)
+      render locals: {
+        facade: SurveyFacade.new(survey)
+      }
+      else
+        redirect_to survey_path(survey)
+        flash[:alert] = "You already voted!"
+      end
+    end
   end
 
   def end
@@ -69,7 +79,7 @@ class SurveysController < ApplicationController
     survey.end_survey
 
     redirect_to survey_path(survey)
-    flash[:alert] = "You have ended th survey."
+    flash[:alert] = "You have ended the survey."
   end
 
   def cancel
@@ -85,6 +95,10 @@ class SurveysController < ApplicationController
 
    def survey_params
      params.require(:survey).permit(:sender, :phone_numbers, :restaurant_1, :restaurant_2, :restaurant_3, :event, :date_time)
+   end
+
+   def valid_user_vote?(survey)
+     Vote.joins(:survey).where(survey: [survey, {user: current_user}]).empty?
    end
 
 end

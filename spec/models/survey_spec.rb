@@ -28,6 +28,7 @@ RSpec.describe Survey, type: :model do
       @vote1 = create(:vote, survey: @survey1, phone_number: @phone_number1, survey_restaurant: @survey_restaurant1)
       @vote2 = create(:vote, survey: @survey2, phone_number: @phone_number3, survey_restaurant: @survey_restaurant5)
       @vote3 = create(:vote, survey: @survey2, phone_number: @phone_number4, survey_restaurant: @survey_restaurant5)
+      @vote4 = create(:vote, survey: @survey2, survey_restaurant: @survey_restaurant6)
       @active_survey = create(:survey, user: @user, status: 0)
       @inactive_survey = create(:survey, user: @user, status: 1)
     end

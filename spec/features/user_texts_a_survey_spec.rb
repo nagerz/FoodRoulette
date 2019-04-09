@@ -38,7 +38,6 @@ describe "As a user" do
       expect(SurveyRestaurant.count).to eq(3)
 
       expect(survey.survey_restaurants.count).to eq(3)
-      expect(survey.phone_numbers.count).to eq(2)
 
       expected_rest_ids = []
       survey.survey_restaurants.each do |restaurant|
@@ -48,14 +47,6 @@ describe "As a user" do
       expect(expected_rest_ids).to include(Restaurant.first.id)
       expect(expected_rest_ids).to include(Restaurant.second.id)
       expect(expected_rest_ids).to include(Restaurant.third.id)
-
-      expected_phones = []
-      survey.phone_numbers.each do |phone|
-        expected_phones << phone.digits
-      end
-
-      expect(expected_phones).to include("+19097540068")
-      expect(expected_phones).to include("+17155740144")
 
       expect(page).to have_content("Your survey has been sent!")
     end

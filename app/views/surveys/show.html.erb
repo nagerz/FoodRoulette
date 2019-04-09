@@ -1,21 +1,41 @@
-<h1>Survey results! Watch them roll in...<h1>
+<% if facade.active? %>
+  <h1>Survey results! Watch them roll in...<h1>
+<% else %>
+  <h1>Survey results!<h1>
+<% end %>
 
 <h3>Survey status: <%= facade.status %></h3>
 
 <p>Total Votes Received: <%= facade.votes.count %></p>
+
+<% if facade.inactive? %>
+  <% if facade.winner %>
+    <h3><%= facade.winner.name %> received the most votes</h3>
+    <section class="survey-complete-buttons">
+      <%= button_to 'Accept and Notify Group', survey_path(facade), method: :get %>
+      <%= button_to 'Take Me There!', directions_path, method: :get, params: { restaurant_address: facade.winner.address_1,
+                                                                             user_address: cookies[:manual_location],
+                                                                             user_lat_long: cookies[:lat_long],
+                                                                             user_id: current_user.id,
+                                                                             restaurant_id: facade.winner.id  } %>
+      <%= button_to 'Start Another Survey', group_roulette_path, method: :get %>
+    </section>
+  <% else %>
+    <h3>No votes were received.</h3>
+  <% end %>
+<% end %>
+
+
 
 <% facade.survey_restaurants.each do |survey_restaurant| %>
   <section class='survey-restaurant'>
     <section class='survey-restaurant-<%= survey_restaurant.id %>'>
       <p><%= survey_restaurant.restaurant.name %></p>
       <p>Votes received: <%= survey_restaurant.votes.count %>
-
-      <%= button_to 'Vote for this', survey_path(facade), method: :patch,
-          params: { phone: "+12223334444",
-                    restaurant_code: (facade.survey_restaurants.index(survey_restaurant) + 1).to_s,
-                   } %>
     </section>
   </section>
 <% end %>
 
-<%= button_to 'End Survey Now', end_survey_path(facade), method: :post %>
+<% if facade.active? %>
+  <%= button_to 'End Survey Now', end_survey_path(facade), method: :post %>
+<% end %>
