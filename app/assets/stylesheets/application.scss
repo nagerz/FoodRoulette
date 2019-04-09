@@ -1,1 +1,88 @@
 @import 'bootstrap';
+
+body {
+  background-color: #75DBCD;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.home-header-logo-1 {
+  margin-left: 450px;
+  margin-top: 150px;
+  align-items: center;
+}
+
+.home-header-logo-2 {
+  margin-top: 150px;
+}
+
+.location-form-padding {
+  background-color: #D8F793;
+  border-radius: 29px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 20px;
+}
+
+#location-search{
+  border-radius: 29px;
+  padding: 9px;
+  margin-left: 33px;
+  margin-right: 33px;
+  font-size: 20px;
+  line-height: 24px;
+  width: 1000px;
+  text-align: center;
+  align-items: center;
+}
+
+.home-buttons {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin: 50px;
+  margin-left: 200px
+}
+
+#home-question {
+  display: inline;
+  font-size: 30px;
+  font-weight: bold;
+  color: #56004C;
+  margin: 20px
+}
+
+#home-button {
+  margin: 20px;
+  font-size: 22px;
+}
+
+
+#login-button {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: #FF6B35;
+}
+
+.button {
+    font-weight: 700;
+    text-decoration: none;
+    padding: 20px 60px;
+    min-width: 120px;
+    color: #fff;
+    background-color: #FF6B35;
+    font-size: 16px;
+    border-radius: 29px;
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    max-width: 340px;
+    margin: 0 auto;
+}
