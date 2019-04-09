@@ -18,7 +18,7 @@ class SurveysController < ApplicationController
    def create
      data = { }
      data[:sender] = survey_params[:sender]
-     data[:phone_numbers] = survey_params[:phone_numbers]
+     data[:phone_numbers] = parse_phone_numbers(survey_params[:phone_numbers])
      data[:event] = survey_params[:event]
      data[:date_time] = survey_params[:date_time]
      data[:restaurant_1] = survey_params[:restaurant_1]
@@ -31,7 +31,7 @@ class SurveysController < ApplicationController
      @survey = Survey.new(user_id: current_user.id)
 
      if @survey.save
-       survey_params[:phone_numbers].split(/\s*,\s*/).each do |number|
+       data[:phone_numbers].each do |number|
          PhoneNumber.create(digits: number, survey: @survey)
        end
 
@@ -57,8 +57,12 @@ class SurveysController < ApplicationController
 
    private
 
-   def survey_params
-     params.require(:survey).permit(:sender, :phone_numbers, :restaurant_1, :restaurant_2, :restaurant_3, :event, :date_time)
-   end
+  def survey_params
+    params.require(:survey).permit(:sender, :phone_numbers, :restaurant_1, :restaurant_2, :restaurant_3, :event, :date_time)
+  end
 
+  def parse_phone_numbers(phone_numbers)
+    numbers = phone_numbers.split(/\s*,\s*/)
+    numbers.map { |number| "+1" + number}
+  end
 end

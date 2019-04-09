@@ -40,7 +40,7 @@ RSpec.feature 'Navigation bar' do
         expect(current_path).to eq(root_path)
       end
 
-      xit 'I can navigate to my profile' do
+      it 'I can navigate to my profile' do
         visit root_path
 
         click_on 'Profile'
@@ -48,7 +48,7 @@ RSpec.feature 'Navigation bar' do
         expect(current_path).to eq(profile_path)
       end
 
-      xit 'I can navigate to the about page' do
+      it 'I can navigate to the about page' do
         visit root_path
 
         click_on 'About'
