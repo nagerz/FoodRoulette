@@ -1,12 +1,12 @@
 class DirectionsController < ApplicationController
   def show
-    if params[:user_lat_long]
-      save_restaurant_visit(params[:user_id], params[:restaurant_id], params[:user_lat_long])
-      directions = create_directions_url(params[:user_lat_long], params[:restaurant_address])
-      redirect_to directions
-    elsif params[:user_address]
+    if params[:user_address] && params[:user_address] != ''
       save_restaurant_visit(params[:user_id], params[:restaurant_id], params[:user_address])
       directions = create_directions_url(params[:user_address], params[:restaurant_address])
+      redirect_to directions
+    elsif params[:user_lat_long]
+      save_restaurant_visit(params[:user_id], params[:restaurant_id], params[:user_lat_long])
+      directions = create_directions_url(params[:user_lat_long], params[:restaurant_address])
       redirect_to directions
     end
   end
