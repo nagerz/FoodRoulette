@@ -16,11 +16,13 @@
   </head>
 
   <body>
-    <% if controller_name == "home" || controller_name == "login" %>
+    <% if (controller_name == 'home' || controller_name == 'login') && current_user.nil? %>
       <section class="home-logo">
         <%= image_tag('logo.png', class: "home-logo-1", alt: "Roulette Logo") %>
         <%= image_tag('logo-3.png', class: "home-logo-2", alt: "Roulette Logo 2") %>
       </section>
+    <% elsif controller_name == "home" && !current_user.nil? %>
+      <%= render 'partials/nav' %>
     <% else %>
       <%= render 'partials/nav' %>
     <% end %>
