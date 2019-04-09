@@ -1,4 +1,4 @@
 class PhoneNumber < ApplicationRecord
   belongs_to :survey
-  belongs_to :vote
+  has_one :vote
 end

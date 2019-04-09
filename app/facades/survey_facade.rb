@@ -13,7 +13,8 @@ class SurveyFacade < SimpleDelegator
     end
   end
 
-  def user_phone_number
+  def winner
+    @survey.winner
   end
 
 end

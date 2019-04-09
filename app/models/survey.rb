@@ -19,14 +19,24 @@ class Survey < ApplicationRecord
   end
 
   def check_end_survey
-    if votes.count == phone_numbers.count
+    if votes.count == phone_numbers.count + 1
       end_survey
     end
   end
 
   def end_survey
     update_attribute(:status, 1)
+
+    #TwilioTextMessenger.new.send_survey_result(self.id)
     #close channel?
+  end
+
+  def winner
+    survey_restaurants.joins(:votes)
+        .group('survey_restaurants.id')
+        .select("survey_restaurants.*, count(votes.id) as vote_count")
+        .order("vote_count desc")
+        .first.restaurant
   end
 
 end

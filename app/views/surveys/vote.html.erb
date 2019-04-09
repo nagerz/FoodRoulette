@@ -4,12 +4,6 @@
   <section class='survey-restaurant'>
     <section class='survey-restaurant-<%= survey_restaurant.id %>'>
       <p><%= survey_restaurant.restaurant.name %></p>
-
-      <%# <%= button_to 'Vote for this', survey_path(facade), method: :patch,
-          params: { phone: "+12223334444",
-                    restaurant_code: (facade.survey_restaurants.index(survey_restaurant) + 1).to_s,
-                   } %> %>
-
       <%= button_to 'Vote for this', survey_path(facade), method: :patch,
           params: {
                     restaurant_code: survey_restaurant

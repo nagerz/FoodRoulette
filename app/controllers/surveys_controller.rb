@@ -77,7 +77,7 @@ class SurveysController < ApplicationController
     survey.end_survey
 
     redirect_to survey_path(survey)
-    flash[:alert] = "You have ended th survey."
+    flash[:alert] = "You have ended the survey."
   end
 
   def cancel

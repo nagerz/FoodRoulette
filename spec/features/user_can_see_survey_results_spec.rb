@@ -16,7 +16,8 @@ describe "As a user" do
 
       @phone_1 = create(:phone_number, survey: @survey)
       @phone_2 = create(:phone_number, survey: @survey)
-      @phone_3 = create(:phone_number, survey: @survey, digits: "+12223334444")
+      @phone_3 = create(:phone_number, survey: @survey)
+      @phone_4 = create(:phone_number, survey: @survey, digits: "+12223334444")
 
       @sr_1 = @survey.survey_restaurants.create(restaurant: @restaurant_1)
       @sr_2 = @survey.survey_restaurants.create(restaurant: @restaurant_2)
@@ -41,8 +42,6 @@ describe "As a user" do
       within(".survey-restaurant-#{@sr_1.id}") do
         expect(page).to have_content("#{@restaurant_1.name}")
         expect(page).to have_content("Votes received: 0")
-
-        expect(page).to have_button('Vote for this')
       end
 
       expect(page).to have_button('End Survey Now')
@@ -51,101 +50,70 @@ describe "As a user" do
     it "page updates with votes" do
       @vote1 = create(:vote, survey: @survey, phone_number: @phone_1, survey_restaurant: @sr_1)
       @vote2 = create(:vote, survey: @survey, phone_number: @phone_2, survey_restaurant: @sr_1)
-      #@vote5 = create(:vote, survey: @survey_2, phone_number: @phone_number1, survey_restaurant: @sr_1)
+      @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_3)
 
       visit survey_path(@survey)
 
       expect(page).to have_content("Survey status: Survey is still active")
-      expect(page).to have_content("Total Votes Received: 2")
+      expect(page).to have_content("Total Votes Received: 3")
 
       within(".survey-restaurant-#{@sr_1.id}") do
         expect(page).to have_content("Votes received: 2")
-
-        expect(page).to have_button('Vote for this')
       end
 
       within(".survey-restaurant-#{@sr_2.id}") do
         expect(page).to have_content("Votes received: 0")
-
-        expect(page).to have_button('Vote for this')
       end
 
-      # @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_2)
-      #
-      # visit survey_path(@survey)
-      #
-      # expect(current_path).to eq(survey_path(@survey))
-      #
-      # expect(page).to have_content("Survey status: Survey is Over")
-      # expect(page).to have_content("Total Votes Received: 3")
-      #
-      # within(".survey-restaurant-#{@sr_1.id}") do
-      #   expect(page).to have_content("Votes recieved: 1")
-      #
-      #   expect(page).to have_button('Vote for this')
-      # end
-      #
-      # within(".survey-restaurant-#{@sr_2.id}") do
-      #   expect(page).to have_content("Votes recieved: 1")
-      #
-      #   expect(page).to have_button('Vote for this')
-      # end
-      #
-      # expect(page).to_not have_button('End Survey Now')
+      within(".survey-restaurant-#{@sr_3.id}") do
+        expect(page).to have_content("Votes received: 1")
+      end
     end
 
-    it "I can see the survey results page after vote by button" do
+    it "I can end the survey by button", :vcr do
       @vote1 = create(:vote, survey: @survey, phone_number: @phone_1, survey_restaurant: @sr_1)
+      @vote2 = create(:vote, survey: @survey, phone_number: @phone_2, survey_restaurant: @sr_3)
+      @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_3)
 
       visit survey_path(@survey)
 
       expect(page).to have_content("Survey results! Watch them roll in...")
       expect(page).to have_content("Survey status: Survey is still active")
-      expect(page).to have_content("Total Votes Received: 1")
-
-      expect(page).to have_content("#{@restaurant_1.name}")
-      expect(page).to have_content("#{@restaurant_2.name}")
-      expect(page).to have_content("#{@restaurant_3.name}")
-      expect(page).to_not have_content("#{@restaurant_4.name}")
-
-      expect(page).to have_css('.survey-restaurant', count: 3)
+      expect(page).to have_content("Total Votes Received: 3")
 
       within(".survey-restaurant-#{@sr_1.id}") do
-        expect(page).to have_content("#{@restaurant_1.name}")
         expect(page).to have_content("Votes received: 1")
-
-        expect(page).to have_button('Vote for this')
       end
 
-      within(".survey-restaurant-#{@sr_2.id}") do
-        expect(page).to have_content("#{@restaurant_2.name}")
-        expect(page).to have_content("Votes received: 0")
-
-        expect(page).to have_button('Vote for this')
-
-        click_button('Vote for this')
-      end
-
-      expect(current_path).to eq(survey_path(@survey))
-
-      expect(page).to have_content("Survey status: Survey is still active")
-      expect(page).to have_content("Total Votes Received: 2")
-
-      within(".survey-restaurant-#{@sr_1.id}") do
-        expect(page).to have_content("#{@restaurant_1.name}")
-        expect(page).to have_content("Votes received: 1")
-
-        expect(page).to have_button('Vote for this')
-      end
-
-      within(".survey-restaurant-#{@sr_2.id}") do
-        expect(page).to have_content("#{@restaurant_2.name}")
-        expect(page).to have_content("Votes received: 1")
-
-        expect(page).to have_button('Vote for this')
+      within(".survey-restaurant-#{@sr_3.id}") do
+        expect(page).to have_content("Votes received: 2")
       end
 
       expect(page).to have_button('End Survey Now')
+
+      click_button "End Survey Now"
+
+      expect(current_path).to eq(survey_path(@survey))
+
+      expect(page).to have_content("You have ended the survey.")
+      expect(page).to have_content("Survey status: Survey is Over")
+      expect(page).to have_content("Total Votes Received: 3")
+
+      expect(page).to have_content("#{@restaurant_3.name } received the most votes")
+
+      expect(page).to have_button('Accept and Notify Group')
+      expect(page).to have_button('Take Me There!')
+      expect(page).to have_button('Start Another Survey')
+
+      within(".survey-restaurant-#{@sr_1.id}") do
+        expect(page).to have_content("Votes received: 1")
+      end
+
+      within(".survey-restaurant-#{@sr_2.id}") do
+        expect(page).to have_content("Votes received: 0")
+      end
+
+      expect(page).to_not have_button('End Survey Now')
     end
   end
 end
