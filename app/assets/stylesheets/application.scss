@@ -37,7 +37,8 @@ header .navlinks {
 }
 
 header li {
-    margin: 20px;
+  margin: 20px;
+}
 
 .home-logo-1 {
   margin-left: 25vw;
@@ -105,22 +106,22 @@ header li {
 }
 
 .button {
-    font-weight: 700;
-    text-decoration: none;
-    padding: 20px 60px;
-    min-width: 120px;
-    color: #fff;
-    background-color: #FF6B35;
-    font-size: 16px;
-    border-radius: 29px;
-    border: none;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    max-width: 340px;
-    margin: 0 auto;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 20px 60px;
+  min-width: 120px;
+  color: #fff;
+  background-color: #FF6B35;
+  font-size: 16px;
+  border-radius: 29px;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 340px;
+  margin: 0 auto;
 }
