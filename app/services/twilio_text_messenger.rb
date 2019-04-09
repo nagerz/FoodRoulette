@@ -3,7 +3,7 @@ class TwilioTextMessenger
 
   def send_survey(data)
     @sender = data[:sender]
-    @phone_numbers = data[:phone_numbers].split(/\s*,\s*/)
+    @phone_numbers = data[:phone_numbers]
     @event = data[:event]
     @date_time = data[:date_time]
     @restaurant_1 = data[:restaurant_1]
