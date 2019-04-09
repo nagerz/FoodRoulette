@@ -27,7 +27,26 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-function WriteCookie() {
+function writeCookie() {
    cookievalue = escape(document.location_form.location.value) + ";"
    document.cookie = "manual_location=" + cookievalue;
 }
+
+async function updatePage(survey_id){
+    var repeater;
+    var survey_id = $('.temp_information').data('survey-id')
+    const response = await fetch(`http://localhost:3000/api/v1/surveys/${survey_id}`, {});
+    const json = await response.json();
+    var total_votes = json.data.attributes.total_votes;
+    var restaurant_1_votes = json.data.attributes.restaurant_1_votes;
+    var restaurant_2_votes = json.data.attributes.restaurant_2_votes;
+    var restaurant_3_votes = json.data.attributes.restaurant_3_votes;
+
+    document.getElementById("total-votes").innerHTML=total_votes;
+    document.getElementById("sr1-votes").innerHTML=restaurant_1_votes;
+    document.getElementById("sr2-votes").innerHTML=restaurant_2_votes;
+    document.getElementById("sr3-votes").innerHTML=restaurant_3_votes;
+    repeater = setTimeout(updatePage, 10000);
+    };
+// total-votes
+// survey-restaurant-<%= survey_restaurant.id %>-votes

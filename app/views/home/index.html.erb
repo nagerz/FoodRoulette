@@ -2,7 +2,7 @@
   navigator.geolocation.getCurrentPosition(success, error)
 </script>
 
-<section class='home-hero'">
+<section class='home-hero'>
   <section class='home-hero-inner'>
 
     <section class="header">
@@ -30,10 +30,10 @@
 <section>
   <article class="home-buttons">
     <h5 id="home-question">Ready to eat?</h5>
-    <%= button_to 'Roulette Now', roulette_path, method: :get, :onclick => "WriteCookie();", class: 'button', id:'home-button' %>
+    <%= button_to 'Roulette Now', roulette_path, method: :get, :onclick => "writeCookie();", class: 'button', id:'home-button' %>
   </article>
   <article class="home-buttons">
     <h5 id="home-question">Picky Friends?</h5>
-    <%= button_to 'Survey them!', group_roulette_path, method: :get, :onclick => "WriteCookie();", class: 'button', id:'home-button' %>
+    <%= button_to 'Survey them!', group_roulette_path, method: :get, :onclick => "writeCookie();", class: 'button', id:'home-button' %>
   </article>
 </section>

@@ -1,3 +1,10 @@
+<%= content_tag :div, class: "temp_information", data: {survey_id: survey_id} do %>
+<% end %>
+
+<script>
+  $( document ).ready( updatePage() );
+</script>
+
 <% if facade.active? %>
   <h1>Survey results! Watch them roll in...<h1>
 <% else %>
@@ -6,7 +13,10 @@
 
 <h3>Survey status: <%= facade.status %></h3>
 
-<p>Total Votes Received: <%= facade.votes.count %></p>
+Total Votes Received: <p id="total-votes"></p>
+Restaurant 1 Votes received:<p id='sr1-votes'></p>
+Restaurant 2 Votes received:<p id='sr2-votes'></p>
+Restaurant 3 Votes received:<p id='sr3-votes'></p>
 
 <% if facade.inactive? %>
   <% if facade.winner %>
@@ -31,7 +41,6 @@
   <section class='survey-restaurant'>
     <section class='survey-restaurant-<%= survey_restaurant.id %>'>
       <p><%= survey_restaurant.restaurant.name %></p>
-      <p>Votes received: <%= survey_restaurant.votes.count %>
       <%= button_to 'Vote for this', survey_path(facade), method: :patch,
           params: { phone: "+12223334444",
                     restaurant_code: (facade.survey_restaurants.index(survey_restaurant) + 1).to_s,
@@ -39,6 +48,9 @@
     </section>
   </section>
 <% end %>
+
+
+
 
 <% if facade.active? %>
   <%= button_to 'End Survey Now', end_survey_path(facade), method: :post, class: 'button'  %>
