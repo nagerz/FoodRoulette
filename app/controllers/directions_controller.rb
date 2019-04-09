@@ -17,8 +17,8 @@ class DirectionsController < ApplicationController
     user = User.find(user_id)
     restaurant = Restaurant.find(restaurant_id)
     if location.include?('|')
-      latitude = CGI::escape(origin.split('|')[0])
-      longitude = CGI::escape(origin.split('|')[1])
+      latitude = CGI::escape(location.split('|')[0])
+      longitude = CGI::escape(location.split('|')[1])
     else
       response = service.geocode(location)
       latitude = response[:results][0][:geometry][:location][:lat]
