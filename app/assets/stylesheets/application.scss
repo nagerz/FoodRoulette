@@ -1,7 +1,61 @@
 @import 'bootstrap';
 
 body {
-  background-color: #D8F793;
+  background-color: #56004C;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.home-header-logo-1 {
+  margin-left: 450px;
+  margin-top: 150px;
+  align-items: center;
+}
+
+.home-header-logo-2 {
+  margin-top: 150px;
+}
+
+.location-form-padding {
+  background-color: #75DBCD;
+  border-radius: 29px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 20px;
+}
+
+#location-search{
+  border-radius: 29px;
+  padding: 9px;
+  margin-left: 33px;
+  margin-right: 33px;
+  font-size: 20px;
+  line-height: 24px;
+  width: 1000px;
+  text-align: center;
+  align-items: center;
+}
+
+.home-buttons {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin: 50px;
+  margin-left: 200px
+}
+
+#home-question {
+  display: inline;
+  font-size: 30px;
+  font-weight: bold;
+  color: #D8F793;
+  margin: 20px
+}
+
+#home-button {
+  margin: 20px;
+  font-size: 22px;
 }
 
 .button {
@@ -10,7 +64,7 @@ body {
     padding: 20px 60px;
     min-width: 120px;
     color: #fff;
-    background-color: #75DBCD;
+    background-color: #FF6B35;
     font-size: 16px;
     border-radius: 29px;
     border: none;
