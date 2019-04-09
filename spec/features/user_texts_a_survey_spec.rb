@@ -28,9 +28,9 @@ describe "As a user" do
 
       survey = Survey.last
 
-      expect(current_path).to eq(survey_path(survey))
+      expect(current_path).to eq(vote_path(survey))
       expect(page).to have_content("Your survey has been sent!")
-      expect(page).to have_content("Survey results! Watch them roll in...")
+      expect(page).to have_content("Vote for your choice!")
     end
 
     it "saves survey restaurants", :vcr do
