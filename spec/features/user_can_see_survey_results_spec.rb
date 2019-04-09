@@ -24,7 +24,7 @@ describe "As a user" do
       @sr_3 = @survey.survey_restaurants.create(restaurant: @restaurant_3)
     end
 
-    it "I can see the survey results page" do
+    xit "I can see the survey results page" do
 
       visit survey_path(@survey)
 
@@ -47,7 +47,7 @@ describe "As a user" do
       expect(page).to have_button('End Survey Now')
     end
 
-    it "page updates with votes" do
+    xit "page updates with votes" do
       @vote1 = create(:vote, survey: @survey, phone_number: @phone_1, survey_restaurant: @sr_1)
       @vote2 = create(:vote, survey: @survey, phone_number: @phone_2, survey_restaurant: @sr_1)
       @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_3)
@@ -70,7 +70,7 @@ describe "As a user" do
       end
     end
 
-    it "I can end the survey by button", :vcr do
+    xit "I can end the survey by button", :vcr do
       @vote1 = create(:vote, survey: @survey, phone_number: @phone_1, survey_restaurant: @sr_1)
       @vote2 = create(:vote, survey: @survey, phone_number: @phone_2, survey_restaurant: @sr_3)
       @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_3)

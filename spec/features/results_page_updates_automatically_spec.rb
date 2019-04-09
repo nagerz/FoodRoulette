@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'As a user, when I visit a survey results page' do
-  it 'the vote count for each restaurant will update without refreshing' do
+  xit 'the vote count for each restaurant will update without refreshing', :js do
     user = create(:user)
     survey = create(:survey)
     restaurant1 = create(:restaurant)
@@ -27,7 +27,7 @@ describe 'As a user, when I visit a survey results page' do
 
     create(:vote, survey: survey, survey_restaurant: sr1, phone_number: phone1)
 
-    sleep(5)
+    sleep(2)
 
     expect(page).to have_content('Total Votes Received: 1')
     expect(page).to have_content('Votes received: 1')
