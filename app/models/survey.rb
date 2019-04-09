@@ -29,14 +29,4 @@ class Survey < ApplicationRecord
     #close channel?
   end
 
-  # def tally_ranks
-#     survey_restaurants = SurveyRestaurant.joins(:votes)
-#                                          .select('survey_restaurants.*, count(votes) as restaurant_votes')
-#                                          .group(:id)
-#                                          .order("restaurant_votes desc")
-# binding.pry
-#     survey_restaurants.each do |survey_restaurant|
-#       rank = survey_restaurants.index(survey_restaurant) + 1
-#       survey_restaurant.update_attribute(:rank, rank)
-    # end
 end

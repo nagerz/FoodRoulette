@@ -11,11 +11,6 @@ describe "As a user" do
       @sr1 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant1)
       @sr2 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant2)
       @sr3 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant3)
-      @phone_number1 = create(:phone_number, digits: "+12223334444", survey: @survey1)
-      @phone_number2 = create(:phone_number, digits: "+13334445555", survey: @survey1)
-      @phone_number3 = create(:phone_number, digits: "+14445556666", survey: @survey1)
-
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
       url = "https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=Denver,%20CO&open_now=true&price=1,2&radius=8000"
       filename = "survey_random_roulette_response.json"
@@ -23,6 +18,10 @@ describe "As a user" do
     end
 
     context 'As the user creator' do
+      before :each do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      end
+
       it "I see a voting page with the correct options" do
         visit vote_path(@survey1)
 
@@ -48,9 +47,9 @@ describe "As a user" do
       it "I can vote for my choice" do
         visit vote_path(@survey1)
 
-        expect(Vote.count).to eq(0)
-
         expect(current_path).to eq(vote_path(@survey1))
+
+        expect(Vote.count).to eq(0)
 
         within(".survey-restaurant-#{@sr1.id}") do
           expect(page).to have_content("#{@restaurant1.name}")
@@ -60,10 +59,10 @@ describe "As a user" do
           click_button('Vote for this')
         end
 
+        expect(current_path).to eq(survey_path(@survey1))
+
         expect(Vote.count).to eq(1)
         expect(Vote.last.survey_restaurant).to eq(@sr1)
-
-        expect(current_path).to eq(survey_path(@survey1))
 
         expect(page).to have_content("Your vote has been cast")
       end
@@ -116,6 +115,9 @@ describe "As a user" do
     end
 
     it "I get a 404 if I am not the survey creator" do
+      visit vote_path(@survey1)
+
+      expect(page).to have_content("The page you're looking for could not be found.")
     end
 
   end

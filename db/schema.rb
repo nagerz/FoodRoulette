@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_232516) do
+ActiveRecord::Schema.define(version: 2019_04_09_015334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,9 @@ ActiveRecord::Schema.define(version: 2019_04_07_232516) do
   create_table "phone_numbers", force: :cascade do |t|
     t.bigint "survey_id"
     t.string "digits"
+    t.bigint "vote_id"
     t.index ["survey_id"], name: "index_phone_numbers_on_survey_id"
+    t.index ["vote_id"], name: "index_phone_numbers_on_vote_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -92,8 +94,6 @@ ActiveRecord::Schema.define(version: 2019_04_07_232516) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "survey_restaurant_id"
-    t.bigint "phone_number_id"
-    t.index ["phone_number_id"], name: "index_votes_on_phone_number_id"
     t.index ["survey_id"], name: "index_votes_on_survey_id"
     t.index ["survey_restaurant_id"], name: "index_votes_on_survey_restaurant_id"
   end
