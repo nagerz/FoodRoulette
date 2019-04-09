@@ -13,4 +13,8 @@ class SurveyFacade < SimpleDelegator
     end
   end
 
+  def winner
+    @survey.winner
+  end
+
 end
