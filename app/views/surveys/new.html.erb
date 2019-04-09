@@ -2,8 +2,8 @@
     <%= f.label :sender, "Your Name:" %>
     <%= f.text_field :sender %><br/>
 
-    <%= f.label :phone_numbers, "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):" %>
-    <%= f.text_field :phone_numbers %><br/>
+    <%= f.label :phone_numbers, "Your Friends' Phone Numbers: 'e.g. 2223334444,5556667777'"%><br/>
+    <%= f.text_field :phone_numbers, value: " " %><br/>
 
     <%= f.label :event, "Event Name:" %>
     <%= f.text_field :event %><br/>
@@ -15,5 +15,5 @@
     <%= f.hidden_field :restaurant_2, { :value => @restaurant_2 } %>
     <%= f.hidden_field :restaurant_3, { :value => @restaurant_3 } %>
 
-    <%= f.submit "Send Text" %>
+    <p id="send"><%= f.submit "Send Text" %></p>
 <% end %>

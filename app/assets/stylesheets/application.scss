@@ -118,13 +118,24 @@ header li {
   background-color: #FF6B35;
 }
 
+input[type=submit]{
+  margin-top: 5vh;
+  text-align: center;
+  max-width: 340px;
+  color: #fff;
+  background-color: #56004C;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .button {
   font-weight: 700;
   text-decoration: none;
   padding: 20px 60px;
   min-width: 120px;
   color: #fff;
-  background-color: #FF6B35;
+  background-color: #56004C;
   font-size: 16px;
   border-radius: 29px;
   border: none;
@@ -137,4 +148,24 @@ header li {
   backdrop-filter: blur(10px);
   max-width: 340px;
   margin: 0 auto;
+}
+
+input {
+  width: 35%;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 30px;
+  min-width: 120px;
+  box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+  font-size: 16px;
+  border-radius: 29px;
+  display: block;
+}
+
+label {
+  font-size: 20px;
+  color: #56004C;
+  font-weight: bold;
+  margin-top: 3vh;
 }
