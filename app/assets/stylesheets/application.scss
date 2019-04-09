@@ -44,18 +44,25 @@ header li {
   margin-left: 25vw;
   margin-top: 20vh;
   align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-logo-2 {
   margin-top: 20vh;
+  max-width: 100%;
+  height: auto;
 }
 
 .location-form-padding {
   background-color: #D8F793;
   border-radius: 29px;
-  margin-left: 70vh;
-  margin-right: 70vh;
+  margin-left: 25vw;
+  margin-top: 5vh;
+  margin-right: 25vw;
   padding: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 #location-search{
@@ -64,9 +71,11 @@ header li {
   margin-left: 3vw;
   margin-right: 3vw;
   font-size: 20px;
-  width: 48vw;
+  width: 38vw;
   text-align: center;
   align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-buttons {
@@ -76,6 +85,8 @@ header li {
   vertical-align: top;
   margin-left: 10vw;
   margin-top: 3vw;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-buttons-1 {
@@ -96,6 +107,8 @@ header li {
   font-size: 30px;
   font-weight: bold;
   color: #56004C;
+  max-width: 100%;
+  height: auto;
 }
 
 #login-button {
