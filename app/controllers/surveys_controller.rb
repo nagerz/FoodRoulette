@@ -61,13 +61,15 @@ class SurveysController < ApplicationController
 
     if current_user != survey.user
       four_oh_four
-    elsif valid_user_vote?(survey)
+    else
+      if valid_user_vote?(survey)
       render locals: {
         facade: SurveyFacade.new(survey)
       }
-    else
-      redirect_to survey_path(survey)
-      flash[:alert] = "You already voted!"
+      else
+        redirect_to survey_path(survey)
+        flash[:alert] = "You already voted!"
+      end
     end
   end
 
