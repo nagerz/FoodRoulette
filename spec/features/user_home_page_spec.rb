@@ -19,18 +19,14 @@ RSpec.feature 'Home page' do
       expect(current_path).to eq(root_path)
 
       #I see the app’s logo
-      expect(page).to have_css(".home-header-logo")
+      expect(page).to have_css(".home-header-logo-1")
 
       #I see a button for “Roulette Now” that says in small text “Ready to eat?” above it
       expect(page).to have_content('Ready to eat?')
       expect(page).to have_button('Roulette Now')
 
-      #I see a button that says “Limit some results” with small text above it that says “A little picky?”
-      expect(page).to have_content('Something in mind?')
-      expect(page).to have_button('Select Options')
-
       #I see a button that says “Survey them!” with small text above it that says “Picky friends?”
-      expect(page).to have_content('Want input from a group?')
+      expect(page).to have_content('Picky Friends?')
       expect(page).to have_button('Survey them!')
     end
   end

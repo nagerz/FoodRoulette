@@ -13,7 +13,7 @@ class SurveysController < ApplicationController
    @restaurant_2 = params["restaurant_2"]
    @restaurant_3 = params["restaurant_3"]
   end
-  
+
   def create
    data = { }
    data[:sender] = survey_params[:sender]
@@ -30,7 +30,7 @@ class SurveysController < ApplicationController
    @survey = Survey.new(user_id: current_user.id)
 
    if @survey.save
-     survey_params[:phone_numbers].each do |number|
+     data[:phone_numbers].each do |number|
        PhoneNumber.create(digits: number, survey: @survey)
      end
 
