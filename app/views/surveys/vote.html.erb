@@ -1,4 +1,3 @@
-<h1>Dining option for <%= facade.event %><h1>
 <h1>Vote for your choice!<h1>
 
 <% facade.survey_restaurants.each do |survey_restaurant| %>
@@ -13,3 +12,5 @@
     </section>
   </section>
 <% end %>
+
+<%= button_to 'Cancel Survey', cancel_survey_path(facade), method: :post %>

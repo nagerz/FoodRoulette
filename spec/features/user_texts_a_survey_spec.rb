@@ -32,7 +32,7 @@ describe "As a user" do
 
       survey = Survey.last
 
-      expect(current_path).to eq(vote_path)
+      expect(current_path).to eq(vote_path(survey))
 
       expect(Survey.count).to eq(1)
       expect(SurveyRestaurant.count).to eq(3)
