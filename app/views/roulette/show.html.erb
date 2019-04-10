@@ -1,5 +1,9 @@
-<li class="name">Name: <%= restaurant.name %></li>
-<li class="address">Address: <%= restaurant.address %></li>
+<div id="map_wrapper">
+    <div id="map_canvas" class="mapping"></div>
+</div>
+
+<li class="name" id="name"><%= restaurant.name %></li>
+<li class="address" id="address"><%= restaurant.address %></li>
 <li class="price_range">Price Range: <%= restaurant.price_range %></li>
 <li class="cuisine">Cuisine: <%= restaurant.cuisine %></li>
 <li class="rating">Rating: <%= restaurant.rating %></li>
@@ -12,3 +16,102 @@
                                                                          user_id: current_user.id,
                                                                          restaurant_id: restaurant.database_id  }, class: 'button'%>
 <%= button_to 'Roulette Again', roulette_path, method: :get, class: 'button' %>
+
+<body style='border:0; margin: 0'>
+    <div id='map' style='width: 100%; height:530px;'></div>
+</body>
+
+
+ <!-- </script>
+
+ <script type="text/javascript">
+   window.onload = function() {
+      var name_1 = document.getElementById('name').innerHTML;
+      var address_1 = document.getElementById('address').innerHTML;
+
+      var addresses = [
+      [name_1, address_1],
+      ["7C6B38",-41.30269,173.63696],
+      ["7C6CA1",-41.49413,173.5421],
+      ["7C6CA2",-40.98585,174.50659],
+      ["C81D9D",-40.93163,173.81726],
+      ["C82009",-41.5183,174.78081],
+      ["C82081",-41.42079,173.5783],
+      ["C820AB",-42.08414,173.96632],
+      ["C820B6",-41.51285,173.53274]
+      ];
+
+      var map = L.map('map', {
+          layers: MQ.mapLayer()
+      });
+
+      MQ.geocode({ map: map })
+          .search(address);
+
+      for (var i = 0; i < addresses.length; i++) {
+        marker = new L.marker([addresses[i][1],planes[i][2]])
+        .bindPopup(planes[i][0])
+        .addTo(map);
+      }
+   }
+
+
+
+
+    var map = L.map('map').setView([-41.3058, 174.82082], 8);
+    mapLink =
+        '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    L.tileLayer(
+        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; ' + mapLink + ' Contributors',
+        maxZoom: 18,
+        }).addTo(map);
+
+
+
+</script> -->
+
+<script>
+
+  var name_1 = document.getElementById('name').innerHTML;
+  var address_1 = document.getElementById('address').innerHTML;
+
+  var addresses = [
+  [name_1, address_1],
+  ["name_2", "309 N Mead St Wichita, KS 67202"]
+  ];
+
+	var planes = [
+		["7C6B07",-40.99497,174.50808],
+		["7C6B38",-41.30269,173.63696],
+		["7C6CA1",-41.49413,173.5421],
+		["7C6CA2",-40.98585,174.50659],
+		["C81D9D",-40.93163,173.81726],
+		["C82009",-41.5183,174.78081],
+		["C82081",-41.42079,173.5783],
+		["C820AB",-42.08414,173.96632],
+		["C820B6",-41.51285,173.53274]
+		];
+
+    for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+        var map = L.map('map').setView([-41.3058, 174.82082], 8);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([address[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+    </script>
