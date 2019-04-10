@@ -99,7 +99,7 @@ class SurveysController < ApplicationController
   end
 
   def parse_phone_numbers(phone_numbers)
-    numbers = phone_numbers.split(/\s*,\s*/)
+    numbers = phone_numbers.strip.split(/\s*,\s*/)
     numbers.map { |number| "+1" + number}
   end
 
