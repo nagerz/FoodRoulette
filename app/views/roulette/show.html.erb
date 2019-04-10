@@ -21,5 +21,6 @@
 <%= button_to 'Roulette Again', roulette_path, method: :get, class: 'button' %>
 
 <script>
+  var mapquestKey = '<%= ENV['MAPQUEST_KEY'] %>';
   $( document ).ready( initMap() );
 </script>

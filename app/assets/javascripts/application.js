@@ -45,7 +45,7 @@ async function initMap(){
   var names = [restaurant_name];
 
   window.onload = function() {
-    L.mapquest.key = 't0N6dnKnxi9OIpCX3XQDGpuOPp35rU7y';
+    L.mapquest.key = mapquestKey;
 
     // Geocode three locations, then call the createMap callback
     L.mapquest.geocoding().geocode(addresses, createMap);
@@ -108,10 +108,9 @@ async function initSurveyMap(){
   restaurant_1_name, restaurant_2_name, restaurant_3_name
   ];
   renderMap();
-};
 
   async function renderMap() {
-    L.mapquest.key = 't0N6dnKnxi9OIpCX3XQDGpuOPp35rU7y';
+    L.mapquest.key = mapquestKey;
 
     // Geocode three locations, then call the createMap callback
     L.mapquest.geocoding().geocode(addresses, createMap);
@@ -132,8 +131,10 @@ async function initSurveyMap(){
       featureGroup.addTo(map);
       map.fitBounds(featureGroup.getBounds());
     }
+  }
 
-  function generateMarkersFeatureGroup(response, names) {
+
+  async function generateMarkersFeatureGroup(response, names) {
     var group = [];
     for (var i = 0; i < response.results.length; i++) {
       var location = response.results[i].locations[0];
@@ -146,5 +147,5 @@ async function initSurveyMap(){
       group.push(marker);
     }
     return L.featureGroup(group);
-  }
-}
+  };
+};

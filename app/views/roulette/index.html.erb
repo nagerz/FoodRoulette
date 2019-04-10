@@ -32,5 +32,6 @@
                 restaurant_3: restaurants[2].name }, class: 'button' %>
 
 <script>
-  $( document ).ready( initSurveymap() );
+  var mapquestKey = '<%= ENV['MAPQUEST_KEY'] %>';
+  $( document ).ready( initSurveyMap() );
 </script>
