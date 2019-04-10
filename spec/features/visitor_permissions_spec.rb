@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "As a visitor" do
-  context "I cannot access any page on the site besides the login page" do
+  it "I cannot access any page on the site besides the login and survey pages" do
     visit '/'
 
     expect(current_path).to eq(login_path)
@@ -22,10 +22,6 @@ describe "As a visitor" do
 
     expect(current_path).to eq(login_path)
 
-    visit '/surveys/1'
-
-    expect(current_path).to eq(login_path)
-
     visit '/vote/1'
 
     expect(current_path).to eq(login_path)
@@ -38,5 +34,14 @@ describe "As a visitor" do
 
     expect(current_path).to eq(login_path)
 
+  end
+
+  it 'I can visit a survey results page but I cannot end the survey' do
+    survey = create(:survey)
+
+    visit survey_path(survey)
+
+    expect(current_path).to eq(survey_path(survey))
+    expect(page).to_not have_button('End Survey Now')
   end
 end
