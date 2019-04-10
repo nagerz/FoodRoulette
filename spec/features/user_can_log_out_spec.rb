@@ -5,7 +5,6 @@ describe 'When a logged in user visits their profile page' do
     visit root_path
 
     click_button 'Connect to Google'
-
     expect(current_path).to eq(root_path)
 
     click_link 'Profile'

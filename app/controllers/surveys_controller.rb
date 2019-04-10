@@ -26,7 +26,7 @@ class SurveysController < ApplicationController
    data[:restaurant_3] = survey_params[:restaurant_3]
    restaurant_names = [survey_params[:restaurant_1], survey_params[:restaurant_2], survey_params[:restaurant_3]]
 
-   TwilioTextMessenger.new.send_survey(data)
+   MessageSenderJob.perform_later(data)
 
    @survey = Survey.new(user_id: current_user.id)
 
@@ -54,7 +54,7 @@ class SurveysController < ApplicationController
     Vote.create_vote(params[:phone], params[:restaurant_code], survey)
     redirect_to survey_path(survey)
 
-    flash[:success] = "Your vote has been cast" unless params[:phone]
+    flash[:success] = "Your vote has been cast." unless params[:phone]
   end
 
   def vote
@@ -69,7 +69,7 @@ class SurveysController < ApplicationController
       }
       else
         redirect_to survey_path(survey)
-        flash[:alert] = "You already voted!"
+        flash[:alert] = "You've already voted!"
       end
     end
   end
@@ -80,7 +80,7 @@ class SurveysController < ApplicationController
     survey.end_survey
 
     redirect_to survey_path(survey)
-    flash[:alert] = "You have ended the survey."
+    flash[:success] = "You closed this survey."
   end
 
   def cancel
@@ -89,7 +89,7 @@ class SurveysController < ApplicationController
     survey.end_survey
 
     redirect_to root_path
-    flash[:alert] = "Group roulette aborted."
+    flash[:alert] = "Your survey has been cancelled."
   end
 
    private

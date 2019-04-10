@@ -44,18 +44,25 @@ header li {
   margin-left: 25vw;
   margin-top: 20vh;
   align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-logo-2 {
   margin-top: 20vh;
+  max-width: 100%;
+  height: auto;
 }
 
 .location-form-padding {
   background-color: #D8F793;
   border-radius: 29px;
-  margin-left: 70vh;
-  margin-right: 70vh;
+  margin-left: 25vw;
+  margin-top: 5vh;
+  margin-right: 25vw;
   padding: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 #location-search{
@@ -64,9 +71,11 @@ header li {
   margin-left: 3vw;
   margin-right: 3vw;
   font-size: 20px;
-  width: 48vw;
+  width: 38vw;
   text-align: center;
   align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-buttons {
@@ -76,6 +85,8 @@ header li {
   vertical-align: top;
   margin-left: 10vw;
   margin-top: 3vw;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-buttons-1 {
@@ -92,10 +103,19 @@ header li {
   margin-left: 5vw;
 }
 
+#new-form-wrapper {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
 #home-question {
   font-size: 30px;
   font-weight: bold;
   color: #56004C;
+  max-width: 100%;
+  height: auto;
 }
 
 #login-button {
@@ -105,11 +125,106 @@ header li {
   background-color: #FF6B35;
 }
 
+#new-form-wrapper input[type=submit]{
+  margin-top: 5vh;
+  text-align: center;
+  color: #fff;
+  background-color: #56004C;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .button {
   font-weight: 700;
   text-decoration: none;
   padding: 20px 60px;
   min-width: 120px;
+  color: #fff;
+  background-color: #56004C;
+  font-size: 16px;
+  border-radius: 29px;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 340px;
+  margin: 5px;
+}
+
+// Roulette
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  justify-content: center;
+  // grid-template-rows: 60% 40%;
+}
+
+.multi-wrapper {
+  display: grid;
+  // grid-template-columns: 33% 33% 33%;
+  // grid-template-rows: auto;
+  justify-content: center;
+  // grid-template-rows: 60% 40%;
+}
+
+.sub-wrapper {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1,2;
+  justify-content: center;
+}
+
+.multi-sub-wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.sub-wrapper2 {
+  grid-column: 2;
+  grid-row: 2;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.single-card {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  border-radius: .75rem;
+  height: auto;
+}
+
+.multi-card {
+  border: 1px solid #d3d3d3;
+  border-radius: .75rem;
+  height: auto;
+  background-color: white;
+  margin: 5px;
+}
+
+.multi-buttons {
+  justify-content: center;
+}
+
+.buttons {
+  grid-column: 1 / span 2;
+  grid-row: 1,2;
+  justify-content: center;
+}
+
+.roulette-button {
+  align-self: center;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 20px 60px;
+  min-width: 90px;
   color: #fff;
   background-color: #FF6B35;
   font-size: 16px;
@@ -122,6 +237,92 @@ header li {
   box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  max-width: 340px;
+  max-width: 260px;
+  margin: 8px;
+}
+
+.restaurant-image {
+  background-size: cover;
+  height: 50%;
+  background-position: center;
+  background-color: #ccc;
+  border-radius: .75rem;
+}
+
+.content {
+  padding: 15px;
+}
+
+.vote-button {
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 30px;
+  min-width: 60px;
+  color: #fff;
+  background-color: #8CB369;
+  font-size: 10px;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 240px;
   margin: 0 auto;
+}
+
+#user-info {
+  font-size: 20px;
+}
+
+#new-form-wrapper input {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 30px;
+  min-width: 120px;
+  box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+  font-size: 16px;
+  border-radius: 29px;
+  display: block;
+}
+
+label {
+  font-size: 20px;
+  color: #56004C;
+  font-weight: bold;
+  margin-top: 3vh;
+}
+
+.user-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancel-button {
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 30px;
+  min-width: 60px;
+  color: #fff;
+  background-color: #56004C;
+  font-size: 10px;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 240px;
+  margin-top: 30px;
 }

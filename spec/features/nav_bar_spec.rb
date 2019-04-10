@@ -26,6 +26,7 @@ RSpec.feature 'Navigation bar' do
         visit root_path
 
         expect(current_path).to eq(root_path)
+        save_and_open_page
 
         expect(page).to have_link('Home')
         expect(page).to have_link('Profile')
@@ -34,7 +35,6 @@ RSpec.feature 'Navigation bar' do
 
       it 'I can navigate to home' do
         visit root_path
-
         click_on 'Home'
 
         expect(current_path).to eq(root_path)

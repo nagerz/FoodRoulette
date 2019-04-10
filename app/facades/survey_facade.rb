@@ -7,9 +7,9 @@ class SurveyFacade < SimpleDelegator
 
   def status
     if @survey.active?
-      "Survey is still active"
+      "Active"
     else
-      "Survey is Over"
+      "Closed"
     end
   end
 
