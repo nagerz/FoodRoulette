@@ -103,6 +103,13 @@ header li {
   margin-left: 5vw;
 }
 
+#new-form-wrapper {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
 #home-question {
   font-size: 30px;
   font-weight: bold;
@@ -118,10 +125,9 @@ header li {
   background-color: #FF6B35;
 }
 
-input[type=submit]{
+#new-form-wrapper input[type=submit]{
   margin-top: 5vh;
   text-align: center;
-  max-width: 340px;
   color: #fff;
   background-color: #56004C;
   text-transform: uppercase;
@@ -150,8 +156,12 @@ input[type=submit]{
   margin: 0 auto;
 }
 
-input {
-  width: 35%;
+#user-info {
+  font-size: 20px;
+}
+
+#new-form-wrapper input {
+  width: 100%;
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
@@ -168,4 +178,12 @@ label {
   color: #56004C;
   font-weight: bold;
   margin-top: 3vh;
+}
+
+.user-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
 }

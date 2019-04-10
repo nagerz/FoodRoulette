@@ -1,12 +1,11 @@
-<section class='user-info'>
-  <ul>
-    <li><%= user.name %></li>
-    <li><%= user.email %></li>
+<section class='user-info-wrapper'>
+  <ul id='user-info'>
+    <p><%= user.name %></p>
+    <p><%= user.email %></p>
     <% if user.thumbnail %>
-      <li><%= image_tag user.thumbnail %></li>
+      <p><%= image_tag user.thumbnail %></p>
     <% end %>
   </ul>
-</section>
 
 <section id='Visits'>
   <% user.visited_restaurants.each do |restaurant| %>
@@ -16,3 +15,5 @@
 
 
 <%= button_to 'Log Out', logout_path, method: :get, class: 'button' %>
+
+</section>
