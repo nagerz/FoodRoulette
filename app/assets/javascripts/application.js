@@ -32,10 +32,11 @@ function writeCookie() {
    document.cookie = "manual_location=" + cookievalue;
 }
 
-async function updatePage(survey_id){
+async function updatePage(){
     var repeater;
     var survey_id = $('.temp_information').data('survey-id')
-    const response = await fetch(`http://localhost:3000/api/v1/surveys/${survey_id}`, {});
+    var api_url = $('.temp_information').data('api-url')
+    const response = await fetch(`https://${api_url}/api/v1/surveys/${survey_id}`, {});
     const json = await response.json();
     var total_votes = json.data.attributes.total_votes;
     var restaurant_1_votes = json.data.attributes.restaurant_1_votes;

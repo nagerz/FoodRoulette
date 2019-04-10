@@ -1,4 +1,6 @@
 class RouletteController < ApplicationController
+  before_action :check_login
+
   def show
     if cookies['manual_location'] && cookies['manual_location'] != ''
       render locals: {

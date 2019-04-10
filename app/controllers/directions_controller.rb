@@ -1,4 +1,6 @@
 class DirectionsController < ApplicationController
+  before_action :check_login
+
   def show
     if params[:user_address] && params[:user_address] != ''
       save_restaurant_visit(params[:user_id], params[:restaurant_id], params[:user_address])
