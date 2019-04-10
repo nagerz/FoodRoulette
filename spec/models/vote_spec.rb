@@ -22,7 +22,7 @@ describe Vote, type: :model do
       expect(duplicate_vote).to eq(nil)
 
       invalid_response = Vote.create_vote("+15556667777", "5", @survey1)
-      expect(invalid_response).to eq(nil)
+      expect(invalid_response).to be_a(InvalidResponseTextJob)
 
       unique_vote = Vote.create_vote("+15556667777", "2", @survey1)
       expect(unique_vote).to be_a(Vote)
