@@ -3,7 +3,8 @@ class SurveysController < ApplicationController
    survey = Survey.find(params[:id])
 
    render locals: {
-     facade: SurveyFacade.new(survey)
+     facade: SurveyFacade.new(survey),
+     survey_id: survey.id
    }
   end
 

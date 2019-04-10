@@ -36,7 +36,7 @@ class DirectionsController < ApplicationController
       longitude = CGI::escape(origin.split('|')[1])
       destination = CGI::escape(destination)
       base_url = 'https://www.google.com/maps/dir/?api=1'
-      base_url + "&origin=#{latitude}%C2%B0+N%2C#{longitude}%C2%B0+W&destination=#{destination}"
+      base_url + "&origin=#{latitude}%2C#{longitude}&destination=#{destination}"
     else
       origin = CGI::escape(origin)
       destination = CGI::escape(destination)

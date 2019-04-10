@@ -1,7 +1,25 @@
+<%= content_tag :div, class: "temp_information", data: {survey_id: survey_id} do %>
+<% end %>
+
+<script>
+  $( document ).ready( updatePage() );
+</script>
+
+<% if facade.active? %>
+  <h1>Survey results! Watch them roll in...<h1>
+<% else %>
+  <h1>Survey results!<h1>
+<% end %>
+
 <h3>Survey Results:<h3>
 
 <small>Survey Status: <%= facade.status %></small><br/>
 <small>Total Votes Cast: <%= facade.votes.count %></small>
+
+Total Votes Received: <p id="total-votes"></p>
+Restaurant 1 Votes received:<p id='sr1-votes'></p>
+Restaurant 2 Votes received:<p id='sr2-votes'></p>
+Restaurant 3 Votes received:<p id='sr3-votes'></p>
 
 <div class="multi-wrapper">
   <div class="multi-sub-wrapper">
@@ -39,7 +57,6 @@
     </div>
   </div>
 </div>
-
 <div class="multi-buttons">
   <% if facade.active? %>
     <%= button_to 'End Survey Now', end_survey_path(facade), method: :post, class: 'cancel-button'  %>
