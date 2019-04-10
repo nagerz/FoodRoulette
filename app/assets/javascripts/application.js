@@ -18,6 +18,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
 function success(pos) {
   var crd = pos.coords;
   document.cookie = `lat_long=${crd.latitude + "|" + crd.longitude}`;
@@ -34,18 +35,14 @@ function WriteCookie() {
 
 async function initMap(){
   var restaurant_id = $('.temp_information').data('restaurant-id');
-  const response = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_id}`, {});
-  const json = await response.json();
+  var response = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_id}`, {});
+  var json = await response.json();
 
   var restaurant_name = json.data.attributes.name;
   var restaurant_address = json.data.attributes.address;
 
-  var addresses = [
-  restaurant_address
-  ];
-  var names = [
-  restaurant_name
-  ];
+  var addresses = [restaurant_address];
+  var names = [restaurant_name];
 
   window.onload = function() {
     L.mapquest.key = 't0N6dnKnxi9OIpCX3XQDGpuOPp35rU7y';
@@ -90,12 +87,12 @@ async function initSurveyMap(){
   var restaurant_1_id = $('.temp_information').data('restaurant-id-1');
   var restaurant_2_id = $('.temp_information').data('restaurant-id-2');
   var restaurant_3_id = $('.temp_information').data('restaurant-id-3');
-  const response_1 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_1_id}`, {});
-  const response_2 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_2_id}`, {});
-  const response_3 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_3_id}`, {});
-  const json_1 = await response_1.json();
-  const json_2 = await response_2.json();
-  const json_3 = await response_3.json();
+  var response_1 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_1_id}`, {});
+  var response_2 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_2_id}`, {});
+  var response_3 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_3_id}`, {});
+  var json_1 = await response_1.json();
+  var json_2 = await response_2.json();
+  var json_3 = await response_3.json();
 
   var restaurant_1_name = json_1.data.attributes.name;
   var restaurant_2_name = json_2.data.attributes.name;
@@ -110,14 +107,17 @@ async function initSurveyMap(){
   var names = [
   restaurant_1_name, restaurant_2_name, restaurant_3_name
   ];
+  renderMap();
+};
 
-  window.onload = function() {
+  async function renderMap() {
     L.mapquest.key = 't0N6dnKnxi9OIpCX3XQDGpuOPp35rU7y';
 
     // Geocode three locations, then call the createMap callback
     L.mapquest.geocoding().geocode(addresses, createMap);
 
     function createMap(error, response) {
+
       // Initialize the Map
       var map = L.mapquest.map('map', {
         layers: L.mapquest.tileLayer('map'),
@@ -133,19 +133,18 @@ async function initSurveyMap(){
       map.fitBounds(featureGroup.getBounds());
     }
 
-    function generateMarkersFeatureGroup(response, names) {
-      var group = [];
-      for (var i = 0; i < response.results.length; i++) {
-        var location = response.results[i].locations[0];
-        var locationLatLng = location.latLng;
+  function generateMarkersFeatureGroup(response, names) {
+    var group = [];
+    for (var i = 0; i < response.results.length; i++) {
+      var location = response.results[i].locations[0];
+      var locationLatLng = location.latLng;
 
-        // Create a marker for each location
-        var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-          .bindPopup("test");
+      // Create a marker for each location
+      var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+        .bindPopup("test");
 
-        group.push(marker);
-      }
-      return L.featureGroup(group);
+      group.push(marker);
     }
+    return L.featureGroup(group);
   }
-};
+}
