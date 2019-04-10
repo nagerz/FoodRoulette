@@ -46,7 +46,7 @@ class SurveysController < ApplicationController
       flash[:success] = "Your survey has been sent!"
     else
       redirect_to root_path
-      flash[:alert] = "We're sorry. You're survey could not be sent at this time."
+      flash[:alert] = "We're sorry. Your survey could not be sent at this time."
     end
   end
 

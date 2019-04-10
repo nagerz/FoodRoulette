@@ -8,5 +8,6 @@ FactoryBot.define do
     rating { "4" }
     longitude { 98.6 }
     latitude { -5.6 }
+    url { "https://www.yelp.com/biz/los-chingones-denver-denver-2" }
   end
 end

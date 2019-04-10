@@ -7,7 +7,8 @@ class Recommendation
               :distance,
               :restaurant_id,
               :database_id,
-              :image_url
+              :image_url,
+              :url
   def initialize(data, restaurant)
     @name = data[:name]
     @address = "#{data[:location][:address1]} #{data[:location][:address2]} #{data[:location][:city]}, #{data[:location][:state]} #{data[:location][:zip_code]}"
@@ -18,5 +19,6 @@ class Recommendation
     @restaurant_id = restaurant.yelp_id
     @database_id = restaurant.id
     @image_url = data[:image_url]
+    @url = restaurant[:url]
   end
 end

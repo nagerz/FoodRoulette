@@ -5,7 +5,7 @@
     <div class="single-card">
       <!-- <img class="restaurant-image" src="" alt="Restaurant Image"> -->
       <div class="content">
-        <h4 class="name"><%= restaurant.name %></h4>
+        <h4 class="name"><%= link_to restaurant.name, restaurant.url %></h4>
         <p class="address">Address: <%= restaurant.address %></p>
         <p class="price_range">Price Range: <%= restaurant.price_range %></p>
         <p class="cuisine">Cuisine: <%= restaurant.cuisine %></p>
