@@ -1,0 +1,3 @@
+steps:
+  - name: ":rspec:"
+    command: "bundle install && npm install && bundle exec rspec"
