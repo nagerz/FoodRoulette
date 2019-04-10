@@ -114,6 +114,9 @@ describe "As a user" do
     end
 
     it "I get a 404 if I am not the survey creator" do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user).and_return(user)
       visit vote_path(@survey1)
 
       expect(page).to have_content("The page you're looking for could not be found.")

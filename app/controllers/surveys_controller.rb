@@ -1,18 +1,20 @@
 class SurveysController < ApplicationController
-  def show
-   survey = Survey.find(params[:id])
+  before_action :check_login, only: [:new, :create, :update, :vote, :end, :cancel]
 
-   render locals: {
-     facade: SurveyFacade.new(survey),
-     survey_id: survey.id
-   }
+  def show
+  survey = Survey.find(params[:id])
+
+  render locals: {
+    facade: SurveyFacade.new(survey),
+    survey_id: survey.id
+  }
   end
 
   def new
-   @survey = Survey.new
-   @restaurant_1 = params["restaurant_1"]
-   @restaurant_2 = params["restaurant_2"]
-   @restaurant_3 = params["restaurant_3"]
+    @survey = Survey.new
+    @restaurant_1 = params["restaurant_1"]
+    @restaurant_2 = params["restaurant_2"]
+    @restaurant_3 = params["restaurant_3"]
   end
 
   def create
@@ -104,6 +106,6 @@ class SurveysController < ApplicationController
   end
 
   def valid_user_vote?(survey)
-     Vote.joins(:survey).where(survey: [survey, {user: current_user}]).empty?
+    Vote.joins(:survey).where(survey: [survey, {user: current_user}]).empty?
   end
 end
