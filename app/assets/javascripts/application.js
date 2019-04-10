@@ -46,5 +46,5 @@ async function updatePage(survey_id){
     document.getElementById("sr1-votes").innerHTML=restaurant_1_votes;
     document.getElementById("sr2-votes").innerHTML=restaurant_2_votes;
     document.getElementById("sr3-votes").innerHTML=restaurant_3_votes;
-    repeater = setTimeout(updatePage, 10000);
+    repeater = setTimeout(updatePage, 3000);
     };
