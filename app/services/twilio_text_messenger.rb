@@ -51,4 +51,15 @@ class TwilioTextMessenger
     })
   end
 
+  def send_invalid_vote_response(phone_number)
+    message = "Invalid response. Answer should be '1', '2', or '3'. Please try again."
+
+    client = Twilio::REST::Client.new
+    response = client.messages.create({
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      to: phone_number,
+      body: message,
+    })
+  end
+
 end

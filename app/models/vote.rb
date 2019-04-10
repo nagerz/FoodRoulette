@@ -19,13 +19,12 @@ class Vote < ApplicationRecord
         survey_restaurant = survey.find_survey_restaurant(response)
         vote = Vote.new(phone_number: phone_number, survey: survey, survey_restaurant: survey_restaurant)
         if vote.save
-          #TwilioTextMessenger.new.send_vote_receipt
           survey.check_end_survey
           vote
         end
       end
     else
-      send_invalid_response_text(phone_number_string, response)
+      InvalidResponseTextJob.perform_later(phone_number_string)
     end
   end
 
@@ -46,8 +45,5 @@ class Vote < ApplicationRecord
     else
       true
     end
-  end
-
-  def self.send_invalid_response_text(phone_number_string, response)
   end
 end
