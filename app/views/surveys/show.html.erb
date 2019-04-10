@@ -28,7 +28,7 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
         <% if facade.winner %>
           <h3><%= facade.winner.name %> received the most votes!</h3>
           <section class="survey-complete-buttons">
-            <%= button_to 'Accept and Notify Group', survey_path(facade), method: :get, class: "button" %>
+            <%= button_to 'Accept and Notify Group', survey_path(facade), method: :get, class: "button" if current_user == facade.user %>
             <%= button_to 'Take Me There!', directions_path, method: :get, class: "button", params: {
                                                                                    restaurant_address: facade.winner.address_1,
                                                                                    user_address: cookies[:manual_location],
@@ -59,6 +59,6 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
 </div>
 <div class="multi-buttons">
   <% if facade.active? %>
-    <%= button_to 'End Survey Now', end_survey_path(facade), method: :post, class: 'cancel-button' unless current_user != facade.user  %>
+    <%= button_to 'End Survey Now', end_survey_path(facade), method: :post, class: 'cancel-button' if current_user == facade.user  %>
   <% end %>
 </div>
