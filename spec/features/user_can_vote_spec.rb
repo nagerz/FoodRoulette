@@ -27,7 +27,7 @@ describe "As a user" do
 
         expect(current_path).to eq(vote_path(@survey1))
 
-        expect(page).to have_content("Vote for your choice!")
+        expect(page).to have_content("Vote for your choice:")
 
         expect(page).to have_content("#{@restaurant1.name}")
         expect(page).to have_content("#{@restaurant2.name}")
@@ -37,8 +37,7 @@ describe "As a user" do
 
         within(".survey-restaurant-#{@sr1.id}") do
           expect(page).to have_content("#{@restaurant1.name}")
-
-          expect(page).to have_button('Vote for this')
+          expect(page).to have_button("Vote for #{@restaurant1.name}")
         end
 
         expect(page).to have_button('Cancel Survey')
@@ -54,9 +53,9 @@ describe "As a user" do
         within(".survey-restaurant-#{@sr1.id}") do
           expect(page).to have_content("#{@restaurant1.name}")
 
-          expect(page).to have_button('Vote for this')
+          expect(page).to have_button("Vote for #{@restaurant1.name}")
 
-          click_button('Vote for this')
+          click_button("Vote for #{@restaurant1.name}")
         end
 
         expect(current_path).to eq(survey_path(@survey1))
@@ -77,9 +76,9 @@ describe "As a user" do
         within(".survey-restaurant-#{@sr1.id}") do
           expect(page).to have_content("#{@restaurant1.name}")
 
-          expect(page).to have_button('Vote for this')
+          expect(page).to have_button("Vote for #{@restaurant1.name}")
 
-          click_button('Vote for this')
+          click_button("Vote for #{@restaurant1.name}")
         end
 
         expect(Vote.count).to eq(1)
@@ -92,7 +91,7 @@ describe "As a user" do
 
         expect(current_path).to eq(survey_path(@survey1))
 
-        expect(page).to have_content("You already voted!")
+        expect(page).to have_content("You've already voted!")
       end
 
       it "I can cancel survey" do
@@ -110,7 +109,7 @@ describe "As a user" do
 
         expect(Vote.count).to eq(0)
 
-        expect(page).to have_content("Group roulette aborted.")
+        expect(page).to have_content("Your survey has been cancelled.")
       end
     end
 

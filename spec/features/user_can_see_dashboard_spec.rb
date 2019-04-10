@@ -39,7 +39,7 @@ describe 'as a user' do
           # expect(current_path).to_eq(restaurant_1.url)
         end
       end
-      save_and_open_page
+      
       expect(page).to_not have_content(restaurant_6.name)
     end
   end
