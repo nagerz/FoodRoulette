@@ -13,6 +13,8 @@ class Vote < ApplicationRecord
 
   def self.text_vote(phone_number_string, response, survey)
     if valid_response?(response)
+      binding.pry
+      
       if survey.active? && survey.unique_vote?(phone_number_string)
         response = response.to_i
         phone_number = PhoneNumber.find_by(digits: phone_number_string)
