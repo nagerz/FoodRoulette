@@ -1,17 +1,25 @@
-<% restaurants.each do |restaurant| %>
-  <div class="restaurant">
-    <li class="name">Name: <%= restaurant.name %></li>
-    <li class="address">Address: <%= restaurant.address %></li>
-    <li class="price_range">Price Range: <%= restaurant.price_range %></li>
-    <li class="cuisine">Cuisine: <%= restaurant.cuisine %></li>
-    <li class="rating">Rating: <%= restaurant.rating %></li>
-    <li class="distance">Distance: <%= restaurant.distance %> miles away</li>
-    <br>
-  </div>
-<% end %>
+<div class="multi-wrapper">
+  <div class="multi-sub-wrapper">
 
-<%= button_to 'Roulette Again', group_roulette_path, method: :get, class: 'button' %>
-<%= button_to 'Send to Friends', new_survey_path, method: :get,
-      params: { restaurant_1: restaurants[0].name,
-                restaurant_2: restaurants[1].name,
-                restaurant_3: restaurants[2].name }, class: 'button' %>
+    <% restaurants.each do |restaurant| %>
+      <div class="multi-card">
+        <div class="content">
+          <h4 class="name"><%= restaurant.name %></h4>
+          <p class="address">Address: <%= restaurant.address %></p>
+          <p class="price_range">Price Range: <%= restaurant.price_range %></p>
+          <p class="cuisine">Cuisine: <%= restaurant.cuisine %></p>
+          <p class="rating">Rating: <%= restaurant.rating %></p>
+          <p class="distance">Distance: <%= restaurant.distance %> miles away</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="multi-buttons">
+    <%= button_to 'Roulette Again', group_roulette_path, method: :get, class: 'button' %>
+    <%= button_to 'Send to Friends', new_survey_path, method: :get,
+          params: { restaurant_1: restaurants[0].name,
+                    restaurant_2: restaurants[1].name,
+                    restaurant_3: restaurants[2].name }, class: 'button' %>
+  </div>
+</div>

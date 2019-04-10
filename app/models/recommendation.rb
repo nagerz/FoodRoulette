@@ -6,7 +6,7 @@ class Recommendation
               :rating,
               :distance,
               :restaurant_id,
-              :database_id
+              :database_id,
               :image_url
   def initialize(data, restaurant)
     @name = data[:name]

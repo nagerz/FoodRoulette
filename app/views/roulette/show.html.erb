@@ -1,25 +1,28 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="card">
-  <li class="name">Name: <%= restaurant.name %></li>
-  <li class="address">Address: <%= restaurant.address %></li>
-  <li class="price_range">Price Range: <%= restaurant.price_range %></li>
-  <li class="cuisine">Cuisine: <%= restaurant.cuisine %></li>
-  <li class="rating">Rating: <%= restaurant.rating %></li>
-  <li class="distance">Distance: <%= restaurant.distance %> miles away</li>
-
-
-  <%= button_to 'Take Me There!', directions_path, method: :get, params: { restaurant_address: restaurant.address,
-                                                                           user_address: cookies[:manual_location],
-                                                                           user_lat_long: cookies[:lat_long],
-                                                                           user_id: current_user.id,
-                                                                           restaurant_id: restaurant.database_id  }, class: 'button'%>
-  <%= button_to 'Roulette Again', roulette_path, method: :get, class: 'button' %>
-</div>
-
-<div class="card">
-  <img src="img_avatar.png" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>John Doe</b></h4>
-    <p>Architect & Engineer</p>
+<div class="wrapper">
+  <div class="sub-wrapper">
+    <div class="single-card">
+      <!-- <img class="restaurant-image" src="" alt="Restaurant Image"> -->
+      <div class="content">
+        <h4 class="name"><%= restaurant.name %></h4>
+        <p class="address">Address: <%= restaurant.address %></p>
+        <p class="price_range">Price Range: <%= restaurant.price_range %></p>
+        <p class="cuisine">Cuisine: <%= restaurant.cuisine %></p>
+        <p class="rating">Rating: <%= restaurant.rating %></p>
+        <p class="distance">Distance: <%= restaurant.distance %> miles away</p>
+      </div>
+    </div>
+  </div>
+  <div class="sub-wrapper2"
+    <div class="buttons">
+      <%= button_to 'Take Me There!', directions_path, method: :get, class: 'roulette-button single-tmt', params: {
+                                                                               restaurant_address: restaurant.address,
+                                                                               user_address: cookies[:manual_location],
+                                                                               user_lat_long: cookies[:lat_long],
+                                                                               user_id: current_user.id,
+                                                                               restaurant_id: restaurant.database_id  } %>
+      <%= button_to 'Roulette Again', roulette_path, method: :get, class: 'roulette-button single-ra' %>
+    </div>
   </div>
 </div>
