@@ -48,7 +48,8 @@ class RestaurantFacade
                    latitude: restaurant_data[:coordinates][:latitude],
                    longitude: restaurant_data[:coordinates][:longitude],
                    reviews: restaurant_data[:review_count],
-                   category_1: restaurant_data[:categories][0][:title]
+                   category_1: restaurant_data[:categories][0][:title],
+                   url: restaurant_data[:url]
                    # category_2: restaurant[:categories][1][:title],
                    # category_3: restaurant[:categories][2][:title]
                 )

@@ -7,7 +7,7 @@
 
 <section id='Visits'>
   <% user.visited_restaurants.each do |restaurant| %>
-    <p class='visit'><%= restaurant.name %></p>
+    <p class='visit'><%= link_to restaurant.name, restaurant.url %></p>
   <% end %>
 </section>
 

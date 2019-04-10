@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-# As a user, when I visit /profile, I see my name,
-# email address and thumbnail. I also see a list of my
-# 5 most recent restaurants visited, with a link to the yelp page
-# for them.
-
 describe 'as a user' do
   context 'when I visit my dashboard' do
     before :each do
@@ -34,10 +29,11 @@ describe 'as a user' do
       within '#Visits' do
         expect(page).to have_css(".visit", count: 5)
         within (all('.visit').first) do
-          save_and_open_page
+
           expect(page).to have_content(@restaurant_1.name)
           click_on(@restaurant_1.name)
-          expect(current_path).to_eq(@restaurant_1.url)
+
+          expect(current_url).to eq(@restaurant_1.url)
         end
       end
 
