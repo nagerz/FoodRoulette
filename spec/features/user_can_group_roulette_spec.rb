@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
- describe 'As a user' do
+describe 'As a user' do
   describe 'when I visit the root page and click \'Survey them!\'' do
     it 'I see a list of three restaurants that I can send to my friends', :vcr do
       user = create(:user)

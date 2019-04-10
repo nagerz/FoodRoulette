@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Navigation bar' do
@@ -26,7 +28,6 @@ RSpec.feature 'Navigation bar' do
         visit root_path
 
         expect(current_path).to eq(root_path)
-        
 
         expect(page).to have_link('Home')
         expect(page).to have_link('Profile')

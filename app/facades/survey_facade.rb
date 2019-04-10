@@ -1,5 +1,6 @@
-class SurveyFacade < SimpleDelegator
+# frozen_string_literal: true
 
+class SurveyFacade < SimpleDelegator
   def initialize(survey)
     super(survey)
     @survey = survey
@@ -7,14 +8,13 @@ class SurveyFacade < SimpleDelegator
 
   def status
     if @survey.active?
-      "Active"
+      'Active'
     else
-      "Closed"
+      'Closed'
     end
   end
 
   def winner
     @survey.winner
   end
-
 end

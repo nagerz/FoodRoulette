@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RouletteController < ApplicationController
   before_action :check_login
 
@@ -12,7 +14,7 @@ class RouletteController < ApplicationController
       }
     else
       redirect_to root_path
-      flash[:alert] = "Please set a search location"
+      flash[:alert] = 'Please set a search location'
     end
   end
 
@@ -27,7 +29,7 @@ class RouletteController < ApplicationController
       }
     else
       redirect_to root_path
-      flash[:alert] = "Please set a search location"
+      flash[:alert] = 'Please set a search location'
     end
   end
 end

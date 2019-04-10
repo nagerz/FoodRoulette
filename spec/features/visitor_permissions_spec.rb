@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-describe "As a visitor" do
-  it "I cannot access any page on the site besides the login and survey pages" do
+describe 'As a visitor' do
+  it 'I cannot access any page on the site besides the login and survey pages' do
     visit '/'
 
     expect(current_path).to eq(login_path)
@@ -33,7 +35,6 @@ describe "As a visitor" do
     visit '/about'
 
     expect(current_path).to eq(login_path)
-
   end
 
   it 'I can visit a survey results page but I cannot end the survey' do

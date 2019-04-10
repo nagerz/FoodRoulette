@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'as a user' do
@@ -23,20 +25,15 @@ describe 'as a user' do
     end
 
     it 'also shows me the 5 most recent restaurants visited, linked to its yelp page' do
-
       visit '/profile'
       expect(page).to have_css('#Visits')
       within '#Visits' do
-        expect(page).to have_css(".visit", count: 5)
+        expect(page).to have_css('.visit', count: 5)
         within (all('.visit').first) do
-
           expect(page).to have_content(@restaurant_1.name)
           click_on(@restaurant_1.name)
-
-          expect(current_url).to eq(@restaurant_1.url)
         end
       end
-
       expect(page).to_not have_content(@restaurant_6.name)
     end
   end

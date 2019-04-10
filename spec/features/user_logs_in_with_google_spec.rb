@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'user logs in' do
@@ -12,5 +14,4 @@ RSpec.feature 'user logs in' do
 
     expect(page).to have_content('Welcome, Julia!')
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SurveyCompleteTextJob < ApplicationJob
   queue_as :default
 

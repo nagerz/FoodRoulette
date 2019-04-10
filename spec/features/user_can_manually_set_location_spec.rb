@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'As a logged in user' do
@@ -28,7 +30,6 @@ describe 'As a logged in user' do
     expect(current_path).to eq(root_path)
 
     expect(page).to have_content('Please set a search location')
-
   end
 
   it 'I can set my location from the main page', :js, :vcr do
@@ -37,7 +38,7 @@ describe 'As a logged in user' do
 
     visit root_path
 
-  set_location('Denver, CO')
+    set_location('Denver, CO')
 
     click_button 'Roulette Now'
 

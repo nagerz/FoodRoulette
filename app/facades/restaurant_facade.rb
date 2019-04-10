@@ -1,12 +1,9 @@
-class RestaurantFacade
+# frozen_string_literal: true
 
+class RestaurantFacade
   def recommendation(location)
     restaurant_data = random_restaurant(location)[0]
-    if make_recommendation(restaurant_data)
-      make_recommendation(restaurant_data)
-    else
-      recommendation(location)
-    end
+    make_recommendation(restaurant_data) || recommendation(location)
   end
 
   def group_recommendations(location)
@@ -49,10 +46,9 @@ class RestaurantFacade
                    longitude: restaurant_data[:coordinates][:longitude],
                    reviews: restaurant_data[:review_count],
                    category_1: restaurant_data[:categories][0][:title],
-                   url: restaurant_data[:url]
-                   # category_2: restaurant[:categories][1][:title],
-                   # category_3: restaurant[:categories][2][:title]
-                )
+                   url: restaurant_data[:url])
+    # category_2: restaurant[:categories][1][:title],
+    # category_3: restaurant[:categories][2][:title]
   end
 
   def random_restaurant(location, limit = 1)

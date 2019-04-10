@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SurveySerializer
   include FastJsonapi::ObjectSerializer
   attribute :total_votes do |survey|

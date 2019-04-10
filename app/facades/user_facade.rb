@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserFacade
   attr_reader :name,
               :email,
@@ -13,5 +15,4 @@ class UserFacade
   def visited_restaurants
     @user.restaurants.limit(5)
   end
-
 end

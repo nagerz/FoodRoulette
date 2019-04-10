@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class GoogleMapsService
   def geocode(location)
-    location = CGI::escape(location)
+    location = CGI.escape(location)
     get_json("geocode/json?address=#{location}&key=#{ENV['GOOGLE_PLACES_API_KEY']}")
   end
 

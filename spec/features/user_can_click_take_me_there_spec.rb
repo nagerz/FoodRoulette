@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
- describe 'As a user' do
+describe 'As a user' do
   describe 'when I click \'Take Me There!\' from the roulette show page' do
     it 'A visit is created linking me to that restaurant and I am taken to a Google Maps directions page', :vcr do
       user = create(:user)
@@ -18,7 +20,7 @@ require 'rails_helper'
       expect(User.first.restaurants.count).to eq(0)
 
       click_button 'Take Me There!'
-    
+
       expect(current_url[0..30]).to eq('https://www.google.com/maps/dir')
 
       expect(User.first.visits.count).to eq(1)

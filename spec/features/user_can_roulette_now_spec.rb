@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-describe "As a user" do
-  it "I can retrieve a single restaurant recommendation", :vcr do
+describe 'As a user' do
+  it 'I can retrieve a single restaurant recommendation', :vcr do
     # As a visitor,
     # when I visit “/”,
     # and I click on “Roulette Now,”
@@ -13,17 +15,17 @@ describe "As a user" do
     visit '/'
 
     expect(current_path).to eq(root_path)
-  set_location('Denver, CO')
+    set_location('Denver, CO')
 
     click_button 'Roulette Now'
 
     expect(current_path).to eq(roulette_path)
 
-    expect(page).to have_css(".name")
-    expect(page).to have_css(".address")
-    expect(page).to have_css(".price_range")
-    expect(page).to have_css(".cuisine")
-    expect(page).to have_css(".rating")
-    expect(page).to have_css(".distance")
+    expect(page).to have_css('.name')
+    expect(page).to have_css('.address')
+    expect(page).to have_css('.price_range')
+    expect(page).to have_css('.cuisine')
+    expect(page).to have_css('.rating')
+    expect(page).to have_css('.distance')
   end
 end

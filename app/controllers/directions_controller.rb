@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DirectionsController < ApplicationController
   before_action :check_login
 
@@ -19,8 +21,8 @@ class DirectionsController < ApplicationController
     user = User.find(user_id)
     restaurant = Restaurant.find(restaurant_id)
     if location.include?('|')
-      latitude = CGI::escape(location.split('|')[0])
-      longitude = CGI::escape(location.split('|')[1])
+      latitude = CGI.escape(location.split('|')[0])
+      longitude = CGI.escape(location.split('|')[1])
     else
       response = service.geocode(location)
       latitude = response[:results][0][:geometry][:location][:lat]
@@ -34,14 +36,14 @@ class DirectionsController < ApplicationController
 
   def create_directions_url(origin = '', destination)
     if origin.include?('|')
-      latitude = CGI::escape(origin.split('|')[0])
-      longitude = CGI::escape(origin.split('|')[1])
-      destination = CGI::escape(destination)
+      latitude = CGI.escape(origin.split('|')[0])
+      longitude = CGI.escape(origin.split('|')[1])
+      destination = CGI.escape(destination)
       base_url = 'https://www.google.com/maps/dir/?api=1'
       base_url + "&origin=#{latitude}%2C#{longitude}&destination=#{destination}"
     else
-      origin = CGI::escape(origin)
-      destination = CGI::escape(destination)
+      origin = CGI.escape(origin)
+      destination = CGI.escape(destination)
       base_url = 'https://www.google.com/maps/dir/?api=1'
       base_url + "&origin=#{origin}&destination=#{destination}"
     end
