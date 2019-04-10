@@ -1,11 +1,13 @@
 class SurveysController < ApplicationController
-  def show
-   survey = Survey.find(params[:id])
+  before_action :check_login
 
-   render locals: {
-     facade: SurveyFacade.new(survey),
-     survey_id: survey.id
-   }
+  def show
+  survey = Survey.find(params[:id])
+
+  render locals: {
+    facade: SurveyFacade.new(survey),
+    survey_id: survey.id
+  }
   end
 
   def new

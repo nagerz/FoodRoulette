@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   get '/roulette', to: 'roulette#show', as: :roulette
   get '/roulettes', to: 'roulette#index', as: :group_roulette
-  get '/refine', to: 'refine#show'
 
   get '/directions', to: 'directions#show'
 
