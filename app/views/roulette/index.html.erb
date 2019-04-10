@@ -16,10 +16,10 @@
   </div>
 
   <div class="multi-buttons">
-    <%= button_to 'Roulette Again', group_roulette_path, method: :get, class: 'button' %>
+    <%= button_to 'Roulette Again', group_roulette_path, method: :get, class: 'button button-ra' %>
     <%= button_to 'Send to Friends', new_survey_path, method: :get,
           params: { restaurant_1: restaurants[0].name,
                     restaurant_2: restaurants[1].name,
-                    restaurant_3: restaurants[2].name }, class: 'button' %>
+                    restaurant_3: restaurants[2].name }, class: 'button button-stf' %>
   </div>
 </div>
