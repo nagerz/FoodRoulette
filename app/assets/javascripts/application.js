@@ -32,99 +32,120 @@ function WriteCookie() {
    document.cookie = "manual_location=" + cookievalue;
 }
 
-// jQuery(function($) {
-//     // Asynchronously Load the map API
-//     var script = document.createElement('script');
-//     script.src = "//maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
-//     document.body.appendChild(script);
-// });
-//
-// function initialize() {
-//     var map;
-//     var bounds = new google.maps.LatLngBounds();
-//     var mapOptions = {
-//         mapTypeId: 'roadmap'
-//     };
-//
-//     // Display a map on the page
-//     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-//     map.setTilt(45);
-//
-//     // Multiple Markers
-//     var markers = [
-//         ['rest_1', 51.503454,-0.119562],
-//         ['rest_2', 51.499633,-0.124755],
-//         ['rest_3', 51.4997,-0.124755]
-//     ];
-//
-//     // // Info Window Content
-//     var infoWindowContent = [
-//         ['<div class="info_content">' + '<h3>A</h3>' +  '</div>'],
-//         ['<div class="info_content">' + '<h3>B</h3>' + '</div>'],
-//         ['<div class="info_content">' + '<h3>C</h3>' + '</div>']
-//     ];
-//
-//     // Display multiple markers on a map
-//     var infoWindow = new google.maps.InfoWindow(), marker, i;
-//
-//     // Loop through our array of markers & place each one on the map
-//     for( i = 0; i < markers.length; i++ ) {
-//         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-//         bounds.extend(position);
-//         marker = new google.maps.Marker({
-//             position: position,
-//             map: map,
-//             title: markers[i][0]
-//         });
-//
-//         // Allow each marker to have an info window
-//         google.maps.event.addListener(marker, 'click', (function(marker, i) {
-//             return function() {
-//                 infoWindow.setContent(infoWindowContent[i][0]);
-//                 infoWindow.open(map, marker);
-//             }
-//         })(marker, i));
-//
-//         // Automatically center the map fitting all markers on the screen
-//         map.fitBounds(bounds);
-//     }
-//
-//     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-//     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-//         this.setZoom(14);
-//         google.maps.event.removeListener(boundsListener);
-//     });
-//
-// }
+async function initMap(){
+  var restaurant_id = $('.temp_information').data('restaurant-id');
+  const response = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_id}`, {});
+  const json = await response.json();
 
-var map = L.map('map', {
-  layers: MQ.mapLayer()
-});
+  var restaurant_name = json.data.attributes.name;
+  var restaurant_address = json.data.attributes.address;
 
-MQ.geocode({ map: map })
-  .search('Boston,MA');
-//
-// function initMap() {
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 8,
-//     center: {lat: -34.397, lng: 150.644}
-//   });
-//   var geocoder = new google.maps.Geocoder();
-//
-//   geocodeAddress(geocoder, map);
-// }
-//
-// function geocodeAddress(geocoder, resultsMap) {
-//   var address = document.getElementById('address').value;
-//   geocoder.geocode({'address': address}, function(results, status) {
-//     if (status === 'OK') {
-//       resultsMap.setCenter(results[0].geometry.location);
-//       var marker = new google.maps.Marker({
-//         map: resultsMap,
-//         position: results[0].geometry.location
-//       });
-//     } else {
-//       alert('Geocode was not successful for the following reason: ' + status);
-//     }
-//   });
-// }
+  var addresses = [
+  restaurant_address
+  ];
+  var names = [
+  restaurant_name
+  ];
+
+  window.onload = function() {
+    L.mapquest.key = 't0N6dnKnxi9OIpCX3XQDGpuOPp35rU7y';
+
+    // Geocode three locations, then call the createMap callback
+    L.mapquest.geocoding().geocode(addresses, createMap);
+
+    function createMap(error, response) {
+      // Initialize the Map
+      var map = L.mapquest.map('map', {
+        layers: L.mapquest.tileLayer('map'),
+        center: [0, 0],
+        zoom: 15
+      });
+
+      // Generate the feature group containing markers from the geocoded locations
+      var featureGroup = generateMarkersFeatureGroup(response, names);
+
+      // Add markers to the map and zoom to the features
+      featureGroup.addTo(map);
+      map.fitBounds(featureGroup.getBounds());
+    }
+
+    function generateMarkersFeatureGroup(response, names) {
+      var group = [];
+      for (var i = 0; i < response.results.length; i++) {
+        var location = response.results[i].locations[0];
+        var locationLatLng = location.latLng;
+
+        // Create a marker for each location
+        var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+          .bindPopup(names[i]);
+
+        group.push(marker);
+      }
+      return L.featureGroup(group);
+    }
+  }
+};
+
+async function initSurveyMap(){
+  var restaurant_1_id = $('.temp_information').data('restaurant-id-1');
+  var restaurant_2_id = $('.temp_information').data('restaurant-id-2');
+  var restaurant_3_id = $('.temp_information').data('restaurant-id-3');
+  const response_1 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_1_id}`, {});
+  const response_2 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_2_id}`, {});
+  const response_3 = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_3_id}`, {});
+  const json_1 = await response_1.json();
+  const json_2 = await response_2.json();
+  const json_3 = await response_3.json();
+
+  var restaurant_1_name = json_1.data.attributes.name;
+  var restaurant_2_name = json_2.data.attributes.name;
+  var restaurant_3_name = json_3.data.attributes.name;
+  var restaurant_1_address = json_1.data.attributes.address;
+  var restaurant_2_address = json_2.data.attributes.address;
+  var restaurant_3_address = json_3.data.attributes.address;
+
+  var addresses = [
+  restaurant_1_address, restaurant_2_address, restaurant_3_address
+  ];
+  var names = [
+  restaurant_1_name, restaurant_2_name, restaurant_3_name
+  ];
+
+  window.onload = function() {
+    L.mapquest.key = 't0N6dnKnxi9OIpCX3XQDGpuOPp35rU7y';
+
+    // Geocode three locations, then call the createMap callback
+    L.mapquest.geocoding().geocode(addresses, createMap);
+
+    function createMap(error, response) {
+      // Initialize the Map
+      var map = L.mapquest.map('map', {
+        layers: L.mapquest.tileLayer('map'),
+        center: [0, 0],
+        zoom: 10
+      });
+
+      // Generate the feature group containing markers from the geocoded locations
+      var featureGroup = generateMarkersFeatureGroup(response, names);
+
+      // Add markers to the map and zoom to the features
+      featureGroup.addTo(map);
+      map.fitBounds(featureGroup.getBounds());
+    }
+
+    function generateMarkersFeatureGroup(response, names) {
+      var group = [];
+      for (var i = 0; i < response.results.length; i++) {
+        var location = response.results[i].locations[0];
+        var locationLatLng = location.latLng;
+
+        // Create a marker for each location
+        var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+          .bindPopup("test");
+
+        group.push(marker);
+      }
+      return L.featureGroup(group);
+    }
+  }
+};
