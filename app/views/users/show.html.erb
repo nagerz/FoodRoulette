@@ -1,1 +1,18 @@
+<section class='user-info'>
+  <ul>
+    <li><%= user.name %></li>
+    <li><%= user.email %></li>
+    <% if user.thumbnail %>
+      <li><%= image_tag user.thumbnail %></li>
+    <% end %>
+  </ul>
+</section>
+
+<section id='Visits'>
+  <% user.visited_restaurants.each do |restaurant| %>
+    <p class='visit'><%= restaurant.name %></p>
+  <% end %>
+</section>
+
+
 <%= button_to 'Log Out', logout_path, method: :get, class: 'button' %>
