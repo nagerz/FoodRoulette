@@ -348,7 +348,6 @@ DEPENDENCIES
   shoulda-matchers
   sidekiq
   simplecov
-  spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   twilio-ruby
