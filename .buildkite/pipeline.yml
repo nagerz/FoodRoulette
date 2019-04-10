@@ -1,0 +1,3 @@
+steps:
+  - name: ":rspec:"
+    command: "scripts/ci/setup.sh && scripts/ci/specs.sh"
