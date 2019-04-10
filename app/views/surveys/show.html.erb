@@ -34,7 +34,7 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
                                                                                    user_address: cookies[:manual_location],
                                                                                    user_lat_long: cookies[:lat_long],
                                                                                    user_id: current_user.id,
-                                                                                   restaurant_id: facade.winner.id  } %>
+                                                                                   restaurant_id: facade.winner.id  } if current_user == facade.user %>
             <%= button_to 'Start Another Survey', group_roulette_path, class: "button", method: :get %>
           </section>
         <% else %>
