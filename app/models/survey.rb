@@ -27,7 +27,7 @@ class Survey < ApplicationRecord
   def end_survey
     update_attribute(:status, 1)
 
-    #TwilioTextMessenger.new.send_survey_result(self.id)
+    SurveyCompleteTextJob.perform_later(self.id)
     #close channel?
   end
 
