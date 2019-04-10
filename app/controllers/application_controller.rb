@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:id]) if session[:id]
   end
 
+  def check_login
+    redirect_to '/login' unless current_user
+  end
+
   def four_oh_four
     render file: 'errors/not_found', status: 404
   end

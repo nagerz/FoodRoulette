@@ -1,4 +1,4 @@
-<%= content_tag :div, class: "temp_information", data: {survey_id: survey_id} do %>
+<%= content_tag :div, class: "temp_information", data: {survey_id: survey_id, api_url: ENV["API_URL"]} do %>
 <% end %>
 
 <script>
@@ -33,7 +33,7 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
                                                                                    user_address: cookies[:manual_location],
                                                                                    user_lat_long: cookies[:lat_long],
                                                                                    user_id: current_user.id,
-                                                                                   restaurant_id: facade.winner.id  } %>
+                                                                                   restaurant_id: facade.winner.id  } if current_user == facade.user %>
             <%= button_to 'Start Another Survey', group_roulette_path, class: "button", method: :get %>
           </section>
         <% else %>
@@ -58,6 +58,6 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
 </div>
 <div class="multi-buttons">
   <% if facade.active? %>
-    <%= button_to 'End Survey Now', end_survey_path(facade), method: :post, class: 'cancel-button'  %>
+    <%= button_to 'End Survey Now', end_survey_path(facade), method: :post, class: 'cancel-button' if current_user == facade.user  %>
   <% end %>
 </div>
