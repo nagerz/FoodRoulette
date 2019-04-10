@@ -45,7 +45,7 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
             <div class="content">
               <section class='survey-restaurant'>
                 <section class='survey-restaurant-<%= survey_restaurant.id %>'>
-                  <p><%= survey_restaurant.restaurant.name %></p>
+                  <p><%= link_to survey_restaurant.restaurant.name, survey_restaurant.restaurant.url %></p>
                   <p>Votes received: <%= survey_restaurant.votes.count %></p>
                 </section>
               </section>

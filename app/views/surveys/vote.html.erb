@@ -8,7 +8,7 @@
       <div class="multi-card survey-restaurant">
         <div class="content survey-restaurant-<%= survey_restaurant.id %>">
           <h4 class="name"><%= survey_restaurant.restaurant.name %></h4>
-          <%= button_to "Vote for #{survey_restaurant.restaurant.name}", survey_path(facade), method: :patch, class: "vote-button",
+          <%= button_to "Vote for #{ survey_restaurant.restaurant.name}", survey_path(facade), method: :patch, class: "vote-button",
               params: {
                         restaurant_code: survey_restaurant
                        } %>
