@@ -10,6 +10,4 @@ class Restaurant < ApplicationRecord
   validates_presence_of :price
   validates_presence_of :rating
   validates_presence_of :category_1
-  validates_presence_of :image_url
-
 end
