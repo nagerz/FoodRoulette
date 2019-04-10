@@ -19,7 +19,7 @@
 
   <body>
     <% if controller_name == "home" || controller_name == "login" %>
-      <section class="home-logo">
+      <section class="home-logo">    
         <%= image_tag('logo.png', class: "home-logo-1", alt: "Roulette Logo") %>
         <%= image_tag('logo-3.png', class: "home-logo-2", alt: "Roulette Logo 2") %>
       </section>
@@ -30,7 +30,4 @@
     <%= yield %>
   </body>
 
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
 </html>

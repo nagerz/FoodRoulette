@@ -1,15 +1,22 @@
-<h1>Vote for your choice!<h1>
+<h3>Vote for your choice:</h3>
 
-<% facade.survey_restaurants.each do |survey_restaurant| %>
-  <section class='survey-restaurant'>
-    <section class='survey-restaurant-<%= survey_restaurant.id %>'>
-      <p><%= survey_restaurant.restaurant.name %></p>
-      <%= button_to 'Vote for this', survey_path(facade), method: :patch,
-          params: {
-                    restaurant_code: survey_restaurant
-                   } %>
-    </section>
-  </section>
-<% end %>
 
-<%= button_to 'Cancel Survey', cancel_survey_path(facade), method: :post, class: 'button' %>
+<div class="multi-wrapper">
+  <div class="multi-sub-wrapper">
+
+    <% facade.survey_restaurants.each do |survey_restaurant| %>
+      <div class="multi-card survey-restaurant">
+        <div class="content survey-restaurant-<%= survey_restaurant.id %>">
+          <h4 class="name"><%= survey_restaurant.restaurant.name %></h4>
+          <%= button_to "Vote for #{survey_restaurant.restaurant.name}", survey_path(facade), method: :patch, class: "vote-button",
+              params: {
+                        restaurant_code: survey_restaurant
+                       } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="multi-buttons">
+  <%= button_to 'Cancel Survey', cancel_survey_path(facade), method: :post, class: 'cancel-button' %>
+</div>
