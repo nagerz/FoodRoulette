@@ -26,9 +26,7 @@ class SurveysController < ApplicationController
    data[:restaurant_3] = survey_params[:restaurant_3]
    restaurant_names = [survey_params[:restaurant_1], survey_params[:restaurant_2], survey_params[:restaurant_3]]
 
-   # binding.pry
-   TwilioTextMessenger.new.send_survey(data)
-   # MessageSenderJob.perform_later(data)
+   MessageSenderJob.perform_later(data)
 
    @survey = Survey.new(user_id: current_user.id)
 
