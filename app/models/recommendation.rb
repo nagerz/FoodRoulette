@@ -19,6 +19,6 @@ class Recommendation
     @restaurant_id = restaurant.yelp_id
     @database_id = restaurant.id
     @image_url = data[:image_url]
-    @url = restaurant[:url]
+    @url = data[:url]
   end
 end
