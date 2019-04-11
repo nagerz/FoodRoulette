@@ -8,7 +8,8 @@ body {
 }
 
 header img {
-  height: 70px;
+  height: 5vw;
+  height: 8vh;
 }
 
 header .header-logo {
@@ -16,12 +17,12 @@ header .header-logo {
 }
 
 header {
-    background-color: #D8F793;
+    background-color: #56004C;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 12vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,14 +43,14 @@ header li {
 
 .home-logo-1 {
   margin-left: 25vw;
-  margin-top: 20vh;
+  margin-top: 10vh;
   align-items: center;
   max-width: 100%;
   height: auto;
 }
 
 .home-logo-2 {
-  margin-top: 20vh;
+  margin-top: 10vh;
   max-width: 100%;
   height: auto;
 }
@@ -97,8 +98,8 @@ header li {
 }
 
 .home-buttons-2 {
-  width: 15%;
-  text-align: center;
+  width: 30%;
+  text-align: left;
   vertical-align: top;
   margin-left: 5vw;
 }
@@ -279,7 +280,9 @@ header li {
 }
 
 #user-info {
-  font-size: 20px;
+  font-size: 22px;
+  padding: 0;
+  text-align: center;
 }
 
 #new-form-wrapper input {
@@ -308,6 +311,12 @@ label {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+}
+
+.header-rest-visited {
+  font-size: 20px;
+  color: #56004C;
+  font-weight: bold;
 }
 
 .cancel-button {
@@ -358,6 +367,53 @@ label {
   }
 }
 
+.navlink a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navlink a:hover {
+  color: #D8F793;
+  text-decoration: none;
+}
+
+.user-info-wrapper img {
+  width: 18vw
+}
+
+.user-info-wrapper input {
+  margin-top: 4vh
+}
+
+#Visits {
+  padding: 15px;
+  width: 25vw;
+  text-align: center;
+}
+
+.header-rest-visited {
+  color: #56004C
+}
+
+#user-info {
+  color: #56004C
+}
+
+#Visits a {
+  margin: 5vh;
+  color: #56004C;
+  text-decoration: none;
+}
+
+#visits p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#Visits a:hover {
+  color: #FF6B35
+}
 // @media screen and (min-width: 451px)
 // {
 //   body {
