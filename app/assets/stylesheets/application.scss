@@ -280,6 +280,8 @@ nav select {
     text-decoration: none;
     color: black;
   }
+  // margin: 1%;
+  // width: 31%;
 }
 
 .vote-button {
@@ -304,6 +306,8 @@ nav select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .results-info {
