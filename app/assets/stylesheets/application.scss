@@ -313,6 +313,15 @@ nav select {
   text-align: center;
 }
 
+.results-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.results-status {
+  margin-top: 20px;
+}
+
 #user-info {
   font-size: 20px;
 }
@@ -363,7 +372,7 @@ label {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   max-width: 240px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .survey-complete-buttons {
