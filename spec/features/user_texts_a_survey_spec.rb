@@ -23,7 +23,7 @@ describe 'As a user' do
       expect(current_path).to eq(new_survey_path)
       fill_in 'Your Name:', with: 'ADag'
 
-      fill_in "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):", with: '9097540068,7155740144'
+      fill_in "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):", with: '1234567899,9876543211'
       fill_in 'Event Name:', with: "Julia's bday!"
       fill_in 'Date/Time of Event (optional):', with: 'This weekend?'
 
@@ -58,7 +58,7 @@ describe 'As a user' do
       expect(SurveyRestaurant.count).to eq(0)
 
       fill_in 'Your Name:', with: 'ADag'
-      fill_in "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):", with: '9097540068,7155740144'
+      fill_in "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):", with: '1234567899,9876543211'
       fill_in 'Event Name:', with: "Julia's bday!"
       fill_in 'Date/Time of Event (optional):', with: 'This weekend?'
 
