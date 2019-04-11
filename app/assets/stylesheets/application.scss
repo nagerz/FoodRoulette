@@ -8,7 +8,8 @@ body {
 }
 
 header img {
-  height: 70px;
+  height: 5vw;
+  height: 8vh;
 }
 
 header .header-logo {
@@ -16,12 +17,12 @@ header .header-logo {
 }
 
 header {
-    background-color: #D8F793;
+    background-color: #56004C;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,14 +54,14 @@ nav select {
 
 .home-logo-1 {
   margin-left: 25vw;
-  margin-top: 20vh;
+  margin-top: 10vh;
   align-items: center;
   max-width: 100%;
   height: auto;
 }
 
 .home-logo-2 {
-  margin-top: 20vh;
+  margin-top: 10vh;
   max-width: 100%;
   height: auto;
 }
@@ -108,8 +109,8 @@ nav select {
 }
 
 .home-buttons-2 {
-  width: 15%;
-  text-align: center;
+  width: 30%;
+  text-align: left;
   vertical-align: top;
   margin-left: 5vw;
 }
@@ -296,7 +297,7 @@ nav select {
   min-width: 60px;
   color: #fff;
   background-color: #8CB369;
-  font-size: 10px;
+  font-size: 15px;
   border-radius: 20px;
   border: none;
   text-align: center;
@@ -334,7 +335,9 @@ nav select {
 }
 
 #user-info {
-  font-size: 20px;
+  font-size: 22px;
+  padding: 0;
+  text-align: center;
 }
 
 #new-form-wrapper input {
@@ -354,7 +357,20 @@ label {
   font-size: 20px;
   color: #56004C;
   font-weight: bold;
-  margin-top: 3vh;
+  margin-top: 1vh;
+}
+
+
+
+.connect-google {
+  display: flex;
+  justify-content: center;
+}
+
+#vote-choice {
+  padding: 15px;
+  text-align: center;
+  color: #56004C
 }
 
 .user-info-wrapper {
@@ -363,6 +379,12 @@ label {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+}
+
+.header-rest-visited {
+  font-size: 22px;
+  color: #56004C;
+  font-weight: bold;
 }
 
 .cancel-button {
@@ -404,8 +426,121 @@ label {
   .multi-card { width: 315px; }
 }
 
-@media screen
-  and (min-width: 576px)
-{
-  .dropdown { display: none; }
+.navlink a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navlink a:hover {
+  color: #D8F793;
+  text-decoration: none;
+}
+
+.user-info-wrapper img {
+  width: 18vw
+}
+
+.user-info-wrapper input {
+  margin-top: 4vh
+}
+
+#Visits {
+  padding: 15px;
+  width: 25vw;
+  text-align: center;
+  font-size: 20px
+}
+
+.header-rest-visited {
+  color: #56004C
+}
+
+#user-info {
+  color: #56004C
+}
+
+.single-card a {
+  margin: 5vh;
+  color: #56004C;
+  text-decoration: none;
+}
+
+.single-card a:hover {
+  color: #FF6B35
+}
+
+.single-card h4{
+  text-align: center;
+}
+
+.multi-card a {
+  margin: 5vh;
+  color: #56004C;
+  text-decoration: none;
+}
+
+.multi-card a:hover {
+  color: #FF6B35
+}
+
+.multi-card h4{
+  text-align: center;
+}
+
+#visits p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.About {
+  color: #56004C;
+  font-size: 18px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vh
+}
+
+.About h3{
+  margin-top: 3vw;
+}
+
+.About a{
+  color: #56004C
+}
+
+.About a:hover{
+  color: white;
+  text-decoration: none
+}
+
+.results-info a {
+  margin: 5vh;
+  color: #FF6B35;
+  text-decoration: none;
+}
+
+.results-info a:hover {
+  color: #D8F793
+}
+
+.flash {
+  color: #56004C;
+  background-color: #D8F793;
+  font-size: 16px;
+  padding: 0.5vw
+}
+
+.success {
+  color: #56004C;
+  background-color: #D8F793;
+  font-size: 16px;
+  padding: 0.5vw
+}
+
+.alert {
+  color: #56004C;
+  background-color: #D8F793;
+  font-size: 16px;
+  padding: 0.5vw
 }

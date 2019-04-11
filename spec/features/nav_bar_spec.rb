@@ -20,7 +20,8 @@ RSpec.feature 'Navigation bar' do
   context 'as a user' do
     before :each do
       user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user).and_return(user)
     end
 
     context 'when I visit any page' do
