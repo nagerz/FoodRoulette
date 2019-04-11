@@ -32,7 +32,7 @@
           <section class='survey-restaurant'>
             <section class='survey-restaurant-<%= facade.survey_restaurants[0].id %>'>
               <p><%= link_to facade.survey_restaurants[0].restaurant.name, facade.survey_restaurants[0].restaurant.url, target: :_blank %></p>
-              <p>Votes received: <p id='sr1-votes'></p></p>
+              <p>Votes received: <span id='sr1-votes'></span></p>
             </section>
           </section>
         </div>
@@ -42,7 +42,7 @@
           <section class='survey-restaurant'>
             <section class='survey-restaurant-<%= facade.survey_restaurants[1].id %>'>
               <p><%= link_to facade.survey_restaurants[1].restaurant.name, facade.survey_restaurants[1].restaurant.url, target: :_blank %></p>
-              <p>Votes received: <p id='sr2-votes'></p></p>
+              <p>Votes received: <span id='sr2-votes'></span></p>
             </section>
           </section>
         </div>
@@ -52,7 +52,7 @@
           <section class='survey-restaurant'>
             <section class='survey-restaurant-<%= facade.survey_restaurants[2].id %>'>
               <p><%= link_to facade.survey_restaurants[2].restaurant.name, facade.survey_restaurants[2].restaurant.url, target: :_blank %></p>
-              <p>Votes received: <p id='sr3-votes'></p></p>
+              <p>Votes received: <span id='sr3-votes'></span></p>
             </section>
           </section>
         </div>
@@ -68,5 +68,5 @@
 
 <section class="results-status">
   <small>Status: <%= facade.status %></small><br/>
-  <small>Total Votes Received: <p id="total-votes" ></small>
+  <small>Total Votes Received: <span id="total-votes" ></span></small>
 </section>
