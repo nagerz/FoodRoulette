@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Surveys API' do
@@ -10,9 +12,9 @@ describe 'Surveys API' do
     get "/api/v1/surveys/#{survey.id}"
     votes = JSON.parse(response.body)
     expect(response).to be_successful
-    expect(votes["data"]["attributes"]["total_votes"]).to eq(1)
-    expect(votes["data"]["attributes"]["restaurant_1_votes"]).to eq(1)
-    expect(votes["data"]["attributes"]["restaurant_2_votes"]).to eq(0)
-    expect(votes["data"]["attributes"]["restaurant_3_votes"]).to eq(0)
+    expect(votes['data']['attributes']['total_votes']).to eq(1)
+    expect(votes['data']['attributes']['restaurant_1_votes']).to eq(1)
+    expect(votes['data']['attributes']['restaurant_2_votes']).to eq(0)
+    expect(votes['data']['attributes']['restaurant_3_votes']).to eq(0)
   end
 end

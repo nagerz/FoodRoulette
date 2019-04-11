@@ -10,6 +10,7 @@ AllCops:
     - 'Rakefile'
     - 'Gemfile'
     - 'config/**/*'
+    - 'spec/factories/*'
 
 Style/Documentation:
   Enabled: false

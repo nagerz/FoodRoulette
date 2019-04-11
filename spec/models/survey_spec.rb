@@ -17,6 +17,7 @@ RSpec.describe Survey, type: :model do
       @restaurant1 = create(:restaurant)
       @restaurant2 = create(:restaurant)
       @restaurant3 = create(:restaurant)
+      # rubocop:disable Metrics/LineLength
       @survey_restaurant1 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant1)
       @survey_restaurant2 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant2)
       @survey_restaurant3 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant3)
@@ -31,6 +32,7 @@ RSpec.describe Survey, type: :model do
       @vote2 = create(:vote, survey: @survey2, phone_number: @phone_number3, survey_restaurant: @survey_restaurant5)
       @vote3 = create(:vote, survey: @survey2, phone_number: @phone_number4, survey_restaurant: @survey_restaurant5)
       @vote4 = create(:vote, survey: @survey2, survey_restaurant: @survey_restaurant6)
+      # rubocop:enable Metrics/LineLength
       @active_survey = create(:survey, user: @user, status: 0)
       @inactive_survey = create(:survey, user: @user, status: 1)
     end

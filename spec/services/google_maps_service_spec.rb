@@ -11,7 +11,7 @@ describe GoogleMapsService do
 
   describe 'instance methods' do
     describe '#geocode' do
-      it 'returns json with geographic information about a given location', :vcr do
+      it 'returns json with information about a given location', :vcr do
         service = GoogleMapsService.new
 
         response = service.geocode('Denver, CO')

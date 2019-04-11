@@ -4,9 +4,10 @@ require 'rails_helper'
 
 describe 'As a user' do
   describe 'when I click \'Take Me There!\' from the roulette show page' do
-    it 'A visit is created linking me to that restaurant and I am taken to a Google Maps directions page', :vcr do
+    it 'A visit is created and I am taken to a Google Maps page', :vcr do
       user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user).and_return(user)
 
       visit '/'
 
