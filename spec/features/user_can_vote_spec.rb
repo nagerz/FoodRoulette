@@ -10,9 +10,11 @@ describe 'As a user' do
       @restaurant1 = create(:restaurant)
       @restaurant2 = create(:restaurant)
       @restaurant3 = create(:restaurant)
+      # rubocop:disable Metrics/LineLength
       @sr1 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant1)
       @sr2 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant2)
       @sr3 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant3)
+      # rubocop:enable Metrics/LineLength
 
       url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=Denver,%20CO&open_now=true&price=1,2&radius=8000'
       filename = 'survey_random_roulette_response.json'
@@ -120,8 +122,8 @@ describe 'As a user' do
       allow_any_instance_of(ApplicationController)
         .to receive(:current_user).and_return(user)
       visit vote_path(@survey1)
-
-      expect(page).to have_content("The page you're looking for could not be found.")
+      message = "The page you're looking for could not be found."
+      expect(page).to have_content(message)
     end
   end
 end

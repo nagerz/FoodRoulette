@@ -15,15 +15,16 @@ describe TwilioTextMessenger do
     end
     describe '#send_survey(data)' do
       it 'texts surveys to numbers according to the given data', :vcr do
-      data =   { sender: 'sender',
-        phone_numbers: ['+15005550006'],
-        event: 'event',
-        date_time: 'date_time',
-        restaurant_1: 'restaurant_1',
-        restaurant_2: 'restaurant_2',
-        restaurant_3: 'restaurant_3'
-      }
-      expect(@service.send_survey(data)).to eq(data[:phone_numbers])
+        data = {
+          sender: 'sender',
+          phone_numbers: ['+15005550006'],
+          event: 'event',
+          date_time: 'date_time',
+          restaurant_1: 'restaurant_1',
+          restaurant_2: 'restaurant_2',
+          restaurant_3: 'restaurant_3'
+        }
+        expect(@service.send_survey(data)).to eq(data[:phone_numbers])
       end
     end
 
@@ -35,9 +36,9 @@ describe TwilioTextMessenger do
     describe '#send_survey_result(survey_id)' do
       it 'sends the result of the survey to voters', :vcr do
         survey = create(:survey)
-        number = create(:phone_number, digits: '+15005550006', survey: survey)
+        num = create(:phone_number, digits: '+15005550006', survey: survey)
         sr = create(:survey_restaurant, survey: survey)
-        create(:vote, phone_number: number, survey: survey, survey_restaurant: sr)
+        create(:vote, phone_number: num, survey: survey, survey_restaurant: sr)
 
         expect(@service.send_survey_result(survey.id))
           .to be_a(Twilio::REST::Api::V2010::AccountContext::MessageInstance)

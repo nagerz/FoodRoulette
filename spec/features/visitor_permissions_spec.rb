@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe 'As a visitor' do
-  it 'I cannot access any page on the site besides the login and survey pages' do
+  it 'I cannot access any page on the site besides the login and survey page' do
     visit '/'
 
     expect(current_path).to eq(login_path)
