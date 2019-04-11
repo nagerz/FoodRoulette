@@ -17,12 +17,15 @@
           <%= link_to 'About', about_path, method: :get%>
         </li>
     </ul>
-    <select>
-     <option value="" selected="selected">Select</option>
-
-     <option value="/">Home</option>
-     <option value="/profile">Profile</option>
-     <option value="/about">About</option>
-   </select>
+     <div class="dropdown">
+      <button class="btn menu-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Menu
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="<%= root_path %>">Home</a>
+        <a class="dropdown-item" href="<%= profile_path %>">Profile</a>
+        <a class="dropdown-item" href="<%= about_path %>">About</a>
+      </div>
+    </div>
   </nav>
 </header>

@@ -35,14 +35,21 @@ header * {
 
 header .navlinks {
   margin-right: 20px;
+  border-color: none;
 }
 
 header li {
   margin: 20px;
 }
 
-nav select {
+.dropdown {
   display: none;
+}
+
+.menu-button {
+  background-color: #8CB369;
+  color: white;
+   margin-right: 10px;
 }
 
 .home-logo-1 {
@@ -183,14 +190,6 @@ nav select {
   height: auto;
   margin: 5px;
   width: 315px;
-  // border: 1px solid #d3d3d3;
-  // border-radius: .75rem;
-  // height: auto;
-  // background-color: white;
-  // margin: 5px;
-  // min-width: 365px;
-  // width: 32%;
-  // flex-wrap: wrap;
 }
 
 .multi-buttons {
@@ -407,19 +406,6 @@ label {
   align-items: center;
 }
 
-@media screen
-  and (max-width: 575px)
-  and (min-width: 200px)
-{
-  // body { background-color: red }
-  nav ul     { display: none; }
-  nav select { display: inline-block; }
-  .multi-sub-wrapper { flex-direction: column;              align-items: center; }
-  .multi-buttons { flex-direction: column;
-    align-items: center; justify-content: center;}
-  .multi-card { width: 315px; }
-}
-
 .navlink a {
   color: white;
   text-transform: uppercase;
@@ -469,7 +455,6 @@ label {
 }
 
 .multi-card a {
-  margin: 5vh;
   color: #56004C;
   text-decoration: none;
 }
@@ -537,4 +522,25 @@ label {
   background-color: #D8F793;
   font-size: 16px;
   padding: 0.5vw
+}
+
+@media screen
+  and (max-width: 575px)
+  and (min-width: 200px)
+{
+  nav ul     { display: none; }
+  .dropdown { display: inline-block; }
+  .multi-sub-wrapper { flex-direction: column; align-items: center; }
+  .multi-buttons { flex-direction: column;
+    align-items: center; justify-content: center;}
+  .multi-card { width: 315px; }
+  .home-logo-1 { display: none; }
+  .home-logo-2 { margin-top: 0; }
+  .location-form-padding { margin-left: 0; margin-right: 0; margin-top: 2vh;}
+  .home-question { display: none }
+  .home-buttons { display: flex; flex-direction: column; align-items: center; text-align: center; margin-left: 0;}
+  .home-buttons-1 { width: 100%; margin-left: 0; display: flex; flex-direction: column; align-items: center; margin-top: 2vh;}
+  .home-buttons-2 { width: 100%; margin-left: 0; display: flex; flex-direction: column; align-items: center; margin-top: 2vh;}
+  #location-search { width: 100%; padding-right: 3vh; }
+  .location-form { margin-right: 2vh; }
 }
