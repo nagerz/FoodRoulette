@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 12vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,6 +173,7 @@ header li {
 .multi-sub-wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 2.1vw;
 }
 
 .multi-card {
@@ -196,9 +197,8 @@ header li {
 .multi-buttons {
   display: flex;
   justify-content: center;
+  margin-top: 2vh
 }
-
-
 
 .sub-wrapper2 {
   grid-column: 2;
@@ -265,7 +265,7 @@ header li {
   min-width: 60px;
   color: #fff;
   background-color: #8CB369;
-  font-size: 10px;
+  font-size: 15px;
   border-radius: 20px;
   border: none;
   text-align: center;
@@ -275,7 +275,6 @@ header li {
   box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  max-width: 240px;
   margin: 0 auto;
 }
 
@@ -302,7 +301,20 @@ label {
   font-size: 20px;
   color: #56004C;
   font-weight: bold;
-  margin-top: 3vh;
+  margin-top: 1vh;
+}
+
+
+
+.connect-google {
+  display: flex;
+  justify-content: center;
+}
+
+#vote-choice {
+  padding: 15px;
+  text-align: center;
+  color: #56004C
 }
 
 .user-info-wrapper {
@@ -314,7 +326,7 @@ label {
 }
 
 .header-rest-visited {
-  font-size: 20px;
+  font-size: 22px;
   color: #56004C;
   font-weight: bold;
 }
@@ -390,6 +402,7 @@ label {
   padding: 15px;
   width: 25vw;
   text-align: center;
+  font-size: 20px
 }
 
 .header-rest-visited {
@@ -400,10 +413,32 @@ label {
   color: #56004C
 }
 
-#Visits a {
+.single-card a {
   margin: 5vh;
   color: #56004C;
   text-decoration: none;
+}
+
+.single-card a:hover {
+  color: #FF6B35
+}
+
+.single-card h4{
+  text-align: center;
+}
+
+.multi-card a {
+  margin: 5vh;
+  color: #56004C;
+  text-decoration: none;
+}
+
+.multi-card a:hover {
+  color: #FF6B35
+}
+
+.multi-card h4{
+  text-align: center;
 }
 
 #visits p {
@@ -411,8 +446,56 @@ label {
   margin-bottom: 1rem;
 }
 
-#Visits a:hover {
-  color: #FF6B35
+.About {
+  color: #56004C;
+  font-size: 18px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vh
+}
+
+.About h3{
+  margin-top: 3vw;
+}
+
+.About a{
+  color: #56004C
+}
+
+.About a:hover{
+  color: white;
+  text-decoration: none
+}
+
+.results-info a {
+  margin: 5vh;
+  color: #FF6B35;
+  text-decoration: none;
+}
+
+.results-info a:hover {
+  color: #D8F793
+}
+
+.flash {
+  color: #56004C;
+  background-color: #D8F793;
+  font-size: 16px;
+  padding: 0.5vw
+}
+
+.success {
+  color: #56004C;
+  background-color: #D8F793;
+  font-size: 16px;
+  padding: 0.5vw
+}
+
+.alert {
+  color: #56004C;
+  background-color: #D8F793;
+  font-size: 16px;
+  padding: 0.5vw
 }
 // @media screen and (min-width: 451px)
 // {
