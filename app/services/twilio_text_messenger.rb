@@ -13,36 +13,22 @@ class TwilioTextMessenger
     @restaurant_3 = data[:restaurant_3]
 
     message = "Your friend #{@sender} has requested your vote for where to eat. To vote for #{@restaurant_1}, reply '1' to this message. To vote for #{@restaurant_2}, reply '2' to this message. To vote for #{@restaurant_3}, reply '3', to this message. (#{@event} #{@date_time})"
+
     @phone_numbers.each do |phone_number|
-      client = Twilio::REST::Client.new
-      response = client.messages.create(
-        from: ENV['TWILIO_PHONE_NUMBER'],
-        to: phone_number,
-        body: message
-      )
+      send_twilio_text(phone_number, message)
     end
   end
 
   def send_valid_vote_response(phone_number, survey, url)
     message = "Thanks for voting! If you'd like to see which restaurant is winning, visit #{url}."
 
-    client = Twilio::REST::Client.new
-    response = client.messages.create(
-      from: ENV['TWILIO_PHONE_NUMBER'],
-      to: phone_number,
-      body: message
-    )
+    send_twilio_text(phone_number, message)
   end
 
   def send_invalid_vote_response(phone_number)
     message = "Your reply needs to be a '1', '2', or '3'. Please try again!"
 
-    client = Twilio::REST::Client.new
-    response = client.messages.create(
-      from: ENV['TWILIO_PHONE_NUMBER'],
-      to: phone_number,
-      body: message
-    )
+    send_twilio_text(phone_number, message)
   end
 
   def send_survey_result(survey_id, url)
@@ -51,12 +37,15 @@ class TwilioTextMessenger
     @survey.phone_numbers.each do |phone_number|
       phone_numbers << phone_number.digits
     end
-    event = @survey.event
     winner = @survey.winner.name
     message = "Your recent survey has ended! #{winner} got the most votes. See the results here: #{url}."
 
+    send_twilio_text(phone_numbers, message)
+  end
+
+  def send_twilio_text(phone_numbers, message)
     client = Twilio::REST::Client.new
-    response = client.messages.create(
+    client.messages.create(
       from: ENV['TWILIO_PHONE_NUMBER'],
       to: phone_numbers,
       body: message
