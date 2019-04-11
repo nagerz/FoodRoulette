@@ -66,7 +66,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'ngrok-rspec'
-  gem "skylight"
+  gem 'skylight'
+  gem 'bullet'
 end
 
 group :development do

@@ -108,6 +108,6 @@ class SurveysController < ApplicationController
   end
 
   def valid_user_vote?(survey)
-    Vote.joins(:survey).where(survey: [survey, { user: current_user }]).empty?
+    Vote.includes(:survey).where(survey: [survey, { user: current_user }]).empty?
   end
 end
