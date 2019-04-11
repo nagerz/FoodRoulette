@@ -29,8 +29,7 @@ describe 'As a user' do
     it 'I can see the survey results page' do
       visit survey_path(@survey)
 
-      expect(page).to have_content('Survey results! Watch them roll in...')
-      expect(page).to have_content('Survey Status: Active')
+      expect(page).to have_content('Status: Active')
       expect(page).to have_content('Total Votes Received:')
 
       expect(page).to have_content(@restaurant_1.name.to_s)
@@ -55,7 +54,7 @@ describe 'As a user' do
 
       visit survey_path(@survey)
 
-      expect(page).to have_content('Survey Status: Active')
+      expect(page).to have_content('Status: Active')
       expect(page).to have_content('Total Votes Received:')
 
       within(".survey-restaurant-#{@sr_1.id}") do
@@ -78,8 +77,7 @@ describe 'As a user' do
 
       visit survey_path(@survey)
 
-      expect(page).to have_content('Survey results! Watch them roll in...')
-      expect(page).to have_content('Survey Status: Active')
+      expect(page).to have_content('Status: Active')
       expect(page).to have_content('Total Votes Received:')
 
       within(".survey-restaurant-#{@sr_1.id}") do
@@ -97,12 +95,12 @@ describe 'As a user' do
 
       expect(current_path).to eq(survey_path(@survey))
 
-      expect(page).to have_content('Survey Status: Closed')
+      expect(page).to have_content('Status: Closed')
       expect(page).to have_content('Total Votes Received:')
 
       expect(page).to have_content("#{@restaurant_3.name} received the most votes!")
 
-      expect(page).to have_button('Take Me There!')
+      expect(page).to have_button('Take Me There')
       expect(page).to have_button('Start Another Survey')
 
       expect(page).to_not have_button('End Survey Now')
