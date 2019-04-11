@@ -16,11 +16,8 @@ class Vote < ApplicationRecord
   def self.text_vote(phone_number_string, response, survey)
     if valid_response?(response)
       if survey.active? && survey.unique_vote?(phone_number_string)
-        ValidResponseTextJob.perform_later(phone_number_string, survey)
-        response = response.to_i
-        phone_number = PhoneNumber.find_by(digits: phone_number_string)
-        survey_restaurant = survey.find_survey_restaurant(response)
-        vote = Vote.new(phone_number: phone_number, survey: survey, survey_restaurant: survey_restaurant)
+        send_valid_vote_text(phone_number_string, survey)
+        vote = new_vote(phone_number_string, response, survey)
         if vote.save
           survey.check_end_survey
           vote
@@ -49,4 +46,24 @@ class Vote < ApplicationRecord
       true
     end
   end
+
+  def self.send_valid_vote_text(phone_number_string, survey)
+    path = "surveys/"
+    url = create_url(path, survey)
+    ValidResponseTextJob.perform_later(phone_number_string, survey, url)
+  end
+
+  def self.new_vote(phone_number_digits, response, survey)
+    phone_number = PhoneNumber.find_by(digits: phone_number_digits)
+    survey_restaurant = survey.find_survey_restaurant(response.to_i)
+    Vote.new(phone_number: phone_number, survey: survey, survey_restaurant: survey_restaurant)
+  end
+
+  def self.create_url(path, object)
+    client = Bitly.client
+    domain = "https://calm-tundra-59037.herokuapp.com/"
+    url = domain + path + object.id.to_s
+    client.shorten(url).short_url
+  end
+
 end

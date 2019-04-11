@@ -23,8 +23,8 @@ class TwilioTextMessenger
     end
   end
 
-  def send_valid_vote_response(phone_number, survey)
-    message = "Thanks for voting! If you'd like to see which restaurant is winning, visit here."
+  def send_valid_vote_response(phone_number, survey, url)
+    message = "Thanks for voting! If you'd like to see which restaurant is winning, visit #{url}."
 
     client = Twilio::REST::Client.new
     response = client.messages.create(
@@ -45,7 +45,7 @@ class TwilioTextMessenger
     )
   end
 
-  def send_survey_result(survey_id)
+  def send_survey_result(survey_id, url)
     @survey ||= Survey.find(survey_id)
     phone_numbers = []
     @survey.phone_numbers.each do |phone_number|
@@ -53,7 +53,7 @@ class TwilioTextMessenger
     end
     event = @survey.event
     winner = @survey.winner.name
-    message = "Your recent survey has ended! #{winner} is the winner!"
+    message = "Your recent survey has ended! #{winner} got the most votes. See the results here: #{url}."
 
     client = Twilio::REST::Client.new
     response = client.messages.create(

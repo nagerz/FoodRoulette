@@ -27,8 +27,17 @@ class Survey < ApplicationRecord
   def end_survey
     update_attribute(:status, 1)
 
-    SurveyCompleteTextJob.perform_later(id)
+    path = "surveys/"
+    url = create_url(path, self)
+    SurveyCompleteTextJob.perform_later(id, url)
     # close channel?
+  end
+
+  def create_url(path, object)
+    client = Bitly.client
+    domain = "https://calm-tundra-59037.herokuapp.com/"
+    url = domain + path + object.id.to_s
+    client.shorten(url).short_url
   end
 
   def winner
