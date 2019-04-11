@@ -38,7 +38,6 @@ describe TwilioTextMessenger do
         number = create(:phone_number, digits: '+15005550006', survey: survey)
         sr = create(:survey_restaurant, survey: survey)
         create(:vote, phone_number: number, survey: survey, survey_restaurant: sr)
-        survey.stub(:winner) { 'Restaurant 1' }
 
         expect(@service.send_survey_result(survey.id))
           .to be_a(Twilio::REST::Api::V2010::AccountContext::MessageInstance)
