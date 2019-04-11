@@ -14,7 +14,7 @@ RSpec.describe RestaurantFacade do
   describe '.recommendation', :vcr do
     describe 'rouletted restaurant exists in the database' do
       it 'creates a recommendation' do
-        existing_restaurant = create(:restaurant, yelp_id: 'test123')
+        _existing_restaurant = create(:restaurant, yelp_id: 'test123')
 
         url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=80202&open_now=true&price=1,2&radius=8000'
         filename = 'random_roulette_response.json'
@@ -30,7 +30,7 @@ RSpec.describe RestaurantFacade do
       end
     end
 
-    describe 'rouletted restaurant does not exist in the database and can be saved' do
+    describe 'restaurant does not exist in the database and can be saved' do
       it 'creates a recommendation' do
         url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=80202&open_now=true&price=1,2&radius=8000'
         filename = 'random_roulette_response.json'
@@ -47,7 +47,7 @@ RSpec.describe RestaurantFacade do
       end
     end
 
-    describe 'rouletted restaurant does not exist in the database and can not be saved' do
+    describe 'restaurant does not exist in the database and cannot be saved' do
       it 'creates a recommendation' do
         url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=80202&open_now=true&price=1,2&radius=8000'
         filename = 'random_roulette_response_with_bad.json'

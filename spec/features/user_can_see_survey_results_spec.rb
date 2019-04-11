@@ -6,24 +6,25 @@ describe 'As a user' do
   context 'After I send a group survey' do
     before :each do
       @user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user).and_return(@user)
 
-      @restaurant_1 = create(:restaurant)
-      @restaurant_2 = create(:restaurant)
-      @restaurant_3 = create(:restaurant)
-      @restaurant_4 = create(:restaurant)
+      @restaurant1 = create(:restaurant)
+      @restaurant2 = create(:restaurant)
+      @restaurant3 = create(:restaurant)
+      @restaurant4 = create(:restaurant)
 
       @survey = create(:survey, user: @user)
-      @survey_2 = create(:survey, user: @user)
+      @survey2 = create(:survey, user: @user)
 
-      @phone_1 = create(:phone_number, survey: @survey)
-      @phone_2 = create(:phone_number, survey: @survey)
-      @phone_3 = create(:phone_number, survey: @survey)
-      @phone_4 = create(:phone_number, survey: @survey, digits: '+12223334444')
+      @phone1 = create(:phone_number, survey: @survey)
+      @phone2 = create(:phone_number, survey: @survey)
+      @phone3 = create(:phone_number, survey: @survey)
+      @phone4 = create(:phone_number, survey: @survey, digits: '+12223334444')
 
-      @sr_1 = @survey.survey_restaurants.create(restaurant: @restaurant_1)
-      @sr_2 = @survey.survey_restaurants.create(restaurant: @restaurant_2)
-      @sr_3 = @survey.survey_restaurants.create(restaurant: @restaurant_3)
+      @sr1 = @survey.survey_restaurants.create(restaurant: @restaurant1)
+      @sr2 = @survey.survey_restaurants.create(restaurant: @restaurant2)
+      @sr3 = @survey.survey_restaurants.create(restaurant: @restaurant3)
     end
 
     it 'I can see the survey results page' do
@@ -33,15 +34,15 @@ describe 'As a user' do
       expect(page).to have_content('Survey Status: Active')
       expect(page).to have_content('Total Votes Received:')
 
-      expect(page).to have_content(@restaurant_1.name.to_s)
-      expect(page).to have_content(@restaurant_2.name.to_s)
-      expect(page).to have_content(@restaurant_3.name.to_s)
-      expect(page).to_not have_content(@restaurant_4.name.to_s)
+      expect(page).to have_content(@restaurant1.name.to_s)
+      expect(page).to have_content(@restaurant2.name.to_s)
+      expect(page).to have_content(@restaurant3.name.to_s)
+      expect(page).to_not have_content(@restaurant4.name.to_s)
 
       expect(page).to have_css('.survey-restaurant', count: 3)
 
-      within(".survey-restaurant-#{@sr_1.id}") do
-        expect(page).to have_content(@restaurant_1.name.to_s)
+      within(".survey-restaurant-#{@sr1.id}") do
+        expect(page).to have_content(@restaurant1.name.to_s)
         expect(page).to have_content('Votes received:')
       end
 
@@ -49,32 +50,36 @@ describe 'As a user' do
     end
 
     it 'page updates with votes' do
-      @vote1 = create(:vote, survey: @survey, phone_number: @phone_1, survey_restaurant: @sr_1)
-      @vote2 = create(:vote, survey: @survey, phone_number: @phone_2, survey_restaurant: @sr_1)
-      @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_3)
+      # rubocop:disable Metrics/LineLength
+      @vote1 = create(:vote, survey: @survey, phone_number: @phone1, survey_restaurant: @sr1)
+      @vote2 = create(:vote, survey: @survey, phone_number: @phone2, survey_restaurant: @sr1)
+      @vote3 = create(:vote, survey: @survey, phone_number: @phone3, survey_restaurant: @sr3)
+      # rubocop:enable Metrics/LineLength
 
       visit survey_path(@survey)
 
       expect(page).to have_content('Survey Status: Active')
       expect(page).to have_content('Total Votes Received:')
 
-      within(".survey-restaurant-#{@sr_1.id}") do
+      within(".survey-restaurant-#{@sr1.id}") do
         expect(page).to have_content('Votes received:')
       end
 
-      within(".survey-restaurant-#{@sr_2.id}") do
+      within(".survey-restaurant-#{@sr2.id}") do
         expect(page).to have_content('Votes received:')
       end
 
-      within(".survey-restaurant-#{@sr_3.id}") do
+      within(".survey-restaurant-#{@sr3.id}") do
         expect(page).to have_content('Votes received:')
       end
     end
 
     it 'I can end the survey by button', :vcr do
-      @vote1 = create(:vote, survey: @survey, phone_number: @phone_1, survey_restaurant: @sr_1)
-      @vote2 = create(:vote, survey: @survey, phone_number: @phone_2, survey_restaurant: @sr_3)
-      @vote3 = create(:vote, survey: @survey, phone_number: @phone_3, survey_restaurant: @sr_3)
+      # rubocop:disable Metrics/LineLength
+      @vote1 = create(:vote, survey: @survey, phone_number: @phone1, survey_restaurant: @sr1)
+      @vote2 = create(:vote, survey: @survey, phone_number: @phone2, survey_restaurant: @sr3)
+      @vote3 = create(:vote, survey: @survey, phone_number: @phone3, survey_restaurant: @sr3)
+      # rubocop:enable Metrics/LineLength
 
       visit survey_path(@survey)
 
@@ -82,11 +87,11 @@ describe 'As a user' do
       expect(page).to have_content('Survey Status: Active')
       expect(page).to have_content('Total Votes Received:')
 
-      within(".survey-restaurant-#{@sr_1.id}") do
+      within(".survey-restaurant-#{@sr1.id}") do
         expect(page).to have_content('Votes received:')
       end
 
-      within(".survey-restaurant-#{@sr_3.id}") do
+      within(".survey-restaurant-#{@sr3.id}") do
         expect(page).to have_content('Votes received:')
       end
 
@@ -100,7 +105,8 @@ describe 'As a user' do
       expect(page).to have_content('Survey Status: Closed')
       expect(page).to have_content('Total Votes Received:')
 
-      expect(page).to have_content("#{@restaurant_3.name} received the most votes!")
+      message = "#{@restaurant3.name} received the most votes!"
+      expect(page).to have_content(message)
 
       expect(page).to have_button('Take Me There!')
       expect(page).to have_button('Start Another Survey')

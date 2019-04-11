@@ -11,12 +11,14 @@ describe Vote, type: :model do
       @restaurant1 = create(:restaurant)
       @restaurant2 = create(:restaurant)
       @restaurant3 = create(:restaurant)
+      # rubocop:disable Metrics/LineLength
       @survey_restaurant1 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant1)
       @survey_restaurant2 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant2)
       @survey_restaurant3 = create(:survey_restaurant, survey: @survey1, restaurant: @restaurant3)
       @phone_number1 = create(:phone_number, digits: '+12223334444', survey: @survey1)
       @phone_number2 = create(:phone_number, digits: '+15556667777', survey: @survey1)
       @vote1 = create(:vote, survey: @survey1, phone_number: @phone_number1, survey_restaurant: @survey_restaurant1)
+      # rubocop:enable Metrics/LineLength
     end
 
     it '.text_vote' do
