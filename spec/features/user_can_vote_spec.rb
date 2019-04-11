@@ -23,7 +23,8 @@ describe 'As a user' do
 
     context 'As the user creator' do
       before :each do
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+        allow_any_instance_of(ApplicationController)
+          .to receive(:current_user).and_return(@user)
       end
 
       it 'I see a voting page with the correct options' do
