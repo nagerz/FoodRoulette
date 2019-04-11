@@ -464,12 +464,20 @@ label {
   color: #FF6B35
 }
 
+.vote-content a {
+  color: #56004C;
+  text-decoration: none;
+}
+
+.vote-content a:hover {
+  color: #FF6B35
+}
+
 .single-card h4{
   text-align: center;
 }
 
 .multi-card a {
-  margin: 5vh;
   color: #56004C;
   text-decoration: none;
 }
@@ -507,6 +515,7 @@ label {
   color: white;
   text-decoration: none
 }
+
 
 .results-info a {
   margin: 5vh;
