@@ -41,6 +41,10 @@ header li {
   margin: 20px;
 }
 
+nav select {
+  display: none;
+}
+
 .home-logo-1 {
   margin-left: 25vw;
   margin-top: 10vh;
@@ -159,6 +163,42 @@ header li {
 
 // Roulette
 
+.multi-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.multi-sub-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.multi-card {
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  border-radius: .75rem;
+  height: auto;
+  margin: 5px;
+  width: 315px;
+  // border: 1px solid #d3d3d3;
+  // border-radius: .75rem;
+  // height: auto;
+  // background-color: white;
+  // margin: 5px;
+  // min-width: 365px;
+  // width: 32%;
+  // flex-wrap: wrap;
+}
+
+.multi-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -166,43 +206,12 @@ header li {
   align-items: center;
 }
 
-.multi-wrapper {
-}
-
-//flex isn't working here for some reason
-.multi-sub-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 2.1vw;
-}
-
-.multi-card {
-  border: 1px solid #d3d3d3;
-  border-radius: .75rem;
-  height: auto;
-  background-color: white;
-  margin: 5px;
-  min-width: 365px;
-  width: 32%;
-  flex-wrap: wrap;
-}
-
 .sub-wrapper {
   display: flex;
-  grid-column: 2;
-  grid-row: 1,2;
   justify-content: center;
 }
 
-.multi-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 2vh
-}
-
-.sub-wrapper2 {
-  grid-column: 2;
-  grid-row: 2;
+.buttons-wrapper {
   justify-content: center;
   margin-top: 15px;
 }
@@ -256,12 +265,28 @@ header li {
 
 .content {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vote-card {
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  border-radius: .75rem;
+  height: auto;
+  margin: 5px;
+  width: 315px;
+  height: 130px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  // margin: 1%;
+  // width: 31%;
 }
 
 .vote-button {
-  font-weight: 700;
-  text-decoration: none;
-  padding: 10px 30px;
+  padding: 10px;
   min-width: 60px;
   color: #fff;
   background-color: #8CB369;
@@ -273,9 +298,33 @@ header li {
   cursor: pointer;
   outline: none;
   box-shadow: 0 3px 5px 0 rgba(42,187,155,.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  max-width: 240px;
   margin: 0 auto;
+}
+
+.vote-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.results-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.results-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.results-status {
+  margin-top: 20px;
 }
 
 #user-info {
@@ -349,34 +398,26 @@ label {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   max-width: 240px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
+.survey-complete-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-// header {
-//     background-color: #D8F793;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     height: 80px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     box-shadow: 0 0 8px 0 black;
-// }
-
-// @media only screen and (max-width: 965px) {
-//   body {
-//     background-color: hotpink;
-//   }
-// }
-
-@media screen and (max-width: 450px)
+@media screen
+  and (max-width: 575px)
+  and (min-width: 200px)
 {
-  body {
-    background-color: red;
-  }
+  // body { background-color: red }
+  nav ul     { display: none; }
+  nav select { display: inline-block; }
+  .multi-sub-wrapper { flex-direction: column;              align-items: center; }
+  .multi-buttons { flex-direction: column;
+    align-items: center; justify-content: center;}
+  .multi-card { width: 315px; }
 }
 
 .navlink a {
@@ -497,9 +538,3 @@ label {
   font-size: 16px;
   padding: 0.5vw
 }
-// @media screen and (min-width: 451px)
-// {
-//   body {
-//     background-color: hotpink;
-//   }
-// }

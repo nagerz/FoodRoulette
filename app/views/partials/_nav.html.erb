@@ -5,7 +5,7 @@
       <%= image_tag('logo-2.png', class: "home-header-logo-2", alt: "Roulette Logo 2") %>
     <% end %>
   </section>
-  <nav class="primary_nav">
+  <nav class="nav">
     <ul class="navlinks">
         <li class="navlink">
           <%= link_to "Home", root_path, method: :get %>
@@ -17,5 +17,12 @@
           <%= link_to 'About', about_path, method: :get%>
         </li>
     </ul>
+    <select>
+     <option value="" selected="selected">Select</option>
+
+     <option value="/">Home</option>
+     <option value="/profile">Profile</option>
+     <option value="/about">About</option>
+   </select>
   </nav>
 </header>

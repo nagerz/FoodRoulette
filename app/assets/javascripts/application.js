@@ -18,6 +18,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
 function success(pos) {
   var crd = pos.coords;
   document.cookie = `lat_long=${crd.latitude + "|" + crd.longitude}`;
@@ -36,7 +37,7 @@ async function updatePage(){
     var repeater;
     var survey_id = $('.temp_information').data('survey-id')
     var api_url = $('.temp_information').data('api-url')
-    const response = await fetch(`https://${api_url}/api/v1/surveys/${survey_id}`, {});
+    const response = await fetch(`${api_url}/api/v1/surveys/${survey_id}`, {});
     const json = await response.json();
     var total_votes = json.data.attributes.total_votes;
     var restaurant_1_votes = json.data.attributes.restaurant_1_votes;
@@ -48,4 +49,4 @@ async function updatePage(){
     document.getElementById("sr2-votes").innerHTML=restaurant_2_votes;
     document.getElementById("sr3-votes").innerHTML=restaurant_3_votes;
     repeater = setTimeout(updatePage, 3000);
-    };
+  };
