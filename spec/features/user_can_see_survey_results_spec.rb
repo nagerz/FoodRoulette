@@ -24,6 +24,10 @@ describe 'As a user' do
       @sr_1 = @survey.survey_restaurants.create(restaurant: @restaurant_1)
       @sr_2 = @survey.survey_restaurants.create(restaurant: @restaurant_2)
       @sr_3 = @survey.survey_restaurants.create(restaurant: @restaurant_3)
+
+      url = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey.id}"
+      filename = 'bitly_response.json'
+      stub_get_json(url, filename)
     end
 
     it 'I can see the survey results page' do

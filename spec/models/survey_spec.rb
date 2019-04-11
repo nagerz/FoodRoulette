@@ -33,6 +33,12 @@ RSpec.describe Survey, type: :model do
       @vote4 = create(:vote, survey: @survey2, survey_restaurant: @survey_restaurant6)
       @active_survey = create(:survey, user: @user, status: 0)
       @inactive_survey = create(:survey, user: @user, status: 1)
+      
+      url = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey1.id}"
+      url2 = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey2.id}"
+      filename = 'bitly_response.json'
+      stub_get_json(url, filename)
+      stub_get_json(url2, filename)
     end
 
     it '#unique_vote?' do

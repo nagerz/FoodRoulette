@@ -1,0 +1,11 @@
+{
+    "status_code": 200,
+    "status_txt": "OK",
+    "data": {
+        "url": "http://bit.ly/2Ia5QgN",
+        "hash": "2Ia5QgN",
+        "global_hash": "2Ia5Qxj",
+        "long_url": "https://calm-tundra-59037.herokuapp.com/surveys/155",
+        "new_hash": 1
+    }
+}

@@ -17,6 +17,10 @@ describe 'As a user' do
       url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=Denver,%20CO&open_now=true&price=1,2&radius=8000'
       filename = 'survey_random_roulette_response.json'
       stub_get_json(url, filename)
+
+      url = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey1.id}"
+      filename = 'bitly_response.json'
+      stub_get_json(url, filename)
     end
 
     context 'As the user creator' do
