@@ -6,7 +6,8 @@ describe 'As a user' do
   context 'When I complete the survey data form and send survey' do
     it 'sends a survey text to mulitple numbers', :vcr do
       user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user).and_return(user)
 
       url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=Denver,%20CO&open_now=true&price=1,2&radius=8000'
       filename = 'survey_random_roulette_response.json'
@@ -22,8 +23,8 @@ describe 'As a user' do
 
       expect(current_path).to eq(new_survey_path)
       fill_in 'Your Name:', with: 'ADag'
-
-      fill_in "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):", with: '9097540068,7155740144'
+      field = "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):"
+      fill_in field, with: '9097540068,7155740144'
       fill_in 'Event Name:', with: "Julia's bday!"
       fill_in 'Date/Time of Event (optional):', with: 'This weekend?'
 
@@ -38,7 +39,8 @@ describe 'As a user' do
 
     it 'saves survey restaurants', :vcr do
       user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user).and_return(user)
 
       url = 'https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&location=Denver,%20CO&open_now=true&price=1,2&radius=8000'
       filename = 'survey_random_roulette_response.json'
@@ -58,7 +60,8 @@ describe 'As a user' do
       expect(SurveyRestaurant.count).to eq(0)
 
       fill_in 'Your Name:', with: 'ADag'
-      fill_in "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):", with: '9097540068,7155740144'
+      field = "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):"
+      fill_in field, with: '9097540068,7155740144'
       fill_in 'Event Name:', with: "Julia's bday!"
       fill_in 'Date/Time of Event (optional):', with: 'This weekend?'
 
