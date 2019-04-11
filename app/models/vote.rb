@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Vote < ApplicationRecord
   belongs_to :survey
   belongs_to :survey_restaurant
@@ -12,7 +14,7 @@ class Vote < ApplicationRecord
   end
 
   def self.text_vote(phone_number_string, response, survey)
-    if valid_response?(response)      
+    if valid_response?(response)
       if survey.active? && survey.unique_vote?(phone_number_string)
         response = response.to_i
         phone_number = PhoneNumber.find_by(digits: phone_number_string)
@@ -40,7 +42,7 @@ class Vote < ApplicationRecord
   end
 
   def self.valid_response?(response)
-    if response.empty? || response.length != 1 || !response.to_i.between?(1,3)
+    if response.empty? || response.length != 1 || !response.to_i.between?(1, 3)
       false
     else
       true

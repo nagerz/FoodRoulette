@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Restaurant < ApplicationRecord
   has_many :survey_restaurants
   has_many :visits

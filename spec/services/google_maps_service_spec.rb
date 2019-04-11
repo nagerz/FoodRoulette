@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe GoogleMapsService do
-  it "exists" do
+  it 'exists' do
     service = GoogleMapsService.new
 
     expect(service).to be_a(GoogleMapsService)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TwilioTextMessenger
   attr_reader :message, :phone_numbers
 
@@ -13,23 +15,23 @@ class TwilioTextMessenger
     message = "Your friend #{@sender} has requested your vote for where to eat. To vote for #{@restaurant_1}, reply '1' to this message. To vote for #{@restaurant_2}, reply '2' to this message. To vote for #{@restaurant_3}, reply '3', to this message. (#{@event} #{@date_time})"
     @phone_numbers.each do |phone_number|
       client = Twilio::REST::Client.new
-      response = client.messages.create({
+      response = client.messages.create(
         from: ENV['TWILIO_PHONE_NUMBER'],
         to: phone_number,
-        body: message,
-      })
+        body: message
+      )
     end
   end
 
-  def send_vote_receipt(survey_id)
-    message = "Thanks for voting! If you'd like to see which restaurant is winning, go to #{}"
+  def send_vote_receipt(_survey_id)
+    message = "Thanks for voting! If you'd like to see which restaurant is winning, go to "
 
     client = Twilio::REST::Client.new
-    response = client.messages.create({
+    response = client.messages.create(
       from: ENV['TWILIO_PHONE_NUMBER'],
       to: phone_number,
-      body: message,
-    })
+      body: message
+    )
   end
 
   def send_survey_result(survey_id)
@@ -43,22 +45,21 @@ class TwilioTextMessenger
     message = "The survey for #{event} is now closed! #{winner} is the winner!"
 
     client = Twilio::REST::Client.new
-    response = client.messages.create({
+    response = client.messages.create(
       from: ENV['TWILIO_PHONE_NUMBER'],
       to: phone_numbers,
-      body: message,
-    })
+      body: message
+    )
   end
 
   def send_invalid_vote_response(phone_number)
     message = "Your reply needs to be a '1', '2', or '3'. Please try again!"
 
     client = Twilio::REST::Client.new
-    response = client.messages.create({
+    response = client.messages.create(
       from: ENV['TWILIO_PHONE_NUMBER'],
       to: phone_number,
-      body: message,
-    })
+      body: message
+    )
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Survey < ApplicationRecord
   attr_accessor :sender, :event, :date_time, :restaurant_1, :restaurant_2, :restaurant_3
 
@@ -10,33 +12,30 @@ class Survey < ApplicationRecord
   enum status: %i[active inactive]
 
   def unique_vote?(phone_number_digits)
-    Vote.joins(:phone_number).where(survey: self.id, phone_numbers: {digits: phone_number_digits}).empty?
+    Vote.joins(:phone_number).where(survey: id, phone_numbers: { digits: phone_number_digits }).empty?
   end
 
   def find_survey_restaurant(response)
     index = response.to_i - 1
-    self.survey_restaurants[index]
+    survey_restaurants[index]
   end
 
   def check_end_survey
-    if votes.count == phone_numbers.count + 1
-      end_survey
-    end
+    end_survey if votes.count == phone_numbers.count + 1
   end
 
   def end_survey
     update_attribute(:status, 1)
 
-    SurveyCompleteTextJob.perform_later(self.id)
-    #close channel?
+    SurveyCompleteTextJob.perform_later(id)
+    # close channel?
   end
 
   def winner
     survey_restaurants.joins(:votes)
-        .group('survey_restaurants.id')
-        .select("survey_restaurants.*, count(votes.id) as vote_count")
-        .order("vote_count desc")
-        .first.restaurant
+                      .group('survey_restaurants.id')
+                      .select('survey_restaurants.*, count(votes.id) as vote_count')
+                      .order('vote_count desc')
+                      .first.restaurant
   end
-
 end

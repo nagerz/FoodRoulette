@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'fixtures/*'
+    - 'node_modules/**/*'
+    - 'bin/*'
+    - 'lib/tasks/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'config/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
