@@ -1,4 +1,4 @@
-<h3>Vote for your choice:</h3>
+<h3 id='vote-choice'>Vote for your choice:</h3>
 
 
 <div class="multi-wrapper">
@@ -7,7 +7,7 @@
     <% facade.survey_restaurants.each do |survey_restaurant| %>
       <div class="multi-card survey-restaurant">
         <div class="content survey-restaurant-<%= survey_restaurant.id %>">
-          <h4 class="name"><%= survey_restaurant.restaurant.name %></h4>
+          <h4 class="name"><%= link_to survey_restaurant.restaurant.name, survey_restaurant.restaurant.url %></h4>
           <%= button_to "Vote for #{ survey_restaurant.restaurant.name}", survey_path(facade), method: :patch, class: "vote-button",
               params: {
                         restaurant_code: survey_restaurant

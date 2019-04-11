@@ -26,7 +26,7 @@ Restaurant 3 Votes received:<p id='sr3-votes'></p>
     <div class="results-info">
       <% if facade.inactive? %>
         <% if facade.winner %>
-          <h3><%= facade.winner.name %> received the most votes!</h3>
+          <h3><%= link_to facade.winner.name, facade.winner.url %> received the most votes!</h3>
           <section class="survey-complete-buttons">
             <%= button_to 'Take Me There!', directions_path, method: :get, class: "button", params: {
                                                                                    restaurant_address: facade.winner.address_1,

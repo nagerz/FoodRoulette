@@ -5,10 +5,13 @@
     <p><%= image_tag user.thumbnail %></p>
   </ul>
 
-<section id='Visits'>
-  <% user.visited_restaurants.each do |restaurant| %>
+  <p class='header-rest-visited'>5 LAST VISITED RESTAURANTS</p>
+<section class='single-card'>
+  <section id='Visits'>
+    <% user.visited_restaurants.each do |restaurant| %>
     <p class='visit'><%= link_to restaurant.name, restaurant.url, target: :_blank %></p>
-  <% end %>
+    <% end %>
+  </section>
 </section>
 
 
