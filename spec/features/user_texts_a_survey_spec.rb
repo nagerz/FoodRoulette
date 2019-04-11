@@ -24,7 +24,7 @@ describe 'As a user' do
       expect(current_path).to eq(new_survey_path)
       fill_in 'Your Name:', with: 'ADag'
       field = "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):"
-      fill_in field, with: '9097540068,7155740144'
+      fill_in field, with: '1234567899,9876543211'
       fill_in 'Event Name:', with: "Julia's bday!"
       fill_in 'Date/Time of Event (optional):', with: 'This weekend?'
 
@@ -61,7 +61,7 @@ describe 'As a user' do
 
       fill_in 'Your Name:', with: 'ADag'
       field = "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):"
-      fill_in field, with: '9097540068,7155740144'
+      fill_in field, with: '1234567899,9876543211'
       fill_in 'Event Name:', with: "Julia's bday!"
       fill_in 'Date/Time of Event (optional):', with: 'This weekend?'
 
