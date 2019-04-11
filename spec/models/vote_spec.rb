@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe Vote, type: :model do
-  describe 'class methods' do
+  describe 'class methods', :vcr do
     before :each do
       @user = create(:user)
       @survey1 = create(:survey, user: @user, status: 0)
@@ -18,11 +18,12 @@ describe Vote, type: :model do
       @phone_number2 = create(:phone_number, digits: '+15556667777', survey: @survey1)
       @vote1 = create(:vote, survey: @survey1, phone_number: @phone_number1, survey_restaurant: @survey_restaurant1)
 
-      url = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey1.id}"
-      url2 = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey2.id}"
+      url = "http://api.bit.ly/v3/shorten?apiKey=#{ENV['BITLY_API_KEY']}&login=#{ENV['BITLY_LOGIN']}&longUrl=https://localhost:3000/surveys/#{@survey1.id}"
+      url2 = "http://api.bit.ly/v3/shorten?apiKey=#{ENV['BITLY_API_KEY']}&login=#{ENV['BITLY_LOGIN']}&longUrl=https://localhost:3000/surveys/#{@survey2.id}"
       filename = 'bitly_response.json'
+      filename2 = 'bitly_response2.json'
       stub_get_json(url, filename)
-      stub_get_json(url2, filename)
+      stub_get_json(url2, filename2)
     end
 
     it '.text_vote' do

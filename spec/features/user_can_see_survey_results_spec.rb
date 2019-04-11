@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe 'As a user' do
-  context 'After I send a group survey' do
+  context 'After I send a group survey', :vcr do
     before :each do
       @user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
@@ -25,7 +25,7 @@ describe 'As a user' do
       @sr_2 = @survey.survey_restaurants.create(restaurant: @restaurant_2)
       @sr_3 = @survey.survey_restaurants.create(restaurant: @restaurant_3)
 
-      url = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey.id}"
+      url = "http://api.bit.ly/v3/shorten?apiKey=#{ENV['BITLY_API_KEY']}&login=#{ENV['BITLY_LOGIN']}&longUrl=https://localhost:3000/surveys/#{@survey.id}"
       filename = 'bitly_response.json'
       stub_get_json(url, filename)
     end

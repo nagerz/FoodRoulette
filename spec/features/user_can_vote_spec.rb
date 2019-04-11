@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'As a user' do
+describe 'As a user', :vcr do
   context 'After I complete the survey data form and send survey' do
     before :each do
       @user = create(:user)
@@ -18,7 +18,7 @@ describe 'As a user' do
       filename = 'survey_random_roulette_response.json'
       stub_get_json(url, filename)
 
-      url = "http://api.bit.ly/v3/shorten?apiKey=R_59aacca9ae764988a6fffe37b34855a6&login=o_2qcdfn6j1e&longUrl=https://calm-tundra-59037.herokuapp.com/surveys/#{@survey1.id}"
+      url = "http://api.bit.ly/v3/shorten?apiKey=#{ENV['BITLY_API_KEY']}&login=#{ENV['BITLY_LOGIN']}&longUrl=https://localhost:3000/surveys/#{@survey1.id}"
       filename = 'bitly_response.json'
       stub_get_json(url, filename)
     end

@@ -18,6 +18,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
   config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
   config.filter_sensitive_data('<YELP_API_KEY>') { ENV['YELP_API_KEY'] }
+  config.default_cassette_options = {:record => :new_episodes}
 end
 
 OmniAuth.config.test_mode = true
@@ -106,6 +107,6 @@ end
 
     Capybara.server_port = 3001
     Ngrok::Rspec.tunnel = { port: Capybara.server_port }
-    
+
     config.include Ngrok::Rspec
   end
