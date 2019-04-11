@@ -16,6 +16,7 @@ class Vote < ApplicationRecord
   def self.text_vote(phone_number_string, response, survey)
     if valid_response?(response)
       if survey.active? && survey.unique_vote?(phone_number_string)
+        ValidResponseTextJob.perform_later(phone_number_string, survey)
         response = response.to_i
         phone_number = PhoneNumber.find_by(digits: phone_number_string)
         survey_restaurant = survey.find_survey_restaurant(response)

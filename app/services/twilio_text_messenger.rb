@@ -23,8 +23,19 @@ class TwilioTextMessenger
     end
   end
 
-  def send_vote_receipt(_survey_id)
-    message = "Thanks for voting! If you'd like to see which restaurant is winning, go to "
+  def send_valid_vote_response(phone_number, survey)
+    message = "Thanks for voting! If you'd like to see which restaurant is winning, visit here."
+
+    client = Twilio::REST::Client.new
+    response = client.messages.create(
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      to: phone_number,
+      body: message
+    )
+  end
+
+  def send_invalid_vote_response(phone_number)
+    message = "Your reply needs to be a '1', '2', or '3'. Please try again!"
 
     client = Twilio::REST::Client.new
     response = client.messages.create(
@@ -42,7 +53,7 @@ class TwilioTextMessenger
     end
     event = @survey.event
     winner = @survey.winner.name
-    message = "The survey for #{event} is now closed! #{winner} is the winner!"
+    message = "Your recent survey has ended! #{winner} is the winner!"
 
     client = Twilio::REST::Client.new
     response = client.messages.create(
@@ -52,14 +63,4 @@ class TwilioTextMessenger
     )
   end
 
-  def send_invalid_vote_response(phone_number)
-    message = "Your reply needs to be a '1', '2', or '3'. Please try again!"
-
-    client = Twilio::REST::Client.new
-    response = client.messages.create(
-      from: ENV['TWILIO_PHONE_NUMBER'],
-      to: phone_number,
-      body: message
-    )
-  end
 end
