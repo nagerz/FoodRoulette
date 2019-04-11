@@ -38,17 +38,43 @@ async function initMap(){
   var response = await fetch(`http://localhost:3000/api/v1/restaurants/${restaurant_id}`, {});
   var json = await response.json();
 
+  var user_manual_location = $('.temp_information').data('user-manual-location');
+  var user_latlong = $('.temp_information').data('user-latlong');
+
+  if (user_manual_location != null) {
+    var search_location = user_manual_location
+  } else {
+    var latlong = []
+    var lat = user_latlong.split("|")[0]
+    var long = user_latlong.split("|")[1]
+    lat = parseFloat(lat)
+    long = parseFloat(long)
+    latlong.push(lat)
+    latlong.push(long)
+  }
+
   var restaurant_name = json.data.attributes.name;
   var restaurant_address = json.data.attributes.address;
+  var restaurant_lat = json.data.attributes.latitude;
+  var restaurant_long = json.data.attributes.longitude;
+  var rest_latlong = []
+  rest_latlong.push(restaurant_lat)
+  rest_latlong.push(restaurant_long)
 
-  var addresses = [restaurant_address];
-  var names = [restaurant_name];
+  var names = ["Current Location", restaurant_name];
 
   window.onload = function() {
     L.mapquest.key = mapquestKey;
 
-    // Geocode three locations, then call the createMap callback
-    L.mapquest.geocoding().geocode(addresses, createMap);
+    // Geocode the locations, then call the createMap callback
+    if (user_manual_location == null) {
+      var addresses = [latlong, rest_latlong];
+      console.log(addresses)
+      L.mapquest.geocoding().geocoder.reverse(addresses, createMap);
+    } else {
+      var addresses = [user_manual_location, restaurant_address];
+      L.mapquest.geocoding().geocode(addresses, createMap);
+    }
 
     function createMap(error, response) {
       // Initialize the Map
@@ -68,16 +94,19 @@ async function initMap(){
 
     function generateMarkersFeatureGroup(response, names) {
       var group = [];
-      for (var i = 0; i < response.results.length; i++) {
-        var location = response.results[i].locations[0];
-        var locationLatLng = location.latLng;
+      var location = response.results[0].locations[0];
+      var locationLatLng = location.latLng;
+      var location2 = response.results[1].locations[0];
+      var locationLatLng2 = location2.latLng;
 
         // Create a marker for each location
-        var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-          .bindPopup(names[i]);
+      var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.circle({primaryColor: '#22407F'})})
+        .bindPopup(names[0]);
+      var marker2 = L.marker(locationLatLng2, {icon: L.mapquest.icons.marker({symbol: 'A'})})
+        .bindPopup(names[1]);
 
         group.push(marker);
-      }
+        group.push(marker2);
       return L.featureGroup(group);
     }
   }
@@ -107,7 +136,6 @@ async function initSurveyMap(){
   var names = [
   restaurant_1_name, restaurant_2_name, restaurant_3_name
   ];
-  renderMap();
 
   async function renderMap() {
     L.mapquest.key = mapquestKey;
@@ -115,13 +143,13 @@ async function initSurveyMap(){
     // Geocode three locations, then call the createMap callback
     L.mapquest.geocoding().geocode(addresses, createMap);
 
-    function createMap(error, response) {
+    async function createMap(error, response) {
 
       // Initialize the Map
       var map = L.mapquest.map('map', {
         layers: L.mapquest.tileLayer('map'),
         center: [0, 0],
-        zoom: 10
+        zoom: 15
       });
 
       // Generate the feature group containing markers from the geocoded locations
@@ -131,21 +159,20 @@ async function initSurveyMap(){
       featureGroup.addTo(map);
       map.fitBounds(featureGroup.getBounds());
     }
-  }
 
+    async function generateMarkersFeatureGroup(response, names) {
+      var group = [];
+      for (var i = 0; i < response.results.length; i++) {
+        var location = response.results[i].locations[0];
+        var locationLatLng = location.latLng;
 
-  async function generateMarkersFeatureGroup(response, names) {
-    var group = [];
-    for (var i = 0; i < response.results.length; i++) {
-      var location = response.results[i].locations[0];
-      var locationLatLng = location.latLng;
+        // Create a marker for each location
+        var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+          .bindPopup("test");
 
-      // Create a marker for each location
-      var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-        .bindPopup("test");
-
-      group.push(marker);
+        group.push(marker);
+      }
+      return L.featureGroup(group);
     }
-    return L.featureGroup(group);
-  };
+  }
 };
