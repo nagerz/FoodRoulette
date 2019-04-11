@@ -306,6 +306,13 @@ nav select {
   align-items: center;
 }
 
+.results-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 #user-info {
   font-size: 20px;
 }
