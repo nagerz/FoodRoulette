@@ -1,13 +1,13 @@
 <section id='new-form-wrapper'>
   <%= form_for @survey do |f| %>
       <%= f.label :sender, "Your Name:" %>
-      <%= f.text_field :sender %><br/>
+      <%= f.text_field :sender, required: true %><br/>
 
       <%= f.label :phone_numbers, "Your Friends' Phone Numbers (e.g. '2223334444,5556667777'):"%><br/>
-      <%= f.text_field :phone_numbers, value: "" %><br/>
+      <%= f.text_field :phone_numbers, value: "", required: true %><br/>
 
       <%= f.label :event, "Event Name:" %>
-      <%= f.text_field :event %><br/>
+      <%= f.text_field :event, required: true %><br/>
 
       <%= f.label :date_time, "Date/Time of Event (optional):" %>
       <%= f.text_field :date_time %><br/>
