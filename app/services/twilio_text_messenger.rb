@@ -24,7 +24,7 @@ class TwilioTextMessenger
   end
 
   def send_valid_vote_response(phone_number, survey)
-    message = "Thanks for voting! If you'd like to see which restaurant is winning, visit here."
+    message = "Thanks for voting! If you'd like to see which restaurant is winning, visit https://calm-tundra-59037.herokuapp.com/surveys/#{survey.id}."
 
     client = Twilio::REST::Client.new
     response = client.messages.create(
