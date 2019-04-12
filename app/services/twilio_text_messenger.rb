@@ -47,20 +47,19 @@ class TwilioTextMessenger
 
   def send_survey_result(survey_id)
     @survey ||= Survey.find(survey_id)
-    phone_numbers = []
-    @survey.phone_numbers.each do |phone_number|
-      phone_numbers << phone_number.digits
-    end
-    event = @survey.event
     winner = @survey.winner.name
-    message = "Your recent survey has ended! #{winner} is the winner!"
 
-    client = Twilio::REST::Client.new
-    response = client.messages.create(
-      from: ENV['TWILIO_PHONE_NUMBER'],
-      to: phone_numbers,
-      body: message
-    )
+    @survey.phone_numbers.each do |phone_number|
+      message = "Your recent survey has ended! #{winner} is the winner!"
+
+      client = Twilio::REST::Client.new
+      response = client.messages.create(
+        from: ENV['TWILIO_PHONE_NUMBER'],
+        to: phone_number.digits,
+        body: message
+      )
+    end
+
   end
 
 end
