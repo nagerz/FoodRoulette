@@ -43,10 +43,14 @@ async function updatePage(){
     var restaurant_1_votes = json.data.attributes.restaurant_1_votes;
     var restaurant_2_votes = json.data.attributes.restaurant_2_votes;
     var restaurant_3_votes = json.data.attributes.restaurant_3_votes;
+    var survey_status = json.data.attributes.survey_status
 
     document.getElementById("total-votes").innerHTML=total_votes;
     document.getElementById("sr1-votes").innerHTML=restaurant_1_votes;
     document.getElementById("sr2-votes").innerHTML=restaurant_2_votes;
     document.getElementById("sr3-votes").innerHTML=restaurant_3_votes;
     repeater = setTimeout(updatePage, 3000);
+    if (survey_status == 'inactive') {
+      location.reload()
+    }
   };
