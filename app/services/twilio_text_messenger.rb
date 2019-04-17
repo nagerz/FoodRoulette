@@ -59,7 +59,6 @@ class TwilioTextMessenger
         body: message
       )
     end
-
   end
 
 end

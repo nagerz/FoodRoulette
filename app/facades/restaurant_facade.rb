@@ -47,8 +47,6 @@ class RestaurantFacade
                    reviews: restaurant_data[:review_count],
                    category_1: restaurant_data[:categories][0][:title],
                    url: restaurant_data[:url])
-    # category_2: restaurant[:categories][1][:title],
-    # category_3: restaurant[:categories][2][:title]
   end
 
   def random_restaurant(location, limit = 1)
@@ -60,7 +58,7 @@ class RestaurantFacade
   end
 
   def restaurants_data(location)
-    service.restaurants(location)
+    Rails.cache.fetch("#{location}", expires_in: 3.days ) { service.restaurants(location) }
   end
 
   def service

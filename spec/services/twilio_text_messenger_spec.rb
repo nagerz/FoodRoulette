@@ -40,8 +40,9 @@ describe TwilioTextMessenger do
         sr = create(:survey_restaurant, survey: survey)
         create(:vote, phone_number: num, survey: survey, survey_restaurant: sr)
 
-        expect(@service.send_survey_result(survey.id))
-          .to be_a(Twilio::REST::Api::V2010::AccountContext::MessageInstance)
+        result = @service.send_survey_result(survey.id)
+        expect(result).to be_a(Array)
+        expect(result[0]).to be_a(PhoneNumber)
       end
     end
 
