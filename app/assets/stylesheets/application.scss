@@ -276,16 +276,19 @@ header li {
   margin: 5px;
   width: 315px;
   height: 130px;
+  text-align: center;
   a {
     text-decoration: none;
-    color: black;
+    color: #56004c;
+    text-align: center;
   }
-  // margin: 1%;
-  // width: 31%;
+  a:hover {
+    color: #ff6b35;
+  }
 }
 
 .vote-button {
-  padding: 10px;
+  padding: 5% 30% 5% 30%;
   min-width: 60px;
   color: #fff;
   background-color: #8CB369;

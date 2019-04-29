@@ -8,7 +8,7 @@
       <div class="vote-card survey-restaurant">
         <div class="vote-content survey-restaurant-<%= survey_restaurant.id %>">
           <h4 class="name"><%= link_to survey_restaurant.restaurant.name, survey_restaurant.restaurant.url, target: :_blank %></h4>
-          <%= button_to "Vote for #{ survey_restaurant.restaurant.name}", survey_path(facade), method: :patch, class: "vote-button",
+          <%= button_to "Vote", survey_path(facade), method: :patch, class: "vote-button",
               params: {
                         restaurant_code: survey_restaurant
                        } %>
