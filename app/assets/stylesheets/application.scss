@@ -324,12 +324,22 @@ header li {
 
 .results-status {
   margin-top: 20px;
+  font-size: large;
 }
 
 #user-info {
   font-size: 22px;
   padding: 0;
   text-align: center;
+}
+
+.winner-info {
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  border-radius: .75rem;
+  margin: 0 20% 0 20%;
+  display: flex;
+  flex-direction: column;
 }
 
 #new-form-wrapper input {
@@ -404,6 +414,11 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2%;
+}
+
+.winner-info h3 {
+  padding-top: 2%
 }
 
 .navlink a {
@@ -543,4 +558,5 @@ label {
   .home-buttons-2 { width: 100%; margin-left: 0; display: flex; flex-direction: column; align-items: center; margin-top: 2vh;}
   #location-search { width: 100%; padding-right: 3vh; }
   .location-form { margin-right: 2vh; }
+  .winner-info { padding: 1%; margin: 0; }
 }

@@ -5,25 +5,27 @@
   $( document ).ready( updatePage() );
 </script>
 
-<h3 class="results-heading">Survey Results:<h3>
+<div class="results-info">
+  <h3 class="results-heading">Survey Results:</h3>
+  <% if facade.inactive? %>
+    <% if facade.winner %>
+      <div class="winner-info">
 
-<% if facade.inactive? %>
-  <% if facade.winner %>
-    <div class="results-info winner-info">
-      <h3><%= facade.winner.name %> received the most votes!</h3>
-      <section class="survey-complete-buttons">
-        <%= button_to 'Take Me There', directions_path, method: :get, class: "button", params: {
-                                                                               restaurant_address: facade.winner.address_1,
-                                                                               user_address: cookies[:manual_location],
-                                                                               user_lat_long: cookies[:lat_long],
-                                                                               user_id: current_user.id,
-                                                                               restaurant_id: facade.winner.id  } if current_user == facade.user %>
-        <%= button_to 'Start Another Survey', group_roulette_path, class: "button", method: :get %>
-      </section>
-    </div>
-  <% else %>
+        <h3><%= facade.winner.name %> received the most votes!</h3>
+        <section class="survey-complete-buttons">
+          <%= button_to 'Take Me There', directions_path, method: :get, class: "button", params: {
+                                                                                 restaurant_address: facade.winner.address_1,
+                                                                                 user_address: cookies[:manual_location],
+                                                                                 user_lat_long: cookies[:lat_long],
+                                                                                 user_id: current_user.id,
+                                                                                 restaurant_id: facade.winner.id  } if current_user == facade.user %>
+          <%= button_to 'Start Another Survey', group_roulette_path, class: "button", method: :get %>
+        </section>
+      </div>
+    <% else %>
     <strong>Nobody voted!</strong>
   <% end %>
+</div>
 <% else %>
   <div class="multi-wrapper">
     <div class="multi-sub-wrapper">
@@ -67,6 +69,6 @@
 <% end %>
 
 <section class="results-status">
-  <small>Status: <%= facade.status %></small><br/>
-  <small>Total Votes Received: <span id="total-votes" ></span></small>
+  <div>Status: <%= facade.status %></div>
+  <div>Total Votes Received: <span id="total-votes" ></span></div>
 </section>
