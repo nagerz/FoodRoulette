@@ -2,8 +2,11 @@
 
 Food Roulette is an app designed to help users decide where to eat, either alone or in a group. Users can ‘roulette’ to get a random restaurant selected for them from the Yelp API based on their location. They can also get a selection of three restaurants that they can send to their friends via text as a survey. Survey participants can then vote for a winner using text messaging and will be alerted when a winning restaurant is selected.
 
-# Prerequisites	
-- Requires PostgresSQL database
+# Dependencies	
+- Rails 5.2.0
+- PostgresSQL database
+- Redis
+- Sidekiq
 
 # Local Setup
 
@@ -112,3 +115,6 @@ will run the item model test that is found in that file on line 28.
 
 # Created By
 - [Chris Lewis](https://github.com/csvlewis)
+- [Julia Marco](https://github.com/juliamarco)
+- [Zach Nager](https://github.com/nagerz)
+- [April Dagonese](https://github.com/aprildagonese)
