@@ -3,7 +3,8 @@
 Food Roulette is an app designed to help users decide where to eat, either alone or in a group. Users can ‘roulette’ to get a random restaurant selected for them from the Yelp API based on their location. They can also get a selection of three restaurants that they can send to their friends via text as a survey. Survey participants can then vote for a winner using text messaging and will be alerted when a winning restaurant is selected.
 
 # Dependencies	
-- Rails 5.2.0
+
+- Rails 5.2.3 or higher
 - PostgresSQL database
 - Redis
 - Sidekiq
@@ -92,7 +93,7 @@ Each friend will also get a text message letting them know that the survey has e
 
 # Testing
 
-Sweater Weather uses RSpec for testing. To run the full test suite, run RSpec from the terminal.
+FoodRoulette uses RSpec for testing. To run the full test suite, run RSpec from the terminal.
 
         bundle exec rspec
         
@@ -101,6 +102,12 @@ Individual tests can be run by specifying the desired file path and line number.
         bundle exec rspec spec/features/nav_bar_spec.rb:28
         
 will run the item model test that is found in that file on line 28.
+
+In order to test text responses back to your app, you will need to set up a local endpoint tunnel using something like [Ngrok](https://ngrok.com/). Once your local tunnel is running, you'll need to take that endpoint url and add it to your Twilio account messaging webhook as:
+
+	http://<YOUR-TEMPORARY-ENDPOINT>/responses
+        
+This will allow the application to recieve and process text votes appropriately.
 
 # Live Site
 
